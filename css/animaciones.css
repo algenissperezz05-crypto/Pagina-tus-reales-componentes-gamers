@@ -1,0 +1,113 @@
+/* ============ AMBIENTE Y ANIMACIONES GENERALES ============
+   Todo se apaga solo si el visitante tiene activado "reducir movimiento" (ver regla al final de style.css). */
+
+/* barra de progreso de lectura (arriba del todo) */
+.progreso{position:fixed;left:0;top:0;z-index:90;width:100%;height:3px;transform-origin:0 50%;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--violet),var(--cyan));box-shadow:0 0 10px rgba(0,229,255,.7);pointer-events:none}
+
+/* luces de fondo que flotan despacio */
+.ambiente{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.orbe{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;animation:deriva 22s ease-in-out infinite}
+.o1{left:-8%;top:18%;width:42vmax;height:42vmax;background:rgba(139,92,246,.45)}
+.o2{right:-10%;top:48%;width:38vmax;height:38vmax;background:rgba(0,229,255,.28);animation-delay:-8s;animation-duration:27s}
+.o3{left:30%;bottom:-18%;width:34vmax;height:34vmax;background:rgba(79,124,255,.3);animation-delay:-14s}
+@keyframes deriva{50%{transform:translate3d(6vmax,-5vmax,0) scale(1.12)}}
+
+/* luz suave que sigue al cursor (solo con mouse) */
+.luz{position:fixed;left:0;top:0;z-index:1;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,229,255,.1),rgba(139,92,246,.06) 55%,transparent);pointer-events:none;opacity:0;transition:opacity .4s;will-change:transform}
+.luz.on{opacity:1}
+@media(hover:none){.luz{display:none}}
+
+/* cabecera: se compacta y proyecta sombra al desplazarte */
+.top{transition:padding .3s,box-shadow .3s,background .3s}
+.top.compacta{padding-block:.4rem;box-shadow:0 10px 30px -12px rgba(0,0,0,.8);background:rgba(7,7,11,.97)}
+.logo{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.brand:hover .logo{transform:rotate(60deg) scale(1.08)}
+
+/* barra de categorías: scroll fino que combina con el diseño */
+.cats{scrollbar-width:thin;scrollbar-color:var(--violet) transparent}
+.cats::-webkit-scrollbar{height:6px}
+.cats::-webkit-scrollbar-track{background:transparent}
+.cats::-webkit-scrollbar-thumb{background:rgba(139,92,246,.6);border-radius:6px}
+.chip{transition:color .2s,border-color .2s,background .2s,transform .2s,box-shadow .2s}
+.chip:hover{border-color:rgba(139,92,246,.7);transform:translateY(-1px)}
+.chip[aria-pressed=true]{box-shadow:0 0 16px -2px rgba(139,92,246,.6)}
+
+/* aparición al desplazarte (solo si hay JavaScript) */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--d,0)*90ms)}
+.js .reveal.visto{opacity:1;transform:none}
+.catalogo h2{position:relative;display:inline-block}
+.catalogo h2::after{content:"";display:block;height:3px;margin-top:.4rem;border-radius:3px;background:linear-gradient(90deg,var(--violet),var(--cyan));transform:scaleX(0);transform-origin:0 50%;transition:transform .8s .2s cubic-bezier(.2,.8,.2,1)}
+.catalogo h2.visto::after{transform:scaleX(1)}
+
+/* botones: brillo que cruza + ondas al hacer clic */
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn.brillo::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:cruza 4.5s ease-in-out infinite}
+@keyframes cruza{0%,60%{left:-60%}100%{left:140%}}
+.btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 24px -6px rgba(0,229,255,.55)}
+.onda{position:absolute;border-radius:50%;background:rgba(255,255,255,.5);transform:scale(0);animation:onda .6s ease-out forwards;pointer-events:none}
+@keyframes onda{to{transform:scale(4);opacity:0}}
+
+/* cifras y marquesina de marcas */
+.datos{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;max-width:1100px;margin:0 auto;padding:2.5rem clamp(1rem,4vw,3rem) 1.5rem}
+.dato{padding:1rem;text-align:center;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,rgba(26,26,38,.85),rgba(18,18,26,.85));transition:border-color .3s,box-shadow .3s,transform .3s}
+.dato:hover{border-color:rgba(0,229,255,.55);box-shadow:0 0 24px -8px rgba(0,229,255,.5);transform:translateY(-3px)}
+.dato b{display:block;font:700 clamp(1.8rem,5vw,2.6rem)/1.1 var(--ft);background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.dato span{color:var(--mut);font-size:.9rem}
+.marquesina{overflow:hidden;margin:0 0 1rem;padding:.9rem 0;border-block:1px solid var(--line);background:rgba(18,18,26,.55);-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.pista{display:flex;width:max-content;gap:2.5rem;animation:marquesina 38s linear infinite}
+.marquesina:hover .pista{animation-play-state:paused}
+.pista button{padding:0;border:0;background:none;font:700 1.05rem var(--ft);letter-spacing:.14em;text-transform:uppercase;color:rgba(160,160,184,.75);white-space:nowrap;cursor:pointer;transition:color .25s,text-shadow .25s}
+.pista button:hover{color:var(--cyan);text-shadow:0 0 14px rgba(0,229,255,.5)}
+.pista button::before{content:"◆";margin-right:2.5rem;color:var(--violet);font-size:.6em;vertical-align:middle}
+@keyframes marquesina{to{transform:translateX(-50%)}}
+
+/* tarjetas de producto: entrada escalonada, inclinación 3D, luz que sigue al cursor */
+.card{position:relative;cursor:pointer;transform-style:preserve-3d;will-change:transform;transition:border-color .25s,box-shadow .3s,transform .25s ease-out}
+.card.entra{animation:tarjeta-in .55s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(min(var(--i,0),11)*55ms)}
+@keyframes tarjeta-in{from{opacity:0;transform:translateY(22px) scale(.97)}}
+.card:hover{border-color:var(--violet);transform:none;box-shadow:0 14px 34px -14px rgba(139,92,246,.55)}
+.card.inclinada{transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-4px)}
+.card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(0,229,255,.14),transparent 60%)}
+.card:hover::after{opacity:1}
+.img{overflow:hidden}
+.img img{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.card:hover .img img,.card:hover .img>svg{transform:scale(1.07) rotate(-1deg)}
+.img>svg{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.ojo{position:absolute;right:.6rem;bottom:.6rem;padding:.2rem .65rem;border:1px solid rgba(0,229,255,.5);border-radius:999px;background:rgba(7,7,11,.8);color:var(--cyan);font:600 .75rem var(--fb);opacity:0;transform:translateY(6px);transition:opacity .25s,transform .25s}
+.card:hover .ojo,.card:focus-within .ojo{opacity:1;transform:none}
+.ver{padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.ver:hover{color:var(--cyan)}
+.tag:not(.out){animation:latido-tag 2.6s ease-in-out infinite}
+@keyframes latido-tag{50%{box-shadow:0 0 14px rgba(0,229,255,.8)}}
+.price{transition:text-shadow .3s}
+.card:hover .price{text-shadow:0 0 16px rgba(0,229,255,.55)}
+.fav.pop{animation:corazon .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes corazon{40%{transform:scale(1.4)}}
+
+/* carrito: icono que vuela hacia el botón */
+.vuela{position:fixed;z-index:80;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:14px;object-fit:contain;background:var(--panel2);border:1px solid var(--cyan);box-shadow:0 0 20px rgba(0,229,255,.6);pointer-events:none;transition:transform .75s cubic-bezier(.5,0,.75,.2),opacity .75s;display:grid;place-items:center;color:var(--cyan);overflow:hidden}
+.vuela svg{width:70%}
+.vuela img{width:100%;height:100%;object-fit:contain}
+.line{animation:linea-in .35s ease both}
+@keyframes linea-in{from{opacity:0;transform:translateX(16px)}}
+
+/* avisos: salen con suavidad */
+.toast{animation:in .3s cubic-bezier(.2,.8,.2,1);transition:opacity .3s,transform .3s}
+.toast.sale{opacity:0;transform:translateY(8px)}
+
+/* botón volver arriba */
+.subir{position:fixed;right:1rem;bottom:1rem;z-index:45;width:46px;height:46px;border:1px solid var(--violet);border-radius:50%;background:rgba(18,18,26,.9);color:var(--cyan);font-size:1.2rem;cursor:pointer;box-shadow:0 0 18px -4px rgba(139,92,246,.7);animation:in .3s both;transition:transform .2s,box-shadow .2s}
+.subir:hover{transform:translateY(-3px);box-shadow:0 0 24px rgba(0,229,255,.55)}
+.subir[hidden]{display:none}
+
+/* pie: línea luminosa */
+.pie{position:relative}
+.pie::before{content:"";position:absolute;left:0;top:-1px;width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--violet),var(--cyan),transparent);background-size:200% 100%;animation:linea 6s linear infinite}
+@keyframes linea{to{background-position:-200% 0}}
+
+/* inclinación de las tarjetas: sin movimiento extra si el visitante lo pidió */
+@media(prefers-reduced-motion:reduce){
+  .js .reveal{opacity:1;transform:none}
+  .pista{animation:none;flex-wrap:wrap;width:auto;justify-content:center}
+  .catalogo h2::after{transform:scaleX(1)}
+}

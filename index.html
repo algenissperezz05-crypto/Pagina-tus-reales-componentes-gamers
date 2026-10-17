@@ -5,21 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tus Reales Componentes Gamers | Tecnología gamer en RD$</title>
 <meta name="description" content="Tarjetas gráficas, procesadores, memoria, almacenamiento, monitores y periféricos gamer. Precios en RD$.">
+<meta name="theme-color" content="#07070b">
 <meta property="og:title" content="Tus Reales Componentes Gamers">
 <meta property="og:description" content="Potencia real, a precio real.">
 <meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M20 3 35 11.5v17L20 37 5 28.5v-17z' fill='%2307070b' stroke='%238b5cf6' stroke-width='2.5'/%3E%3Cpath d='M14 27V13h8a4.5 4.5 0 0 1 0 9h-8m8 0 5 5' fill='none' stroke='%2300e5ff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add("js");</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<!-- ESTILOS -->
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/animaciones.css">
+<link rel="stylesheet" href="./css/hero3d.css">
+<link rel="stylesheet" href="./css/modales.css">
+
+<!-- SCRIPTS (el orden importa: datos primero, app.js después, luego los módulos) -->
 <script src="./js/data.js" defer></script>
+<script src="./js/fichas.js" defer></script>
+<script src="./js/config.js" defer></script>
 <script src="./js/app.js" defer></script>
+<script src="./js/hero3d.js" defer></script>
+<script src="./js/efectos.js" defer></script>
+<script src="./js/modal.js" defer></script>
+<script src="./js/producto.js" defer></script>
+<script src="./js/checkout.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#catalogo">Saltar al catálogo</a>
+
+<!-- AMBIENTE: barra de progreso, luces de fondo y luz que sigue al cursor (decorativos) -->
+<div class="progreso" id="progreso" aria-hidden="true"></div>
+<div class="ambiente" aria-hidden="true"><span class="orbe o1"></span><span class="orbe o2"></span><span class="orbe o3"></span></div>
+<div class="luz" id="luz" aria-hidden="true"></div>
+
 <p class="promo">Precios y existencias de referencia: confirma disponibilidad antes de comprar.</p>
 
-<!-- CABECERA: logo, buscador, favoritos y carrito -->
+<!-- CABECERA: logo, menú, buscador, favoritos y carrito -->
 <header class="top">
   <a class="brand" href="#inicio" aria-label="Tus Reales Componentes Gamers, inicio">
     <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 35 11.5v17L20 37 5 28.5v-17z" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M14 27V13h8a4.5 4.5 0 0 1 0 9h-8m8 0 5 5" fill="none" stroke="#00e5ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -41,7 +64,7 @@
   </nav>
   <form class="search" role="search" id="busqueda">
     <label class="sr" for="q">Buscar productos</label>
-    <input id="q" type="search" placeholder="Busca por nombre, marca o categoría" autocomplete="off">
+    <input id="q" type="search" placeholder="Buscar…" title="Busca por nombre, marca o categoría" autocomplete="off">
   </form>
   <button class="icon-btn" id="btn-fav" type="button" aria-pressed="false">Favoritos <b id="n-fav">0</b></button>
   <button class="icon-btn" id="btn-cart" type="button" aria-controls="carrito" aria-expanded="false">Carrito <b id="n-cart">0</b></button>
@@ -49,19 +72,69 @@
 <nav class="cats" id="cats" aria-label="Categorías"></nav>
 
 <main>
-  <!-- HERO -->
+  <!-- HERO: texto a la izquierda, procesador 3D giratorio a la derecha -->
   <section class="hero" id="inicio">
-    <div>
+    <canvas class="particulas" id="particulas" aria-hidden="true"></canvas>
+    <div class="hero-texto">
+      <p class="kicker"><span class="punto" aria-hidden="true"></span>Hardware gamer · precios en RD$</p>
       <h1>Potencia real, a precio real.</h1>
-      <p>Componentes y periféricos para armar y mejorar tu PC. Filtra por categoría, marca y precio, guarda favoritos y arma tu carrito.</p>
-      <a class="btn" href="#catalogo">Ver catálogo</a>
+      <p class="lead">Componentes y periféricos para armar y mejorar tu PC. Filtra por categoría, marca y precio, guarda favoritos y arma tu carrito.</p>
+      <p class="explora">Explora <button class="palabra" id="palabra" type="button" aria-label="Ir a la categoría mostrada">Tarjetas gráficas</button></p>
+      <div class="hero-acciones">
+        <a class="btn brillo" href="#catalogo">Ver catálogo</a>
+        <a class="btn ghost" href="#contacto">Contacto</a>
+      </div>
     </div>
-    <svg class="hero-art" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="20" width="52" height="24" rx="3"/><circle cx="22" cy="32" r="7"/><circle cx="42" cy="32" r="7"/><path d="M22 25v14M15 32h14M42 25v14M35 32h14M10 44v6h12v-6"/></svg>
+
+    <!-- ESCENA 3D (solo CSS): capas que flotan y giran. Decorativa. -->
+    <div class="hero-3d" id="hero-3d" aria-hidden="true">
+      <div class="aura"></div>
+      <div class="inclina" id="inclina">
+        <div class="escena">
+          <div class="capa pcb" style="--z:0em;--dz:.4em">
+            <svg class="trazas" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <g class="base">
+                <path pathLength="100" d="M50 50V24H30V8"/><path pathLength="100" d="M50 50V20H64V4"/>
+                <path pathLength="100" d="M50 50H80V36H94"/><path pathLength="100" d="M50 50H84V66H96"/>
+                <path pathLength="100" d="M50 50V76H70V92"/><path pathLength="100" d="M50 50V80H36V96"/>
+                <path pathLength="100" d="M50 50H20V64H6"/><path pathLength="100" d="M50 50H16V34H4"/>
+              </g>
+              <g class="pulso">
+                <path pathLength="100" style="--d:0s" d="M50 50V24H30V8"/><path pathLength="100" style="--d:.4s" d="M50 50V20H64V4"/>
+                <path pathLength="100" style="--d:.8s" d="M50 50H80V36H94"/><path pathLength="100" style="--d:1.2s" d="M50 50H84V66H96"/>
+                <path pathLength="100" style="--d:1.6s" d="M50 50V76H70V92"/><path pathLength="100" style="--d:2s" d="M50 50V80H36V96"/>
+                <path pathLength="100" style="--d:2.4s" d="M50 50H20V64H6"/><path pathLength="100" style="--d:2.8s" d="M50 50H16V34H4"/>
+              </g>
+            </svg>
+          </div>
+          <i class="anillo a1"></i>
+          <i class="poste p1"></i><i class="poste p2"></i><i class="poste p3"></i><i class="poste p4"></i>
+          <div class="capa sustrato" style="--z:5em;--dz:.8em"></div>
+          <div class="capa ihs" style="--z:9em;--dz:1.2em"><span class="grabado">TRCG</span><i class="barrido"></i></div>
+          <div class="capa nucleo" style="--z:10.4em;--dz:1.6em"></div>
+          <i class="anillo a2"></i>
+          <i class="orbita ob1"></i><i class="orbita ob2"></i>
+        </div>
+      </div>
+      <div class="sombra"></div>
+      <span class="etiqueta e1">GPU</span><span class="etiqueta e2">RAM</span><span class="etiqueta e3">SSD</span><span class="etiqueta e4">RGB</span>
+    </div>
   </section>
+
+  <!-- CIFRAS (se calculan con tu catálogo) -->
+  <section class="datos" aria-label="Resumen del catálogo">
+    <div class="dato reveal"><b id="c-prod" data-contar="0">0</b><span>Productos</span></div>
+    <div class="dato reveal" style="--d:1"><b id="c-cat" data-contar="0">0</b><span>Categorías</span></div>
+    <div class="dato reveal" style="--d:2"><b id="c-marca" data-contar="0">0</b><span>Marcas</span></div>
+    <div class="dato reveal" style="--d:3"><b id="c-stock" data-contar="0">0</b><span>Con existencias</span></div>
+  </section>
+
+  <!-- MARQUESINA DE MARCAS (se arma con tu catálogo) -->
+  <div class="marquesina" aria-label="Marcas disponibles"><div class="pista" id="pista-marcas"></div></div>
 
   <!-- CATÁLOGO: filtros a la izquierda, productos a la derecha -->
   <section id="catalogo" class="catalogo" aria-labelledby="t-cat">
-    <h2 id="t-cat">Catálogo</h2>
+    <h2 id="t-cat" class="reveal">Catálogo</h2>
     <div class="layout">
       <aside class="filtros" aria-label="Filtros">
         <details id="det-filtros" open>
@@ -105,11 +178,17 @@
   <p id="vacio">Tu carrito está vacío. Agrega productos desde el catálogo.</p>
   <footer>
     <dl><dt>Total</dt><dd id="total">RD$ 0</dd></dl>
-    <p class="nota">Total de referencia. Cuando exista el pago, el precio final se calculará en el servidor.</p>
-    <button class="btn" type="button" disabled>Pagar (próxima etapa)</button>
+    <p class="nota">Total de referencia. La tienda confirma el precio final y la disponibilidad al recibir tu pedido.</p>
+    <button class="btn brillo" id="pagar" type="button" disabled>Finalizar compra</button>
     <button class="btn ghost" id="vaciar" type="button">Vaciar carrito</button>
   </footer>
 </aside>
+
+<!-- FICHA DE PRODUCTO y VENTANA DE COMPRA: su contenido lo dibujan js/producto.js y js/checkout.js -->
+<dialog class="modal" id="ficha" aria-labelledby="pf-nombre"><div id="ficha-cuerpo"></div></dialog>
+<dialog class="modal" id="compra" aria-labelledby="co-titulo"><div id="compra-cuerpo"></div></dialog>
+
+<button class="subir" id="subir" type="button" aria-label="Volver arriba" hidden>↑</button>
 <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
 </body>
 </html>

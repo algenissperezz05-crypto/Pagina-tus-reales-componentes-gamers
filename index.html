@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tus Reales Componentes Gamers | Tecnología gamer en RD$</title>
+<meta name="description" content="Tarjetas gráficas, procesadores, memoria, almacenamiento, monitores y periféricos gamer. Precios en RD$.">
+<meta property="og:title" content="Tus Reales Componentes Gamers">
+<meta property="og:description" content="Potencia real, a precio real.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="./css/style.css">
+<script src="./js/data.js" defer></script>
+<script src="./js/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#catalogo">Saltar al catálogo</a>
+<p class="promo">Precios y existencias de referencia: confirma disponibilidad antes de comprar.</p>
+
+<!-- CABECERA: logo, buscador, favoritos y carrito -->
+<header class="top">
+  <a class="brand" href="#inicio" aria-label="Tus Reales Componentes Gamers, inicio">
+    <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 35 11.5v17L20 37 5 28.5v-17z" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M14 27V13h8a4.5 4.5 0 0 1 0 9h-8m8 0 5 5" fill="none" stroke="#00e5ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Tus Reales<br>Componentes Gamers</span>
+  </a>
+  <!-- MENÚ PRINCIPAL -->
+  <button class="icon-btn menu-toggle" id="menu-toggle" type="button" aria-controls="menu" aria-expanded="false">Menú</button>
+  <nav class="menu" id="menu" aria-label="Menú principal">
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li class="has-sub">
+        <button type="button" id="menu-cats" aria-expanded="false" aria-controls="sub-cats">Categorías <span aria-hidden="true">▾</span></button>
+        <ul id="sub-cats" hidden></ul>
+      </li>
+      <li><a href="#catalogo" id="menu-novedades">Novedades</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+  <form class="search" role="search" id="busqueda">
+    <label class="sr" for="q">Buscar productos</label>
+    <input id="q" type="search" placeholder="Busca por nombre, marca o categoría" autocomplete="off">
+  </form>
+  <button class="icon-btn" id="btn-fav" type="button" aria-pressed="false">Favoritos <b id="n-fav">0</b></button>
+  <button class="icon-btn" id="btn-cart" type="button" aria-controls="carrito" aria-expanded="false">Carrito <b id="n-cart">0</b></button>
+</header>
+<nav class="cats" id="cats" aria-label="Categorías"></nav>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div>
+      <h1>Potencia real, a precio real.</h1>
+      <p>Componentes y periféricos para armar y mejorar tu PC. Filtra por categoría, marca y precio, guarda favoritos y arma tu carrito.</p>
+      <a class="btn" href="#catalogo">Ver catálogo</a>
+    </div>
+    <svg class="hero-art" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="20" width="52" height="24" rx="3"/><circle cx="22" cy="32" r="7"/><circle cx="42" cy="32" r="7"/><path d="M22 25v14M15 32h14M42 25v14M35 32h14M10 44v6h12v-6"/></svg>
+  </section>
+
+  <!-- CATÁLOGO: filtros a la izquierda, productos a la derecha -->
+  <section id="catalogo" class="catalogo" aria-labelledby="t-cat">
+    <h2 id="t-cat">Catálogo</h2>
+    <div class="layout">
+      <aside class="filtros" aria-label="Filtros">
+        <details id="det-filtros" open>
+          <summary>Filtros</summary>
+          <label for="f-marca">Marca</label>
+          <select id="f-marca"></select>
+          <label for="f-precio">Precio máximo: <output id="o-precio"></output></label>
+          <input id="f-precio" type="range" step="500">
+          <label class="chk"><input id="f-stock" type="checkbox"> Solo disponibles</label>
+          <button class="btn ghost" id="f-limpiar" type="button">Limpiar filtros</button>
+        </details>
+      </aside>
+      <div>
+        <div class="barra">
+          <p id="resumen" aria-live="polite"></p>
+          <label class="sr" for="orden">Ordenar por</label>
+          <select id="orden">
+            <option value="relevancia">Orden del catálogo</option>
+            <option value="precio-asc">Precio: menor a mayor</option>
+            <option value="precio-desc">Precio: mayor a menor</option>
+            <option value="nombre">Nombre (A-Z)</option>
+            <option value="novedad">Novedades primero</option>
+          </select>
+        </div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie" id="contacto">
+  <p><strong>Tus Reales Componentes Gamers</strong><br>Datos de contacto, envíos, garantías y políticas se publicarán con información real.<br>Precios y existencias son de referencia.</p>
+  <a href="#inicio">Volver arriba</a>
+</footer>
+
+<!-- CARRITO LATERAL -->
+<div class="velo" id="velo"></div>
+<aside class="drawer" id="carrito" role="dialog" aria-modal="true" aria-labelledby="t-cart">
+  <header><h2 id="t-cart">Tu carrito</h2><button class="icon-btn" id="cerrar" type="button">Cerrar</button></header>
+  <ul id="lista-cart"></ul>
+  <p id="vacio">Tu carrito está vacío. Agrega productos desde el catálogo.</p>
+  <footer>
+    <dl><dt>Total</dt><dd id="total">RD$ 0</dd></dl>
+    <p class="nota">Total de referencia. Cuando exista el pago, el precio final se calculará en el servidor.</p>
+    <button class="btn" type="button" disabled>Pagar (próxima etapa)</button>
+    <button class="btn ghost" id="vaciar" type="button">Vaciar carrito</button>
+  </footer>
+</aside>
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+</body>
+</html>

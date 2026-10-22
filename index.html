@@ -13,16 +13,20 @@
 <script>document.documentElement.classList.add("js");</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<!-- Tipografías: se cargan sin frenar la página (mientras llegan se usa la letra del sistema) -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"></noscript>
 
 <!-- ESTILOS -->
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/animaciones.css">
 <link rel="stylesheet" href="./css/hero3d.css">
+<link rel="stylesheet" href="./css/secciones.css">
 <link rel="stylesheet" href="./css/modales.css">
 
 <!-- SCRIPTS (el orden importa: datos primero, app.js después, luego los módulos) -->
 <script src="./js/data.js" defer></script>
+<script src="./js/combos.js" defer></script>
 <script src="./js/fichas.js" defer></script>
 <script src="./js/config.js" defer></script>
 <script src="./js/app.js" defer></script>
@@ -35,8 +39,7 @@
 <body>
 <a class="skip" href="#catalogo">Saltar al catálogo</a>
 
-<!-- AMBIENTE: barra de progreso, luces de fondo y luz que sigue al cursor (decorativos) -->
-<div class="progreso" id="progreso" aria-hidden="true"></div>
+<!-- AMBIENTE: luces de fondo y luz que sigue al cursor (decorativos) -->
 <div class="ambiente" aria-hidden="true"><span class="orbe o1"></span><span class="orbe o2"></span><span class="orbe o3"></span></div>
 <div class="luz" id="luz" aria-hidden="true"></div>
 
@@ -53,6 +56,8 @@
   <nav class="menu" id="menu" aria-label="Menú principal">
     <ul>
       <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#ofertas">Ofertas</a></li>
+      <li><a href="#combos">Combos</a></li>
       <li><a href="#catalogo">Catálogo</a></li>
       <li class="has-sub">
         <button type="button" id="menu-cats" aria-expanded="false" aria-controls="sub-cats">Categorías <span aria-hidden="true">▾</span></button>
@@ -66,8 +71,8 @@
     <label class="sr" for="q">Buscar productos</label>
     <input id="q" type="search" placeholder="Buscar…" title="Busca por nombre, marca o categoría" autocomplete="off">
   </form>
-  <button class="icon-btn" id="btn-fav" type="button" aria-pressed="false">Favoritos <b id="n-fav">0</b></button>
-  <button class="icon-btn" id="btn-cart" type="button" aria-controls="carrito" aria-expanded="false">Carrito <b id="n-cart">0</b></button>
+  <button class="icon-btn" id="btn-fav" type="button" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.3 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg><span class="t">Favoritos</span> <b id="n-fav">0</b></button>
+  <button class="icon-btn" id="btn-cart" type="button" aria-controls="carrito" aria-expanded="false"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a1 1 0 0 0 1 .8h9.2a1 1 0 0 0 1-.8L21 7H6"/></svg><span class="t">Carrito</span> <b id="n-cart">0</b></button>
 </header>
 <nav class="cats" id="cats" aria-label="Categorías"></nav>
 
@@ -82,6 +87,7 @@
       <p class="explora">Explora <button class="palabra" id="palabra" type="button" aria-label="Ir a la categoría mostrada">Tarjetas gráficas</button></p>
       <div class="hero-acciones">
         <a class="btn brillo" href="#catalogo">Ver catálogo</a>
+        <a class="btn ghost" href="#ofertas">Ofertas y combos</a>
         <a class="btn ghost" href="#contacto">Contacto</a>
       </div>
     </div>
@@ -121,6 +127,36 @@
     </div>
   </section>
 
+  <!-- OFERTAS: productos con precio rebajado (los que tienen "oferta" en js/data.js). La sección se dibuja sola desde app.js -->
+  <section class="seccion ofertas" id="ofertas" aria-labelledby="t-ofertas" hidden>
+    <div class="sec-cab">
+      <div>
+        <h2 id="t-ofertas" class="reveal">Ofertas</h2>
+        <p class="sec-sub">Productos con el precio rebajado, mientras haya existencias.</p>
+      </div>
+      <div class="sec-acc">
+        <button class="btn ghost" id="of-todas" type="button">Ver todas las ofertas</button>
+        <div class="flechas">
+          <button class="flecha" id="of-prev" type="button" aria-controls="of-pista" aria-label="Ofertas anteriores" disabled>‹</button>
+          <button class="flecha" id="of-sig" type="button" aria-controls="of-pista" aria-label="Más ofertas">›</button>
+        </div>
+      </div>
+    </div>
+    <div class="of-pista" id="of-pista" role="region" aria-label="Productos en oferta"></div>
+  </section>
+
+  <!-- COMBOS DE HOY: PC completas (se arman en js/combos.js). Se dibujan solas desde app.js -->
+  <section class="seccion combos" id="combos" aria-labelledby="t-combos" hidden>
+    <div class="sec-cab">
+      <div>
+        <h2 id="t-combos" class="reveal">Combos de hoy</h2>
+        <p class="sec-sub">PC completas con todas las piezas para armar y jugar. Pagas menos que comprando cada pieza por separado.</p>
+      </div>
+    </div>
+    <div class="combos-grid" id="combos-lista"></div>
+    <p class="sec-nota">Piezas, precios y existencias de referencia: la tienda confirma disponibilidad y compatibilidad al recibir tu pedido.</p>
+  </section>
+
   <!-- CIFRAS (se calculan con tu catálogo) -->
   <section class="datos" aria-label="Resumen del catálogo">
     <div class="dato reveal"><b id="c-prod" data-contar="0">0</b><span>Productos</span></div>
@@ -128,9 +164,6 @@
     <div class="dato reveal" style="--d:2"><b id="c-marca" data-contar="0">0</b><span>Marcas</span></div>
     <div class="dato reveal" style="--d:3"><b id="c-stock" data-contar="0">0</b><span>Con existencias</span></div>
   </section>
-
-  <!-- MARQUESINA DE MARCAS (se arma con tu catálogo) -->
-  <div class="marquesina" aria-label="Marcas disponibles"><div class="pista" id="pista-marcas"></div></div>
 
   <!-- CATÁLOGO: filtros a la izquierda, productos a la derecha -->
   <section id="catalogo" class="catalogo" aria-labelledby="t-cat">
@@ -144,6 +177,7 @@
           <label for="f-precio">Precio máximo: <output id="o-precio"></output></label>
           <input id="f-precio" type="range" step="500">
           <label class="chk"><input id="f-stock" type="checkbox"> Solo disponibles</label>
+          <label class="chk"><input id="f-ofertas" type="checkbox"> Solo en oferta</label>
           <button class="btn ghost" id="f-limpiar" type="button">Limpiar filtros</button>
         </details>
       </aside>
@@ -157,9 +191,11 @@
             <option value="precio-desc">Precio: mayor a menor</option>
             <option value="nombre">Nombre (A-Z)</option>
             <option value="novedad">Novedades primero</option>
+            <option value="dto">Mayor descuento</option>
           </select>
         </div>
         <div class="grid" id="grid"></div>
+        <div class="mas" id="mas-caja" hidden><button class="btn ghost" id="mas" type="button">Ver más productos</button></div>
       </div>
     </div>
   </section>

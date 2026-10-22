@@ -1,5 +1,5 @@
-/* EFECTOS: progreso de lectura, cabecera, aparición al desplazarse, luz del cursor, tarjetas con inclinación,
-   cifras que cuentan, marquesina de marcas, vuelo al carrito, ondas en botones y botón "volver arriba". */
+/* EFECTOS: cabecera, aparición al desplazarse, luz del cursor, tarjetas con inclinación,
+   cifras que cuentan, vuelo al carrito, ondas en botones y botón "volver arriba". */
 (() => {
   "use strict";
   const T = window.TRCG;
@@ -8,19 +8,30 @@
   const reducido = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const conMouse = matchMedia("(hover: hover)").matches;
 
-  /* 1. Progreso, cabecera compacta y botón de subir (un solo listener, ligero) */
-  const prog = $("#progreso"), cab = $(".top"), subir = $("#subir");
+  /* 1. Cabecera compacta y botón de subir (un solo listener, ligero) */
+  const cab = $(".top"), subir = $("#subir");
   let espera = false;
   const alScroll = () => {
     espera = false;
-    const max = document.documentElement.scrollHeight - innerHeight;
-    prog.style.setProperty("--p", max > 0 ? (scrollY / max).toFixed(4) : 0);
     cab.classList.toggle("compacta", scrollY > 40);
     subir.hidden = scrollY < 700;
   };
   addEventListener("scroll", () => { if (!espera) { espera = true; requestAnimationFrame(alScroll); } }, { passive: true });
   alScroll();
   subir.addEventListener("click", () => scrollTo({ top: 0, behavior: reducido ? "auto" : "smooth" }));
+
+  /* La altura real de la cabecera decide cuánto margen se deja al saltar a una sección (#ofertas, #combos, #catalogo...).
+     Se mide con el menú desplegable del celular CERRADO: ese menú se cierra al tocar un enlace, y el salto tiene que
+     contar con la cabecera ya cerrada (si no, la sección quedaría a media pantalla, o fuera de ella). */
+  const panelMenu = $("#menu"), botonMenu = $("#menu-toggle");
+  const medirCab = () => {
+    let alto = cab.offsetHeight;
+    if (panelMenu && botonMenu && panelMenu.classList.contains("open") && getComputedStyle(botonMenu).display !== "none")
+      alto -= panelMenu.offsetHeight + (parseFloat(getComputedStyle(cab).rowGap) || 0);
+    document.documentElement.style.scrollPaddingTop = (alto + 12) + "px";
+  };
+  medirCab();
+  if ("ResizeObserver" in window) new ResizeObserver(medirCab).observe(cab); else addEventListener("resize", medirCab);
 
   /* 2. Aparición suave de los bloques marcados con .reveal */
   const rev = [...document.querySelectorAll(".reveal")];
@@ -43,21 +54,36 @@
     document.documentElement.addEventListener("pointerleave", () => luz.classList.remove("on"));
   }
 
-  /* 4. Tarjetas: inclinación 3D suave y luz que sigue al cursor */
-  const grid = $("#grid");
-  if (grid && !reducido && conMouse) {
-    grid.addEventListener("pointermove", e => {
-      const c = e.target.closest(".card"); if (!c) return;
-      const r = c.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
-      c.style.setProperty("--mx", x + "px"); c.style.setProperty("--my", y + "px");
-      c.style.setProperty("--ry", ((x / r.width - .5) * 8).toFixed(2) + "deg");
-      c.style.setProperty("--rx", ((.5 - y / r.height) * 8).toFixed(2) + "deg");
-      c.classList.add("inclinada");
+  /* 4. Tarjetas (catálogo, ofertas y combos): inclinación 3D suave y luz que sigue al cursor.
+        Se calcula una sola vez por cuadro de pantalla, aunque el mouse mande cientos de movimientos por segundo. */
+  if (!reducido && conMouse) {
+    let activa = null, caja = null, ult = null, raf = 0;
+    const soltar = () => { if (activa) activa.classList.remove("inclinada"); activa = caja = null; };
+    const pintar = () => {
+      raf = 0;
+      if (!activa || !ult) return;
+      if (!caja) caja = activa.getBoundingClientRect();
+      const x = ult.clientX - caja.left, y = ult.clientY - caja.top, g = activa.classList.contains("combo") ? 5 : 8;
+      activa.style.setProperty("--mx", x + "px"); activa.style.setProperty("--my", y + "px");
+      activa.style.setProperty("--ry", ((x / caja.width - .5) * g).toFixed(2) + "deg");
+      activa.style.setProperty("--rx", ((.5 - y / caja.height) * g).toFixed(2) + "deg");
+      activa.classList.add("inclinada");
+    };
+    const mover = e => {
+      const c = e.target.closest(".card, .combo");
+      if (!c) { soltar(); return; }
+      if (c !== activa) { soltar(); activa = c; }
+      ult = e;
+      if (!raf) raf = requestAnimationFrame(pintar);
+    };
+    ["#grid", "#of-pista", "#combos-lista"].forEach(sel => {
+      const z = $(sel); if (!z) return;
+      z.addEventListener("pointermove", mover, { passive: true });
+      z.addEventListener("pointerleave", soltar);
     });
-    grid.addEventListener("pointerout", e => {
-      const c = e.target.closest(".card");
-      if (c && !c.contains(e.relatedTarget)) c.classList.remove("inclinada");
-    });
+    /* si la página o la fila de ofertas se desplaza, la posición medida ya no vale */
+    addEventListener("scroll", () => { caja = null; }, { passive: true, capture: true });
+    addEventListener("resize", () => { caja = null; }, { passive: true });
   }
 
   /* 5. Cifras (calculadas con tu catálogo) que cuentan hacia arriba al aparecer */
@@ -87,22 +113,12 @@
     document.querySelectorAll(".dato").forEach(d => co.observe(d));
   } else document.querySelectorAll(".dato b").forEach(contar);
 
-  /* 6. Marquesina de marcas: clic en una marca filtra el catálogo */
-  const pista = $("#pista-marcas");
-  if (pista) {
-    const marcas = [...new Set(T.productos.map(p => p.marca))];
-    pista.innerHTML =
-      marcas.map(m => `<button type="button" data-marca="${T.esc(m)}">${T.esc(m)}</button>`).join("") +
-      marcas.map(m => `<button type="button" tabindex="-1" aria-hidden="true" data-marca="${T.esc(m)}">${T.esc(m)}</button>`).join("");
-    pista.addEventListener("click", e => { const b = e.target.closest("[data-marca]"); if (b) T.verMarca(b.dataset.marca); });
-  }
-
-  /* 7. Al agregar al carrito, la imagen del producto vuela hasta el botón del carrito */
+  /* 6. Al agregar al carrito, la imagen del producto vuela hasta el botón del carrito */
   document.addEventListener("trcg:agregado", e => {
     if (reducido) return;
     const origen = e.detail && e.detail.origen;
-    const cont = origen && origen.closest ? origen.closest(".card, .pf") : null;
-    const src = cont && cont.querySelector(".img img, .pf-img img, .img > svg, .pf-img svg");
+    const cont = origen && origen.closest ? origen.closest(".card, .pf, .combo") : null;
+    const src = cont && cont.querySelector(".img img, .pf-img img, .img > svg, .pf-img svg, .combo-ico img, .combo-ico svg");
     const dest = $("#btn-cart");
     if (!src || !dest) return;
     const a = src.getBoundingClientRect(), b = dest.getBoundingClientRect();
@@ -120,7 +136,7 @@
     setTimeout(() => n.remove(), 850);
   });
 
-  /* 8. Onda al hacer clic en los botones */
+  /* 7. Onda al hacer clic en los botones */
   document.addEventListener("pointerdown", e => {
     const b = e.target.closest(".btn");
     if (!b || b.disabled || reducido) return;

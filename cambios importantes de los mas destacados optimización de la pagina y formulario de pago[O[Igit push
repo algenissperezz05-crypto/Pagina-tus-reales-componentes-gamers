@@ -1,0 +1,2113 @@
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'css/animaciones.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'css/hero3d.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'css/modales.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'css/style.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'js/app.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'js/checkout.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'js/config.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'js/data.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'js/efectos.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'js/fichas.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'js/hero3d.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'js/modal.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'js/producto.js', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/README.md b/README.md[m
+[1mindex fca3115..82d185c 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -3,53 +3,115 @@[m
+ Tienda gamer (precios en RD$) hecha solo con HTML, CSS y JavaScript. No necesita servidor ni instalar nada.[m
+ [m
+ ## Qué incluye[m
+[31m-- Menú principal, buscador, categorías, filtros (marca, precio, disponibles), orden, favoritos y carrito. El carrito y los favoritos se guardan en el navegador.[m
+[31m-- **Pantalla principal con un procesador 3D giratorio** (hecho con CSS): placa con circuitos que pulsan, chip metálico, anillos, columnas de luz y etiquetas GPU / RAM / SSD / RGB que flotan. Se inclina un poco con el cursor. Detrás hay una red de partículas, el título tiene brillo y la frase "Explora…" cambia de categoría (al tocarla filtra el catálogo).[m
+[31m-- **Ficha de producto**: al tocar un producto se abre una ventana con foto (se inclina con el cursor), precio, existencias, descripción, características, cantidad, "Añadir al carrito", "Comprar ahora", favoritos y productos relacionados.[m
+[31m-- **Ventana de compra**: formulario con validación (nombre, teléfono, correo opcional, retiro o envío a domicilio, forma de pago, notas), resumen del pedido y una pantalla para revisar y enviar el pedido por WhatsApp, por correo o copiarlo.[m
+[31m-- **Animaciones y ambiente**: barra de progreso de lectura, luces de fondo que flotan, luz que sigue al cursor, cabecera que se compacta, cifras que cuentan (calculadas con tu catálogo), marquesina de marcas (al tocar una marca filtra), tarjetas que entran escalonadas y se inclinan con brillo, la imagen vuela al carrito al agregar, botones con brillo y ondas, avisos que se deslizan y botón de volver arriba.[m
+[31m-- Si el visitante tiene activado "reducir movimiento" en su sistema, las animaciones se apagan solas.[m
+[32m+[m[32m- **Inicio**: título con brillo, procesador 3D giratorio hecho con CSS (se inclina un poco con el cursor, con partículas de fondo) y la frase "Explora…" que cambia de categoría (al tocarla filtra el catálogo).[m
+[32m+[m[32m- **Ofertas**: una fila de tarjetas que se desliza con el dedo, con las flechas o con el teclado. Muestra los 12 productos con mayor descuento que tengan existencias, con su etiqueta "−N%" y el precio anterior tachado. El botón "Ver todas las ofertas" lleva al catálogo ya filtrado ("Solo en oferta") y ordenado por "Mayor descuento".[m
+[32m+[m[32m- **Combos de hoy**: PC completas (Inicio, Media y Élite) con todas sus piezas, el precio "por separado" tachado, cuánto se ahorra y cuántos combos quedan. Se pueden agregar al carrito o abrir para ver cada pieza.[m
+[32m+[m[32m- **Catálogo**: 113 productos en 14 categorías, buscador, filtros (marca, precio, solo disponibles, solo en oferta), orden (incluye "Mayor descuento"), favoritos y carrito. Se dibujan 24 productos y el botón "Ver más productos" agrega otros 24. El carrito y los favoritos se guardan en el navegador.[m
+[32m+[m[32m- **Ficha de producto y ficha de combo**: al tocar un producto o un combo se abre una ventana con foto, precio (con su oferta), existencias, descripción, características o piezas, cantidad, "Añadir al carrito", "Comprar ahora" y productos relacionados. Desde un combo se puede abrir cada pieza y volver con el botón "← Volver a PC Gamer…".[m
+[32m+[m[32m- **Ventana de compra**: formulario con validación (nombre, teléfono, correo opcional, retiro o envío a domicilio, forma de pago, notas), resumen del pedido y una pantalla para revisar y enviar el pedido por WhatsApp, por correo o copiarlo. Los combos salen con sus piezas, una por línea.[m
+[32m+[m[32m- **Animaciones y ambiente**: luces de fondo, luz que sigue al cursor, cabecera que se compacta al bajar, cifras que cuentan (calculadas con tu catálogo), tarjetas que entran escalonadas y se inclinan con brillo, la imagen vuela al carrito al agregar, botones con brillo, avisos que se deslizan y botón de volver arriba.[m
+[32m+[m[32m- Si el visitante tiene activado "reducir movimiento" en su sistema, las animaciones se apagan solas (ver "Si algo no aparece").[m
+[32m+[m
+[32m+[m[32m> Esta versión **ya no tiene** la marquesina de marcas ni la barra de progreso de la cabecera.[m
+ [m
+ ## Cómo ejecutarla[m
+[31m-1. Conserva la estructura de carpetas tal como está.[m
+[31m-2. Abre `index.html` en Chrome, Edge, Firefox o Safari. No hay que instalar nada.[m
+[32m+[m[32m1. Si descargaste el `.zip`, extráelo primero (clic derecho → **Extraer todo**). No abras `index.html` desde dentro del `.zip`.[m
+[32m+[m[32m2. Conserva la estructura de carpetas tal como está: `index.html` con `css/`, `js/` y `assets/` al lado.[m
+[32m+[m[32m3. Abre `index.html` en Chrome, Edge, Firefox o Safari. No hay que instalar nada.[m
+[32m+[m[32m4. Pon tus fotos de producto en `assets/images/` (un archivo por producto). La lista exacta de nombres está en `LISTA-DE-FOTOS.txt`. Si falta una foto, la tarjeta muestra el icono de su categoría.[m
+[32m+[m
+[32m+[m[32m### Si ya tienes tu proyecto armado y solo quieres actualizarlo[m
+[32m+[m[32mReemplaza `index.html`, `README.md`, `LISTA-DE-FOTOS.txt` y las carpetas `css/` y `js/`. **No toques `assets/images/`**: ahí están tus fotos. Ojo: este paquete trae su propio `js/data.js` (con tus 31 productos de antes más 82 nuevos) y `js/config.js` (con tu WhatsApp y tu correo); si ya le hiciste cambios a alguno de los dos, guarda una copia antes de reemplazarlos.[m
+ [m
+ ## Estructura[m
+ - `index.html`: estructura y textos de la página.[m
+[31m-- `css/style.css`: colores (variables al inicio) y diseño base.[m
+[32m+[m[32m- `css/style.css`: colores (variables al inicio) y diseño base (cabecera, menú, catálogo, tarjetas).[m
+[32m+[m[32m- `css/secciones.css`: secciones Ofertas y Combos de hoy, etiqueta de descuento y botón "Ver más".[m
+ - `css/animaciones.css`: ambiente y animaciones generales.[m
+ - `css/hero3d.css`: la escena 3D y la animación del título.[m
+ - `css/modales.css`: ficha de producto y ventana de compra.[m
+[31m-- `js/data.js`: catálogo. Aquí cambias productos, marcas, categorías, precios y existencias.[m
+[32m+[m[32m- `js/data.js`: catálogo. Aquí cambias productos, marcas, categorías, precios, ofertas y existencias. **Es obligatorio: sin este archivo la página no muestra productos.**[m
+[32m+[m[32m- `js/combos.js`: los combos de PC completa (Inicio, Media y Élite).[m
+ - `js/fichas.js`: descripción y características de cada producto (se buscan por `id`).[m
+ - `js/config.js`: datos de la tienda para recibir pedidos (WhatsApp, correo, formas de pago).[m
+[31m-- `js/app.js`: búsqueda, filtros, favoritos y carrito.[m
+[32m+[m[32m- `js/app.js`: búsqueda, filtros, ofertas, combos, paginación, favoritos y carrito.[m
+ - `js/hero3d.js`: inclinación de la escena 3D, partículas y la frase "Explora…".[m
+[31m-- `js/efectos.js`: progreso, luz del cursor, tarjetas, cifras, marquesina y vuelo al carrito.[m
+[31m-- `js/modal.js`, `js/producto.js`, `js/checkout.js`: ventanas, ficha de producto y compra.[m
+[32m+[m[32m- `js/efectos.js`: luz del cursor, tarjetas, cifras, vuelo al carrito y botón de subir.[m
+[32m+[m[32m- `js/modal.js`, `js/producto.js`, `js/checkout.js`: ventanas, ficha de producto/combo y compra.[m
+ - `assets/images/`: una imagen por producto (`<id>.png`).[m
+[32m+[m[32m- `LISTA-DE-FOTOS.txt`: nombre de archivo de la foto de cada producto (marca los 82 productos nuevos, que aún no tienen foto).[m
+[32m+[m
+[32m+[m[32m## Poner o quitar una oferta (`js/data.js`)[m
+[32m+[m[32mCada producto tiene `precio` (el normal). Para ponerlo en oferta, agrega `oferta` con el precio rebajado (debe ser menor que `precio`):[m
+[32m+[m
+[32m+[m[32m```js[m
+[32m+[m[32m{ id: "ssd-01", cat: "Almacenamiento", marca: "WD", nombre: "…", precio: 4300, oferta: 3700, stock: 20, img: "assets/images/ssd-01.png" }[m
+[32m+[m[32m```[m
+[32m+[m[32mPara quitarla, borra el campo `oferta`. El porcentaje de descuento, la etiqueta "−N%" y el precio tachado se calculan solos, y el carrito, la ficha y el pedido usan el precio rebajado. **Las 15 ofertas que vienen son de ejemplo**: cámbialas por las reales. Si no queda ningún producto en oferta, la sección Ofertas se oculta sola. El carrusel muestra los 12 de mayor descuento (el número está en `pintarOfertas`, dentro de `js/app.js`).[m
+[32m+[m
+[32m+[m[32m## Cambiar los combos (`js/combos.js`)[m
+[32m+[m[32mCada combo es un bloque con:[m
+[32m+[m[32m- `id`: código corto y único (se le agrega `combo-` si no lo trae).[m
+[32m+[m[32m- `nombre`, `etiqueta` (el nivel, ej. "Entrada · 1080p") y `lema` (una frase corta).[m
+[32m+[m[32m- `items`: lista de `id` de productos de `js/data.js`. Cada uno cuenta como 1 unidad.[m
+[32m+[m[32m- `descuento`: porcentaje de rebaja sobre la suma de las piezas (si no lo pones, es 5).[m
+[32m+[m[32m- `precio` (opcional): precio fijo en RD$; si lo pones, manda sobre `descuento`.[m
+[32m+[m[32m- `nota` (opcional): aviso corto que sale en la ficha del combo.[m
+[32m+[m[32m- `img` (opcional): foto del combo; si no la hay, se usa un icono de PC.[m
+[32m+[m
+[32m+[m[32mEl precio "por separado" es la suma de los precios actuales de las piezas (con sus ofertas). Las existencias del combo son las de la pieza que menos tenga: si una se agota, el combo se marca como agotado. Si un `id` no existe en `data.js`, ese combo no se muestra y el aviso aparece en la consola del navegador (F12).[m
+[32m+[m[32m**Antes de publicar, revisa que las piezas de cada combo sean compatibles entre sí** (socket del procesador, tipo de memoria, potencia de la fuente y tamaño de la caja). Los que vienen son ejemplos armados con productos del catálogo.[m
+[32m+[m
+[32m+[m[32m## Agregar productos[m
+[32m+[m[32m1. En `js/data.js`, dentro de `productos`, agrega una línea nueva con un `id` único (ej. `gpu-14`), `cat` (una de las categorías de la lista), `marca`, `nombre`, `precio`, `stock` y `img: "assets/images/gpu-14.png"`. Opcionales: `nuevo: true` y `oferta`.[m
+[32m+[m[32m2. Guarda la foto en `assets/images/gpu-14.png`.[m
+[32m+[m[32m3. (Opcional) En `js/fichas.js`, agrega una entrada con ese `id` con su descripción y características. Si no la tiene, se usa la descripción de su categoría.[m
+[32m+[m[32mNo hace falta tocar nada más: filtros, marcas, cifras, buscador y paginación se arman solos.[m
+[32m+[m
+[32m+[m[32m## Fotos: cómo mantenerlas livianas[m
+[32m+[m[32m- Usa PNG o WebP, cuadradas y de menos de ~300 KB cada una. Una foto de varios MB hace que la tarjeta tarde en aparecer, aunque la página esté optimizada. Se puede reducir el peso gratis en squoosh.app sin perder calidad visible.[m
+[32m+[m[32m- Las fotos se cargan "perezosamente": solo se descargan las que el visitante está por ver.[m
+[32m+[m
+[32m+[m[32m## Optimización (qué se hizo)[m
+[32m+[m[32m- **Menos trabajo para el navegador**: se quitaron los efectos más costosos de dibujar (desenfoques `blur` y `backdrop-filter` en luces, aura, cabecera, etiquetas y fondo de las ventanas) y se cambiaron por degradados y fondos sólidos. Las animaciones que quedan solo mueven y desvanecen (`transform` y `opacity`), que el navegador sabe hacer sin redibujar.[m
+[32m+[m[32m- **Animaciones que se pausan solas**: la escena 3D y las partículas se detienen cuando el inicio no se ve en pantalla, cuando la pestaña está oculta y cuando hay una ventana abierta. En celulares las luces de fondo quedan quietas.[m
+[32m+[m[32m- **Eventos del cursor ordenados**: la inclinación de las tarjetas y de la escena 3D se calcula una vez por cuadro, y las partículas se dibujan a 30 cuadros por segundo.[m
+[32m+[m[32m- **Catálogo paginado**: se dibujan 24 productos y "Ver más" agrega 24 sin volver a dibujar los anteriores. Las búsquedas usan un índice que se calcula una sola vez.[m
+[32m+[m[32m- **Tipografías sin bloquear**: las fuentes de Google se cargan sin detener la primera pantalla (si tardan, se ve el texto con una fuente del sistema y luego cambia).[m
+[32m+[m[32m- **Imágenes** con carga perezosa y decodificación asíncrona.[m
+[32m+[m[32m- **Se probó y se descartó** `content-visibility: auto` en las tarjetas: aceleraba el dibujo pero hacía que el botón "volver arriba" se detuviera antes de llegar. La paginación ya cumple ese papel.[m
+[32m+[m[32m- **Medido en un equipo de pruebas sin tarjeta gráfica** (un caso exigente; en tu PC o celular los números serán distintos), comparando la página de antes con la de ahora: el primer contenido aparece en ~0.24 s en vez de ~0.73 s, y al desplazarse la página pasa de ~14 a ~56 cuadros por segundo. Con el catálogo de 113 productos dibujado de golpe con el código anterior, la carga era aún más lenta.[m
+[32m+[m
+[32m+[m[32m## Si algo no aparece[m
+[32m+[m[32m- **"No se pudo cargar el catálogo"**: la página no encuentra o no puede leer `js/data.js`. Revisa que el archivo exista dentro de la carpeta `js/`, que abriste `index.html` desde la carpeta completa del proyecto (no desde el `.zip`) y que `data.js` no tenga errores de escritura (una coma o una llave de más o de menos). Para ver el error exacto, pulsa F12 y abre la pestaña "Consola".[m
+[32m+[m[32m- **Se ve el icono de la categoría en vez de la foto**: falta ese archivo en `assets/images/` o su nombre no coincide con el valor de `img` en `js/data.js`. Es lo normal para los 82 productos nuevos hasta que les pongas foto (ver `LISTA-DE-FOTOS.txt`).[m
+[32m+[m[32m- **No aparece la sección Ofertas o Combos de hoy**: Ofertas se oculta si ningún producto con existencias tiene `oferta`; Combos se oculta si `js/combos.js` no se pudo cargar o ningún combo tiene sus `id` válidos (la consola F12 dice cuál falla).[m
+[32m+[m[32m- **El procesador 3D y los fondos no se mueven**: el navegador está respetando la opción "reducir movimiento" del sistema. En Windows está en Configuración → Accesibilidad → Efectos visuales → "Efectos de animación" (Windows 11) o Accesibilidad → Pantalla → "Mostrar animaciones en Windows" (Windows 10). Si está apagado, la página muestra todo quieto a propósito.[m
+ [m
+[31m-## Lo que debes completar: `js/config.js`[m
+[31m-- `whatsapp`: tu número con código de país y solo números (ejemplo RD: `"18095551234"`). Activa el botón "Enviar por WhatsApp".[m
+[31m-- `email`: el correo donde quieres recibir pedidos. Activa "Enviar por correo".[m
+[31m-- `pagos`: las formas de pago que realmente aceptas (el cliente elige una como preferencia).[m
+[32m+[m[32m## Datos de la tienda: `js/config.js`[m
+[32m+[m[32m- `whatsapp`: tu número con código de país y solo números (ejemplo RD: `"18095551234"`). Activa el botón "Enviar por WhatsApp". **Ya está puesto con tu número.**[m
+[32m+[m[32m- `email`: el correo donde quieres recibir pedidos. Activa "Enviar por correo". **Ya está puesto con tu correo.**[m
+[32m+[m[32m- `pagos`: las formas de pago que realmente aceptas (el cliente elige una como preferencia). **Es una lista de ejemplo (Efectivo, Transferencia bancaria, Tarjeta): cámbiala por las tuyas.**[m
+[32m+[m[32m- Privacidad: como la página es pública, quien abra el código puede ver el número y el correo de este archivo. Deja solo los que quieras que sean públicos.[m
+ [m
+ ## Cómo funciona la compra (importante)[m
+[31m-Esta página **no cobra ni procesa pagos y no tiene servidor**, así que no recibe pedidos por sí sola. El cliente llena sus datos, revisa el mensaje del pedido y lo envía desde su propio WhatsApp o correo (se abren con el texto ya escrito). Hasta que no completes `js/config.js`, el cliente solo puede copiar el resumen, y la página se lo dice.[m
+[32m+[m[32mEsta página **no cobra ni procesa pagos y no tiene servidor**, así que no recibe pedidos por sí sola. El cliente llena sus datos, revisa el mensaje del pedido y lo envía desde su propio WhatsApp o correo (se abren con el texto ya escrito). Si dejas el WhatsApp y el correo vacíos en `js/config.js`, el cliente solo puede copiar el resumen, y la página se lo dice.[m
+ - Los datos que escribe el cliente no se guardan en el navegador ni se envían a ningún servidor. No se piden datos de tarjeta.[m
+[31m-- "Comprar ahora" compra solo ese producto y no toca el carrito. "Finalizar compra" (desde el carrito) quita del carrito los productos del pedido cuando el cliente lo envía o lo copia; si cierra la ventana sin hacerlo, el carrito queda igual.[m
+[31m-- El total es de referencia: la tienda confirma disponibilidad, envío y precio final.[m
+[32m+[m[32m- "Comprar ahora" compra solo ese producto o combo y no toca el carrito. "Finalizar compra" (desde el carrito) quita del carrito lo que va en el pedido cuando el cliente lo envía o lo copia; si cierra la ventana sin hacerlo, el carrito queda igual.[m
+[32m+[m[32m- El total es de referencia: la tienda confirma disponibilidad, compatibilidad de las piezas, envío y precio final.[m
+ [m
+ ## Fichas técnicas: `js/fichas.js`[m
+[31m-Los textos salen del nombre de cada producto y de especificaciones generales del fabricante: **revísalos antes de publicar**. Para un producto nuevo, agrega una entrada con su `id` (si no la tiene, se usa la descripción de su categoría).[m
+[32m+[m[32mLos textos salen del nombre de cada producto y de especificaciones generales del fabricante: **revísalos antes de publicar**, sobre todo los de los 82 productos nuevos.[m
+ [m
+ ## Animaciones: ajustar o apagar[m
+[31m-- Colores y tipografías: variables `:root` de `css/style.css`.[m
+[32m+[m[32m- Colores y tipografías: variables `:root` de `css/style.css` (el color de las ofertas está en `css/secciones.css`).[m
+ - Escena 3D: tamaño con `--w` en `.hero-3d` y velocidades en los `@keyframes` de `css/hero3d.css`. Es solo CSS: para usar un modelo 3D real (`.glb`) habría que agregar ese archivo y una librería como `model-viewer` o `three.js`.[m
+ - Para quitar un efecto, borra su bloque en `css/animaciones.css` o el apartado numerado en `js/efectos.js`.[m
+[32m+[m[32m- Menú: de 1280 px de ancho hacia arriba el menú va en la cabecera; en pantallas más pequeñas aparece el botón "Menú".[m
+ [m
+ ## Limitaciones[m
+[31m-- Los nombres y marcas son modelos reales, pero precios y existencias son de referencia: confírmalos.[m
+[32m+[m[32m- Los nombres y marcas son modelos reales, pero **precios, ofertas, existencias, descuentos de los combos y fichas técnicas son de referencia**: confírmalos.[m
+[32m+[m[32m- Los 82 productos nuevos no traen foto (ver `LISTA-DE-FOTOS.txt`).[m
+ - Los datos de contacto, envíos y garantías del pie de página aún no existen.[m
+ - No hay pagos ni cuentas.[m
+ [m
+[1mdiff --git a/assets/images/acc-01.png b/assets/images/acc-01.png[m
+[1mindex 8115362..e80cb4b 100644[m
+Binary files a/assets/images/acc-01.png and b/assets/images/acc-01.png differ
+[1mdiff --git a/assets/images/aud-01.png b/assets/images/aud-01.png[m
+[1mindex b949936..2c6a649 100644[m
+Binary files a/assets/images/aud-01.png and b/assets/images/aud-01.png differ
+[1mdiff --git a/assets/images/cam-01.png b/assets/images/cam-01.png[m
+[1mindex b782a4d..873f0c7 100644[m
+Binary files a/assets/images/cam-01.png and b/assets/images/cam-01.png differ
+[1mdiff --git a/assets/images/cam-02.png b/assets/images/cam-02.png[m
+[1mindex d648a1a..235ae79 100644[m
+Binary files a/assets/images/cam-02.png and b/assets/images/cam-02.png differ
+[1mdiff --git a/assets/images/case-01.png b/assets/images/case-01.png[m
+[1mindex 3989ea8..93230f8 100644[m
+Binary files a/assets/images/case-01.png and b/assets/images/case-01.png differ
+[1mdiff --git a/assets/images/fig-01.png b/assets/images/fig-01.png[m
+[1mindex f4d403c..a5558e2 100644[m
+Binary files a/assets/images/fig-01.png and b/assets/images/fig-01.png differ
+[1mdiff --git a/assets/images/psu-01.png b/assets/images/psu-01.png[m
+[1mindex 5a3f955..1f51030 100644[m
+Binary files a/assets/images/psu-01.png and b/assets/images/psu-01.png differ
+[1mdiff --git a/assets/images/ram-03.png b/assets/images/ram-03.png[m
+[1mdeleted file mode 100644[m
+[1mindex fb081d7..0000000[m
+Binary files a/assets/images/ram-03.png and /dev/null differ
+[1mdiff --git a/assets/images/str-01.png b/assets/images/str-01.png[m
+[1mindex 87b564a..7127bd5 100644[m
+Binary files a/assets/images/str-01.png and b/assets/images/str-01.png differ
+[1mdiff --git a/css/animaciones.css b/css/animaciones.css[m
+[1mindex c6e7d26..15d37d1 100644[m
+[1m--- a/css/animaciones.css[m
+[1m+++ b/css/animaciones.css[m
+[36m@@ -1,16 +1,16 @@[m
+ /* ============ AMBIENTE Y ANIMACIONES GENERALES ============[m
+    Todo se apaga solo si el visitante tiene activado "reducir movimiento" (ver regla al final de style.css). */[m
+ [m
+[31m-/* barra de progreso de lectura (arriba del todo) */[m
+[31m-.progreso{position:fixed;left:0;top:0;z-index:90;width:100%;height:3px;transform-origin:0 50%;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--violet),var(--cyan));box-shadow:0 0 10px rgba(0,229,255,.7);pointer-events:none}[m
+[31m-[m
+ /* luces de fondo que flotan despacio */[m
+ .ambiente{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}[m
+[31m-.orbe{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;animation:deriva 22s ease-in-out infinite}[m
+[31m-.o1{left:-8%;top:18%;width:42vmax;height:42vmax;background:rgba(139,92,246,.45)}[m
+[31m-.o2{right:-10%;top:48%;width:38vmax;height:38vmax;background:rgba(0,229,255,.28);animation-delay:-8s;animation-duration:27s}[m
+[31m-.o3{left:30%;bottom:-18%;width:34vmax;height:34vmax;background:rgba(79,124,255,.3);animation-delay:-14s}[m
+[32m+[m[32m.orbe{position:absolute;border-radius:50%;opacity:.35;animation:deriva 22s ease-in-out infinite}[m
+[32m+[m[32m.o1{left:-8%;top:18%;width:50vmax;height:50vmax;background:radial-gradient(closest-side,rgba(139,92,246,.55),rgba(139,92,246,.3) 50%,transparent)}[m
+[32m+[m[32m.o2{right:-12%;top:46%;width:46vmax;height:46vmax;background:radial-gradient(closest-side,rgba(0,229,255,.34),rgba(0,229,255,.18) 50%,transparent);animation-delay:-8s;animation-duration:27s}[m
+[32m+[m[32m.o3{left:26%;bottom:-24%;width:42vmax;height:42vmax;background:radial-gradient(closest-side,rgba(79,124,255,.36),rgba(79,124,255,.18) 50%,transparent);animation-delay:-14s}[m
+ @keyframes deriva{50%{transform:translate3d(6vmax,-5vmax,0) scale(1.12)}}[m
+[32m+[m[32m/* en celulares y mientras hay una ventana abierta, las luces se quedan quietas (ahorra batería) */[m
+[32m+[m[32m@media(hover:none),(max-width:700px){.orbe{animation:none}}[m
+[32m+[m[32mbody.lock .orbe{animation-play-state:paused}[m
+ [m
+ /* luz suave que sigue al cursor (solo con mouse) */[m
+ .luz{position:fixed;left:0;top:0;z-index:1;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,229,255,.1),rgba(139,92,246,.06) 55%,transparent);pointer-events:none;opacity:0;transition:opacity .4s;will-change:transform}[m
+[36m@@ -19,7 +19,7 @@[m
+ [m
+ /* cabecera: se compacta y proyecta sombra al desplazarte */[m
+ .top{transition:padding .3s,box-shadow .3s,background .3s}[m
+[31m-.top.compacta{padding-block:.4rem;box-shadow:0 10px 30px -12px rgba(0,0,0,.8);background:rgba(7,7,11,.97)}[m
+[32m+[m[32m.top.compacta{padding-block:.4rem;box-shadow:0 10px 30px -12px rgba(0,0,0,.8);background:#07070b}[m
+ .logo{transition:transform .6s cubic-bezier(.2,.8,.2,1)}[m
+ .brand:hover .logo{transform:rotate(60deg) scale(1.08)}[m
+ [m
+[36m@@ -41,32 +41,25 @@[m
+ [m
+ /* botones: brillo que cruza + ondas al hacer clic */[m
+ .btn{position:relative;overflow:hidden;isolation:isolate}[m
+[31m-.btn.brillo::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:cruza 4.5s ease-in-out infinite}[m
+[31m-@keyframes cruza{0%,60%{left:-60%}100%{left:140%}}[m
+[32m+[m[32m.btn.brillo::after{content:"";position:absolute;top:0;left:0;width:40%;height:100%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:translateX(-150%) skewX(-20deg);animation:cruza 4.5s ease-in-out infinite}[m
+[32m+[m[32m@keyframes cruza{0%,60%{transform:translateX(-150%) skewX(-20deg)}100%{transform:translateX(350%) skewX(-20deg)}}[m
+ .btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 24px -6px rgba(0,229,255,.55)}[m
+ .onda{position:absolute;border-radius:50%;background:rgba(255,255,255,.5);transform:scale(0);animation:onda .6s ease-out forwards;pointer-events:none}[m
+ @keyframes onda{to{transform:scale(4);opacity:0}}[m
+ [m
+[31m-/* cifras y marquesina de marcas */[m
+[32m+[m[32m/* cifras del catálogo */[m
+ .datos{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;max-width:1100px;margin:0 auto;padding:2.5rem clamp(1rem,4vw,3rem) 1.5rem}[m
+ .dato{padding:1rem;text-align:center;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,rgba(26,26,38,.85),rgba(18,18,26,.85));transition:border-color .3s,box-shadow .3s,transform .3s}[m
+ .dato:hover{border-color:rgba(0,229,255,.55);box-shadow:0 0 24px -8px rgba(0,229,255,.5);transform:translateY(-3px)}[m
+ .dato b{display:block;font:700 clamp(1.8rem,5vw,2.6rem)/1.1 var(--ft);background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}[m
+ .dato span{color:var(--mut);font-size:.9rem}[m
+[31m-.marquesina{overflow:hidden;margin:0 0 1rem;padding:.9rem 0;border-block:1px solid var(--line);background:rgba(18,18,26,.55);-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}[m
+[31m-.pista{display:flex;width:max-content;gap:2.5rem;animation:marquesina 38s linear infinite}[m
+[31m-.marquesina:hover .pista{animation-play-state:paused}[m
+[31m-.pista button{padding:0;border:0;background:none;font:700 1.05rem var(--ft);letter-spacing:.14em;text-transform:uppercase;color:rgba(160,160,184,.75);white-space:nowrap;cursor:pointer;transition:color .25s,text-shadow .25s}[m
+[31m-.pista button:hover{color:var(--cyan);text-shadow:0 0 14px rgba(0,229,255,.5)}[m
+[31m-.pista button::before{content:"◆";margin-right:2.5rem;color:var(--violet);font-size:.6em;vertical-align:middle}[m
+[31m-@keyframes marquesina{to{transform:translateX(-50%)}}[m
+ [m
+[31m-/* tarjetas de producto: entrada escalonada, inclinación 3D, luz que sigue al cursor */[m
+[31m-.card{position:relative;cursor:pointer;transform-style:preserve-3d;will-change:transform;transition:border-color .25s,box-shadow .3s,transform .25s ease-out}[m
+[32m+[m[32m/* tarjetas de producto: entrada escalonada, inclinación 3D, luz que sigue al cursor (sin capa propia por tarjeta: la capa solo se prepara mientras se inclina) */[m
+[32m+[m[32m.card{position:relative;cursor:pointer;transition:border-color .25s,box-shadow .3s,transform .25s ease-out}[m
+ .card.entra{animation:tarjeta-in .55s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(min(var(--i,0),11)*55ms)}[m
+ @keyframes tarjeta-in{from{opacity:0;transform:translateY(22px) scale(.97)}}[m
+ .card:hover{border-color:var(--violet);transform:none;box-shadow:0 14px 34px -14px rgba(139,92,246,.55)}[m
+[31m-.card.inclinada{transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-4px)}[m
+[32m+[m[32m.card.inclinada{will-change:transform;transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-4px)}[m
+ .card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(0,229,255,.14),transparent 60%)}[m
+ .card:hover::after{opacity:1}[m
+ .img{overflow:hidden}[m
+[36m@@ -77,8 +70,7 @@[m
+ .card:hover .ojo,.card:focus-within .ojo{opacity:1;transform:none}[m
+ .ver{padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}[m
+ .ver:hover{color:var(--cyan)}[m
+[31m-.tag:not(.out){animation:latido-tag 2.6s ease-in-out infinite}[m
+[31m-@keyframes latido-tag{50%{box-shadow:0 0 14px rgba(0,229,255,.8)}}[m
+[32m+[m[32m.tag:not(.out):not(.dto){box-shadow:0 0 12px rgba(0,229,255,.6)}[m
+ .price{transition:text-shadow .3s}[m
+ .card:hover .price{text-shadow:0 0 16px rgba(0,229,255,.55)}[m
+ .fav.pop{animation:corazon .45s cubic-bezier(.2,.8,.2,1)}[m
+[36m@@ -108,6 +100,5 @@[m
+ /* inclinación de las tarjetas: sin movimiento extra si el visitante lo pidió */[m
+ @media(prefers-reduced-motion:reduce){[m
+   .js .reveal{opacity:1;transform:none}[m
+[31m-  .pista{animation:none;flex-wrap:wrap;width:auto;justify-content:center}[m
+   .catalogo h2::after{transform:scaleX(1)}[m
+ }[m
+[1mdiff --git a/css/hero3d.css b/css/hero3d.css[m
+[1mindex f0baf4a..3dfdebd 100644[m
+[1m--- a/css/hero3d.css[m
+[1m+++ b/css/hero3d.css[m
+[36m@@ -8,12 +8,13 @@[m
+ @keyframes entrar{from{opacity:0;transform:translateY(18px)}}[m
+ [m
+ .kicker{display:inline-flex;align-items:center;gap:.6rem;margin:0 0 1rem;color:var(--cyan);font:600 .8rem var(--ft);letter-spacing:.16em;text-transform:uppercase}[m
+[31m-.punto{width:8px;height:8px;border-radius:50%;background:var(--cyan);animation:latido 2s infinite}[m
+[31m-@keyframes latido{0%{box-shadow:0 0 0 0 rgba(0,229,255,.6)}70%,100%{box-shadow:0 0 0 10px rgba(0,229,255,0)}}[m
+[32m+[m[32m.punto{position:relative;width:8px;height:8px;border-radius:50%;background:var(--cyan)}[m
+[32m+[m[32m.punto::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--cyan);animation:latido 2s ease-out infinite}[m
+[32m+[m[32m@keyframes latido{0%{transform:scale(1);opacity:.6}70%,100%{transform:scale(3.4);opacity:0}}[m
+ [m
+ /* Título con un brillo que lo recorre despacio */[m
+ .hero h1{background:linear-gradient(110deg,#e9e9f3 0%,#e9e9f3 38%,#00e5ff 48%,#8b5cf6 56%,#e9e9f3 66%,#e9e9f3 100%) 0 0/260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:entrar .8s cubic-bezier(.2,.8,.2,1) both,brillo-titulo 9s linear 1s infinite}[m
+[31m-@keyframes brillo-titulo{from{background-position:100% 0}to{background-position:-60% 0}}[m
+[32m+[m[32m@keyframes brillo-titulo{0%{background-position:100% 0}35%,100%{background-position:-60% 0}}[m
+ [m
+ .explora{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem;font:500 1.05rem var(--ft)}[m
+ .palabra{padding:0 .15rem;border:0;border-bottom:1px dashed rgba(0,229,255,.55);background:none;color:var(--cyan);font:700 1.1rem var(--ft);cursor:pointer;text-shadow:0 0 14px rgba(0,229,255,.45);transition:opacity .25s,transform .25s}[m
+[36m@@ -23,10 +24,10 @@[m
+ /* ---------- Escena 3D ----------[m
+    Todo se mide en "em": el tamaño de .hero-3d manda y la escena se escala sola en celular. */[m
+ .hero-3d{--w:min(86vw,440px);position:relative;z-index:1;justify-self:center;width:var(--w);height:var(--w);font-size:calc(var(--w)/32);perspective:80em;perspective-origin:50% 38%;animation:entrar 1s .2s cubic-bezier(.2,.8,.2,1) both}[m
+[31m-.aura{position:absolute;inset:4%;border-radius:50%;background:radial-gradient(closest-side,rgba(139,92,246,.5),rgba(0,229,255,.14) 62%,transparent);filter:blur(1.4em);animation:aura 6s ease-in-out infinite}[m
+[32m+[m[32m.aura{position:absolute;inset:4%;border-radius:50%;background:radial-gradient(closest-side,rgba(139,92,246,.5),rgba(0,229,255,.14) 62%,transparent);animation:aura 6s ease-in-out infinite}[m
+ @keyframes aura{50%{transform:scale(1.12);opacity:.72}}[m
+ .inclina{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(calc(var(--ty,0)*1deg)) rotateY(calc(var(--tx,0)*1deg));transition:transform .3s ease-out}[m
+[31m-.escena{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(62deg) rotateZ(0deg);animation:giro 22s linear infinite;will-change:transform}[m
+[32m+[m[32m.escena{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(62deg) rotateZ(0deg);animation:giro 22s linear infinite}[m
+ @keyframes giro{to{transform:rotateX(62deg) rotateZ(360deg)}}[m
+ [m
+ /* capas apiladas que "respiran" (suben y bajan un poco) */[m
+[36m@@ -65,21 +66,25 @@[m
+ .barrido{position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.75) 50%,transparent 65%) 150% 0/300% 100%;opacity:.6;animation:barrido 4.5s ease-in-out infinite}[m
+ @keyframes barrido{to{background-position:-50% 0}}[m
+ [m
+[31m-.nucleo{width:4.6em;height:4.6em;margin:-2.3em 0 0 -2.3em;border-radius:.6em;background:conic-gradient(from 45deg,#00e5ff,#8b5cf6,#00e5ff);box-shadow:0 0 2.2em rgba(0,229,255,.85),0 0 4.5em rgba(139,92,246,.55);animation:respira 5s ease-in-out infinite,nucleo 2.4s ease-in-out infinite}[m
+[32m+[m[32m.nucleo{width:4.6em;height:4.6em;margin:-2.3em 0 0 -2.3em;border-radius:.6em;background:conic-gradient(from 45deg,#00e5ff,#8b5cf6,#00e5ff);box-shadow:0 0 2.2em rgba(0,229,255,.85),0 0 4.5em rgba(139,92,246,.55);animation:respira 5s ease-in-out infinite}[m
+[32m+[m[32m.nucleo::before{content:"";position:absolute;inset:0;border-radius:inherit;background:#fff;opacity:0;animation:brilla 2.4s ease-in-out infinite}[m
+ .nucleo::after{content:"";position:absolute;inset:.5em;border-radius:.3em;background:linear-gradient(rgba(255,255,255,.4) 1px,transparent 1px) 0 0/1em 1em,linear-gradient(90deg,rgba(255,255,255,.4) 1px,transparent 1px) 0 0/1em 1em}[m
+[31m-@keyframes nucleo{50%{filter:brightness(1.4)}}[m
+[32m+[m[32m@keyframes brilla{50%{opacity:.34}}[m
+ [m
+ .orbita{--z:7em;position:absolute;left:50%;top:50%;width:23em;height:23em;margin:-11.5em 0 0 -11.5em;transform:translateZ(var(--z));animation:giroZ 9s linear infinite;pointer-events:none}[m
+ .orbita::before{content:"";position:absolute;left:50%;top:-.6em;width:1.2em;height:1.2em;margin-left:-.6em;border-radius:50%;background:#fff;box-shadow:0 0 1em .3em #00e5ff}[m
+ .ob2{--z:14em;width:17em;height:17em;margin:-8.5em 0 0 -8.5em;animation-duration:6s;animation-direction:reverse}[m
+ .ob2::before{background:#e6d9ff;box-shadow:0 0 1em .3em #8b5cf6}[m
+ [m
+[31m-.sombra{position:absolute;left:50%;bottom:2%;width:60%;height:8%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.7),transparent);filter:blur(.4em);animation:aura 6s ease-in-out infinite}[m
+[32m+[m[32m.sombra{position:absolute;left:50%;bottom:2%;width:60%;height:8%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.7),transparent);animation:aura 6s ease-in-out infinite}[m
+ [m
+ /* etiquetas flotantes de vidrio (2D) */[m
+[31m-.etiqueta{position:absolute;z-index:2;padding:.35em .9em;border:1px solid rgba(0,229,255,.4);border-radius:999px;background:rgba(18,18,26,.75);backdrop-filter:blur(4px);box-shadow:0 0 1.2em rgba(0,229,255,.2);color:#e9e9f3;font:700 1em var(--ft);letter-spacing:.1em;animation:flota 6s ease-in-out infinite}[m
+[32m+[m[32m.etiqueta{position:absolute;z-index:2;padding:.35em .9em;border:1px solid rgba(0,229,255,.4);border-radius:999px;background:rgba(18,18,26,.9);box-shadow:0 0 1.2em rgba(0,229,255,.2);color:#e9e9f3;font:700 1em var(--ft);letter-spacing:.1em;animation:flota 6s ease-in-out infinite}[m
+ .e1{left:0;top:16%}.e2{right:0;top:28%;animation-delay:-1.5s}.e3{left:5%;bottom:18%;animation-delay:-3s}.e4{right:3%;bottom:12%;animation-delay:-4.5s}[m
+ @keyframes flota{50%{transform:translateY(-.8em)}}[m
+ [m
+ @media(min-width:900px){.hero{grid-template-columns:1.05fr .95fr}}[m
+ @media(max-width:899px){.hero-3d{margin-top:.5rem}}[m
+[32m+[m
+[32m+[m[32m/* pausa: cuando el héroe no se ve (lo marca js/hero3d.js con la clase "pausa") o hay una ventana abierta, todo se detiene */[m
+[32m+[m[32m.hero.pausa *,.hero.pausa *::before,.hero.pausa *::after,body.lock .hero *,body.lock .hero *::before,body.lock .hero *::after{animation-play-state:paused!important}[m
+[1mdiff --git a/css/modales.css b/css/modales.css[m
+[1mindex ab30fe4..10be426 100644[m
+[1m--- a/css/modales.css[m
+[1m+++ b/css/modales.css[m
+[36m@@ -17,7 +17,7 @@[m [mhtml{scrollbar-gutter:stable}[m
+ @supports(height:100dvh){.modal{--alto:calc(100dvh - 1.5rem)}}[m
+ .modal:focus-visible{outline:none}[m
+ .modal::before{content:"";position:absolute;left:0;top:0;z-index:5;width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--violet),var(--cyan),transparent);background-size:200% 100%;animation:linea 5s linear infinite;pointer-events:none}[m
+[31m-.modal::backdrop{background:rgba(3,3,9,.76);backdrop-filter:blur(6px)}[m
+[32m+[m[32m.modal::backdrop{background:rgba(3,3,9,.84)}[m
+ .modal[open]{animation:modal-in .38s cubic-bezier(.2,.8,.2,1)}[m
+ .modal[open]::backdrop{animation:fondo-in .3s ease}[m
+ .modal.saliendo{animation:modal-out .22s ease forwards}[m
+[36m@@ -34,7 +34,7 @@[m [mhtml{scrollbar-gutter:stable}[m
+   @supports(height:100dvh){.modal{--alto:92dvh}}[m
+ }[m
+ /* botón de cerrar (queda fijo aunque se desplace el contenido) */[m
+[31m-.mx{position:absolute;top:.8rem;right:.8rem;z-index:6;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:rgba(18,18,26,.88);backdrop-filter:blur(4px);color:var(--txt);font-size:1rem;cursor:pointer;transition:transform .3s,border-color .2s,color .2s,box-shadow .2s}[m
+[32m+[m[32m.mx{position:absolute;top:.8rem;right:.8rem;z-index:6;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:rgba(18,18,26,.94);color:var(--txt);font-size:1rem;cursor:pointer;transition:transform .3s,border-color .2s,color .2s,box-shadow .2s}[m
+ .mx:hover{transform:rotate(90deg);border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 16px -2px rgba(0,229,255,.6)}[m
+ [m
+ /* ---------- FICHA DE PRODUCTO ---------- */[m
+[36m@@ -50,6 +50,7 @@[m [mhtml{scrollbar-gutter:stable}[m
+ .pf-foto>svg{width:clamp(120px,34vw,210px);height:auto;filter:drop-shadow(0 0 22px rgba(0,229,255,.45))}[m
+ @keyframes pf-flota{50%{transform:translateY(-10px)}}[m
+ .pf-img .tag{z-index:2;top:.9rem;left:.9rem}[m
+[32m+[m[32m.pf-img .tag.dto{left:auto;right:.9rem}[m
+ .pf-info{padding:2rem 2rem 1.5rem;min-width:0}[m
+ .pf-info>*{animation:pf-sube .5s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--k,0)*55ms + 120ms)}[m
+ @keyframes pf-sube{from{opacity:0;transform:translateY(14px)}}[m
+[36m@@ -96,6 +97,26 @@[m [mhtml{scrollbar-gutter:stable}[m
+ .pf-rel b{font:700 .95rem var(--ft);color:var(--cyan)}[m
+ @media(max-width:640px){.pf-info{padding:1.4rem 1.25rem 1.25rem}.pf-rel{padding:1.1rem 1.25rem 1.5rem}.pf-img{min-height:230px;padding:1.5rem 1rem}}[m
+ [m
+[32m+[m[32m/* ficha de un COMBO: nivel de la PC, ahorro y lista de piezas (cada una se puede abrir) */[m
+[32m+[m[32m.pf-volver{margin:0 3rem .6rem 0}[m
+[32m+[m[32m.pf-volver .link{font-size:.9rem}[m
+[32m+[m[32m.pf-ahorro{margin:.35rem 0 0;color:#ffb3d1;font-size:.95rem}[m
+[32m+[m[32m.pf-ahorro b{color:#fff}[m
+[32m+[m[32m.pf-chip{padding:.2rem .65rem;border:1px solid var(--line);border-radius:999px;color:var(--mut)}[m
+[32m+[m[32m.pf-nivel{position:relative;z-index:1;margin:.9rem 0 0;text-align:center;color:var(--cyan);font:700 1.15rem var(--ft);letter-spacing:.08em;text-transform:uppercase}[m
+[32m+[m[32m.pf-nivel small{display:block;margin-top:.25rem;color:var(--mut);font:400 .88rem var(--fb);letter-spacing:0;text-transform:none}[m
+[32m+[m[32m.pf-sub{margin:1.3rem 0 .6rem;font-size:1rem;font-weight:600;color:var(--mut)}[m
+[32m+[m[32m.pf-piezas{display:grid;gap:.5rem;margin:0;padding:0;list-style:none}[m
+[32m+[m[32m.pf-piezas button{display:grid;grid-template-columns:48px minmax(0,1fr) auto;align-items:center;gap:.7rem;width:100%;padding:.5rem .65rem;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:inherit;font:inherit;text-align:left;cursor:pointer;transition:border-color .2s,transform .2s,box-shadow .2s}[m
+[32m+[m[32m.pf-piezas button:hover{border-color:var(--violet);transform:translateX(3px);box-shadow:0 8px 22px -14px rgba(139,92,246,.75)}[m
+[32m+[m[32m.pf-piezas .mini{width:48px}[m
+[32m+[m[32m.pf-piezas .mini img{object-fit:contain}[m
+[32m+[m[32m.pz-n b{display:block;font-size:.9rem;font-weight:600;line-height:1.25}[m
+[32m+[m[32m.pz-n small{color:var(--mut);font-size:.78rem}[m
+[32m+[m[32m.pz-p{color:var(--cyan);font:700 .92rem var(--ft);white-space:nowrap}[m
+[32m+[m[32m.pf-suma{display:flex;justify-content:space-between;gap:1rem;margin:.8rem 0 0;padding-top:.7rem;border-top:1px dashed var(--line);color:var(--mut)}[m
+[32m+[m[32m.pf-suma b{color:var(--txt)}[m
+[32m+[m
+ /* ---------- VENTANA DE COMPRA ---------- */[m
+ .co{display:grid}[m
+ @media(min-width:880px){.co{grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr)}}[m
+[1mdiff --git a/css/style.css b/css/style.css[m
+[1mindex f802a20..bae9471 100644[m
+[1m--- a/css/style.css[m
+[1m+++ b/css/style.css[m
+[36m@@ -13,7 +13,7 @@[m [ma{color:inherit}[m
+ .promo{margin:0;padding:.45rem 1rem;text-align:center;font-size:.85rem;background:var(--panel2);color:var(--mut);border-bottom:1px solid var(--line)}[m
+ [m
+ /* CABECERA */[m
+[31m-.top{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1rem;padding:.75rem clamp(1rem,4vw,3rem);background:rgba(7,7,11,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}[m
+[32m+[m[32m.top{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1rem;padding:.75rem clamp(1rem,4vw,3rem);background:#07070b;border-bottom:1px solid var(--line)}[m
+ .brand{display:flex;align-items:center;gap:.6rem;margin-right:auto;text-decoration:none;font-weight:700;line-height:1.1;font-size:.95rem}[m
+ .logo{width:40px;height:40px;color:var(--violet)}[m
+ .search{flex:1 1 100%;order:3}[m
+[36m@@ -25,22 +25,53 @@[m [ma{color:inherit}[m
+ .icon-btn b{display:inline-grid;place-items:center;min-width:1.4rem;height:1.4rem;margin-left:.3rem;padding:0 .3rem;border-radius:999px;background:var(--cyan);color:#001014;font-size:.8rem}[m
+ .pulse{animation:pulse .4s}[m
+ @keyframes pulse{50%{transform:scale(1.35)}}[m
+[32m+[m[32m/* iconos de Favoritos y Carrito: solo se ven en celular; en pantallas grandes sale el texto */[m
+[32m+[m[32m.icon-btn .ico{display:none}[m
+[32m+[m[32m@media(max-width:899px){[m
+[32m+[m[32m  .top{display:grid;grid-template-columns:minmax(0,1fr) auto auto;grid-template-areas:"marca fav carro" "buscar buscar menu" "lista lista lista";gap:.5rem .6rem;padding-block:.55rem}[m
+[32m+[m[32m  .brand{grid-area:marca;min-width:0}[m
+[32m+[m[32m  #btn-fav{grid-area:fav}[m
+[32m+[m[32m  #btn-cart{grid-area:carro}[m
+[32m+[m[32m  .search{grid-area:buscar;min-width:0}[m
+[32m+[m[32m  .search input{padding:.6rem 1rem}[m
+[32m+[m[32m  .menu-toggle{grid-area:menu}[m
+[32m+[m[32m  .menu{grid-area:lista}[m
+[32m+[m[32m}[m
+[32m+[m[32m@media(max-width:640px){[m
+[32m+[m[32m  .brand{gap:.5rem;font-size:.8rem}[m
+[32m+[m[32m  .logo{width:34px;height:34px}[m
+[32m+[m[32m  .icon-btn{display:inline-flex;align-items:center;gap:.35rem;padding:.45rem .6rem}[m
+[32m+[m[32m  .icon-btn .ico{display:block;width:18px;height:18px}[m
+[32m+[m[32m  .icon-btn .t{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}[m
+[32m+[m[32m  .icon-btn b{margin-left:0}[m
+[32m+[m[32m}[m
+[32m+[m[32m@media(max-width:359px){[m
+[32m+[m[32m  .brand{gap:.4rem;font-size:.7rem}[m
+[32m+[m[32m  .logo{width:30px;height:30px}[m
+[32m+[m[32m  .icon-btn{padding:.4rem .5rem}[m
+[32m+[m[32m}[m
+ /* MENÚ PRINCIPAL */[m
+ .menu-toggle{display:inline-block}[m
+ .menu{order:4;flex:1 1 100%;display:none}[m
+ .menu.open{display:block}[m
+ .menu ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.15rem}[m
+[32m+[m[32m.menu ul[hidden]{display:none}[m
+[32m+[m[32m/* con el menú abierto en pantallas chicas, la lista no puede ser más alta que la pantalla: se desplaza por dentro */[m
+[32m+[m[32m@media(max-width:1279px){.menu.open{max-height:calc(100vh - 11rem);max-height:calc(100dvh - 11rem);overflow-y:auto;overscroll-behavior:contain}}[m
+ .menu a,.menu button{display:block;width:100%;padding:.65rem .85rem;border:0;border-radius:8px;background:none;color:var(--txt);font:500 .95rem var(--fb);text-align:left;text-decoration:none;cursor:pointer}[m
+ .menu a:hover,.menu button:hover,.menu button[aria-expanded=true]{background:var(--panel2);color:var(--cyan)}[m
+ .has-sub{position:relative}[m
+ .has-sub>ul{padding:.25rem 0 .25rem 1rem}[m
+[31m-@media(min-width:900px){[m
+[32m+[m[32m@media(min-width:1280px){[m
+   .menu-toggle{display:none}[m
+   .menu,.menu.open{display:block;order:0;flex:0 1 auto}[m
+[31m-  .menu ul{flex-direction:row;align-items:center;gap:.1rem}[m
+[31m-  .menu a,.menu button{width:auto;white-space:nowrap}[m
+[32m+[m[32m  .menu ul{flex-direction:row;align-items:center;gap:0}[m
+[32m+[m[32m  .top{column-gap:.5rem}[m
+[32m+[m[32m  .brand{font-size:.9rem}[m
+[32m+[m[32m  .icon-btn{padding:.55rem .85rem}[m
+[32m+[m[32m  .menu a,.menu button{width:auto;padding:.5rem .5rem;white-space:nowrap}[m
+[32m+[m[32m  .search{flex:1 1 120px;min-width:110px}[m
+   .has-sub>ul{position:absolute;top:calc(100% + .4rem);left:0;z-index:30;min-width:220px;padding:.4rem;background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,.5)}[m
+[31m-  .has-sub>ul[hidden]{display:none}[m
+ }[m
+ .cats{display:flex;gap:.5rem;overflow-x:auto;padding:.75rem clamp(1rem,4vw,3rem);border-bottom:1px solid var(--line)}[m
+ .chip{flex:none;padding:.5rem .95rem;border-radius:999px;border:1px solid var(--line);background:none;color:var(--mut);font:500 .9rem var(--fb);cursor:pointer}[m
+[36m@@ -65,8 +96,8 @@[m [ma{color:inherit}[m
+ /* CATÁLOGO Y FILTROS */[m
+ .catalogo{padding:2.5rem clamp(1rem,4vw,3rem)}[m
+ .catalogo h2{font-size:1.8rem;margin:0 0 1.25rem}[m
+[31m-.layout{display:grid;gap:1.5rem}[m
+[31m-@media(min-width:900px){.layout{grid-template-columns:240px 1fr}.filtros{position:sticky;top:6rem;align-self:start}}[m
+[32m+[m[32m.layout{display:grid;gap:1.5rem;grid-template-columns:minmax(0,1fr)}[m
+[32m+[m[32m@media(min-width:900px){.layout{grid-template-columns:240px minmax(0,1fr)}.filtros{position:sticky;top:6rem;align-self:start}}[m
+ .filtros details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:1rem}[m
+ .filtros summary{font:700 1.05rem var(--ft);cursor:pointer}[m
+ .filtros label{display:block;margin:1rem 0 .35rem;font-size:.9rem;color:var(--mut)}[m
+[36m@@ -74,7 +105,7 @@[m [ma{color:inherit}[m
+ .filtros input[type=range]{width:100%;accent-color:var(--violet)}[m
+ .filtros .chk{display:flex;gap:.5rem;align-items:center;color:var(--txt)}[m
+ .filtros .btn{width:100%;margin-top:1rem}[m
+[31m-.barra{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1rem}[m
+[32m+[m[32m.barra{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.5rem 1rem;margin-bottom:1rem}[m
+ .barra select{width:auto}[m
+ .barra p{margin:0;color:var(--mut)}[m
+ .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem}[m
+[36m@@ -133,11 +164,3 @@[m [ma{color:inherit}[m
+ .pie{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;padding:2rem clamp(1rem,4vw,3rem);border-top:1px solid var(--line);color:var(--mut);font-size:.9rem}[m
+ .pie p{margin:0}[m
+ @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}[m
+[31m-[m
+[31m-html {[m
+[31m-  scroll-behavior: smooth;[m
+[31m-}[m
+[31m-[m
+[31m-#catalogo {[m
+[31m-  scroll-margin-top: 100px;[m
+[31m-}[m
+\ No newline at end of file[m
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 539b455..99cfb23 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -13,16 +13,20 @@[m
+ <script>document.documentElement.classList.add("js");</script>[m
+ <link rel="preconnect" href="https://fonts.googleapis.com">[m
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>[m
+[31m-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">[m
+[32m+[m[32m<!-- Tipografías: se cargan sin frenar la página (mientras llegan se usa la letra del sistema) -->[m
+[32m+[m[32m<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">[m
+[32m+[m[32m<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"></noscript>[m
+ [m
+ <!-- ESTILOS -->[m
+ <link rel="stylesheet" href="./css/style.css">[m
+ <link rel="stylesheet" href="./css/animaciones.css">[m
+ <link rel="stylesheet" href="./css/hero3d.css">[m
+[32m+[m[32m<link rel="stylesheet" href="./css/secciones.css">[m
+ <link rel="stylesheet" href="./css/modales.css">[m
+ [m
+ <!-- SCRIPTS (el orden importa: datos primero, app.js después, luego los módulos) -->[m
+ <script src="./js/data.js" defer></script>[m
+[32m+[m[32m<script src="./js/combos.js" defer></script>[m
+ <script src="./js/fichas.js" defer></script>[m
+ <script src="./js/config.js" defer></script>[m
+ <script src="./js/app.js" defer></script>[m
+[36m@@ -35,8 +39,7 @@[m
+ <body>[m
+ <a class="skip" href="#catalogo">Saltar al catálogo</a>[m
+ [m
+[31m-<!-- AMBIENTE: barra de progreso, luces de fondo y luz que sigue al cursor (decorativos) -->[m
+[31m-<div class="progreso" id="progreso" aria-hidden="true"></div>[m
+[32m+[m[32m<!-- AMBIENTE: luces de fondo y luz que sigue al cursor (decorativos) -->[m
+ <div class="ambiente" aria-hidden="true"><span class="orbe o1"></span><span class="orbe o2"></span><span class="orbe o3"></span></div>[m
+ <div class="luz" id="luz" aria-hidden="true"></div>[m
+ [m
+[36m@@ -53,6 +56,8 @@[m
+   <nav class="menu" id="menu" aria-label="Menú principal">[m
+     <ul>[m
+       <li><a href="#inicio">Inicio</a></li>[m
+[32m+[m[32m      <li><a href="#ofertas">Ofertas</a></li>[m
+[32m+[m[32m      <li><a href="#combos">Combos</a></li>[m
+       <li><a href="#catalogo">Catálogo</a></li>[m
+       <li class="has-sub">[m
+         <button type="button" id="menu-cats" aria-expanded="false" aria-controls="sub-cats">Categorías <span aria-hidden="true">▾</span></button>[m
+[36m@@ -66,8 +71,8 @@[m
+     <label class="sr" for="q">Buscar productos</label>[m
+     <input id="q" type="search" placeholder="Buscar…" title="Busca por nombre, marca o categoría" autocomplete="off">[m
+   </form>[m
+[31m-  <button class="icon-btn" id="btn-fav" type="button" aria-pressed="false">Favoritos <b id="n-fav">0</b></button>[m
+[31m-  <button class="icon-btn" id="btn-cart" type="button" aria-controls="carrito" aria-expanded="false">Carrito <b id="n-cart">0</b></button>[m
+[32m+[m[32m  <button class="icon-btn" id="btn-fav" type="button" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.6-9.3-9A5.2 5.2 0 0 1 12 6.3 5.2 5.2 0 0 1 21.3 12C19 16.4 12 21 12 21z"/></svg><span class="t">Favoritos</span> <b id="n-fav">0</b></button>[m
+[32m+[m[32m  <button class="icon-btn" id="btn-cart" type="button" aria-controls="carrito" aria-expanded="false"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4a1 1 0 0 0 1 .8h9.2a1 1 0 0 0 1-.8L21 7H6"/></svg><span class="t">Carrito</span> <b id="n-cart">0</b></button>[m
+ </header>[m
+ <nav class="cats" id="cats" aria-label="Categorías"></nav>[m
+ [m
+[36m@@ -82,6 +87,7 @@[m
+       <p class="explora">Explora <button class="palabra" id="palabra" type="button" aria-label="Ir a la categoría mostrada">Tarjetas gráficas</button></p>[m
+       <div class="hero-acciones">[m
+         <a class="btn brillo" href="#catalogo">Ver catálogo</a>[m
+[32m+[m[32m        <a class="btn ghost" href="#ofertas">Ofertas y combos</a>[m
+         <a class="btn ghost" href="#contacto">Contacto</a>[m
+       </div>[m
+     </div>[m
+[36m@@ -121,6 +127,36 @@[m
+     </div>[m
+   </section>[m
+ [m
+[32m+[m[32m  <!-- OFERTAS: productos con precio rebajado (los que tienen "oferta" en js/data.js). La sección se dibuja sola desde app.js -->[m
+[32m+[m[32m  <section class="seccion ofertas" id="ofertas" aria-labelledby="t-ofertas" hidden>[m
+[32m+[m[32m    <div class="sec-cab">[m
+[32m+[m[32m      <div>[m
+[32m+[m[32m        <h2 id="t-ofertas" class="reveal">Ofertas</h2>[m
+[32m+[m[32m        <p class="sec-sub">Productos con el precio rebajado, mientras haya existencias.</p>[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m      <div class="sec-acc">[m
+[32m+[m[32m        <button class="btn ghost" id="of-todas" type="button">Ver todas las ofertas</button>[m
+[32m+[m[32m        <div class="flechas">[m
+[32m+[m[32m          <button class="flecha" id="of-prev" type="button" aria-controls="of-pista" aria-label="Ofertas anteriores" disabled>‹</button>[m
+[32m+[m[32m          <button class="flecha" id="of-sig" type="button" aria-controls="of-pista" aria-label="Más ofertas">›</button>[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m    <div class="of-pista" id="of-pista" role="region" aria-label="Productos en oferta"></div>[m
+[32m+[m[32m  </section>[m
+[32m+[m
+[32m+[m[32m  <!-- COMBOS DE HOY: PC completas (se arman en js/combos.js). Se dibujan solas desde app.js -->[m
+[32m+[m[32m  <section class="seccion combos" id="combos" aria-labelledby="t-combos" hidden>[m
+[32m+[m[32m    <div class="sec-cab">[m
+[32m+[m[32m      <div>[m
+[32m+[m[32m        <h2 id="t-combos" class="reveal">Combos de hoy</h2>[m
+[32m+[m[32m        <p class="sec-sub">PC completas con todas las piezas para armar y jugar. Pagas menos que comprando cada pieza por separado.</p>[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m    <div class="combos-grid" id="combos-lista"></div>[m
+[32m+[m[32m    <p class="sec-nota">Piezas, precios y existencias de referencia: la tienda confirma disponibilidad y compatibilidad al recibir tu pedido.</p>[m
+[32m+[m[32m  </section>[m
+[32m+[m
+   <!-- CIFRAS (se calculan con tu catálogo) -->[m
+   <section class="datos" aria-label="Resumen del catálogo">[m
+     <div class="dato reveal"><b id="c-prod" data-contar="0">0</b><span>Productos</span></div>[m
+[36m@@ -129,9 +165,6 @@[m
+     <div class="dato reveal" style="--d:3"><b id="c-stock" data-contar="0">0</b><span>Con existencias</span></div>[m
+   </section>[m
+ [m
+[31m-  <!-- MARQUESINA DE MARCAS (se arma con tu catálogo) -->[m
+[31m-  <div class="marquesina" aria-label="Marcas disponibles"><div class="pista" id="pista-marcas"></div></div>[m
+[31m-[m
+   <!-- CATÁLOGO: filtros a la izquierda, productos a la derecha -->[m
+   <section id="catalogo" class="catalogo" aria-labelledby="t-cat">[m
+     <h2 id="t-cat" class="reveal">Catálogo</h2>[m
+[36m@@ -144,6 +177,7 @@[m
+           <label for="f-precio">Precio máximo: <output id="o-precio"></output></label>[m
+           <input id="f-precio" type="range" step="500">[m
+           <label class="chk"><input id="f-stock" type="checkbox"> Solo disponibles</label>[m
+[32m+[m[32m          <label class="chk"><input id="f-ofertas" type="checkbox"> Solo en oferta</label>[m
+           <button class="btn ghost" id="f-limpiar" type="button">Limpiar filtros</button>[m
+         </details>[m
+       </aside>[m
+[36m@@ -157,9 +191,11 @@[m
+             <option value="precio-desc">Precio: mayor a menor</option>[m
+             <option value="nombre">Nombre (A-Z)</option>[m
+             <option value="novedad">Novedades primero</option>[m
+[32m+[m[32m            <option value="dto">Mayor descuento</option>[m
+           </select>[m
+         </div>[m
+         <div class="grid" id="grid"></div>[m
+[32m+[m[32m        <div class="mas" id="mas-caja" hidden><button class="btn ghost" id="mas" type="button">Ver más productos</button></div>[m
+       </div>[m
+     </div>[m
+   </section>[m
+[1mdiff --git a/js/app.js b/js/app.js[m
+[1mindex 737efc3..a23f412 100644[m
+[1m--- a/js/app.js[m
+[1m+++ b/js/app.js[m
+[36m@@ -1,18 +1,24 @@[m
+ (() => {[m
+   "use strict";[m
+   const grid = document.getElementById("grid");[m
+[31m-  if (!window.CATALOGO) { grid.textContent = "No se pudo cargar el catálogo. Comprueba que exista js/data.js."; return; }[m
+[32m+[m[32m  if (!window.CATALOGO) {[m
+[32m+[m[32m    grid.innerHTML = '<div class="vacio"><p><strong>No se pudo cargar el catálogo.</strong></p><p>Falta el archivo <code>js/data.js</code> o tiene un error de escritura. Abre <code>index.html</code> desde la carpeta completa del proyecto (con <code>css</code>, <code>js</code> y <code>assets</code> juntas); si descargaste un .zip, extráelo primero.</p></div>';[m
+[32m+[m[32m    return;[m
+[32m+[m[32m  }[m
+   const { moneda, categorias, productos } = window.CATALOGO;[m
+[32m+[m[32m  const reducido = matchMedia("(prefers-reduced-motion: reduce)").matches;[m
+ [m
+   /* UTILIDADES */[m
+   const $ = (s, el = document) => el.querySelector(s);[m
+   const fmt = n => `${moneda} ${n.toLocaleString("es-DO")}`;[m
+   const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));[m
+[31m-  const norm = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();[m
+[32m+[m[32m  const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();[m
+   const store = {[m
+     get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },[m
+     set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* sin almacenamiento disponible */ } }[m
+   };[m
+[32m+[m[32m  /* Ejecuta la función una sola vez por cuadro de pantalla (para scroll, resize y movimiento del mouse) */[m
+[32m+[m[32m  const enFrame = fn => { let espera = false; return (...a) => { if (espera) return; espera = true; requestAnimationFrame(() => { espera = false; fn(...a); }); }; };[m
+   const ICONOS = {[m
+     "Tarjetas gráficas": '<rect x="6" y="20" width="52" height="24" rx="3"/><circle cx="22" cy="32" r="7"/><circle cx="42" cy="32" r="7"/><path d="M10 44v6h12v-6"/>',[m
+     "Procesadores": '<rect x="16" y="16" width="32" height="32" rx="3"/><rect x="25" y="25" width="14" height="14"/><path d="M24 8v8M32 8v8M40 8v8M24 48v8M32 48v8M40 48v8M8 24h8M8 32h8M8 40h8M48 24h8M48 32h8M48 40h8"/>',[m
+[36m@@ -27,12 +33,49 @@[m
+     "Cámaras y streaming": '<circle cx="32" cy="28" r="14"/><circle cx="32" cy="28" r="6"/><path d="M24 44v8h16v-8M20 56h24"/>',[m
+     "Audio": '<path d="M12 38v-6a20 20 0 0 1 40 0v6"/><rect x="8" y="36" width="10" height="16" rx="3"/><rect x="46" y="36" width="10" height="16" rx="3"/>',[m
+     "Accesorios gamer": '<rect x="8" y="22" width="48" height="24" rx="12"/><path d="M20 30v8M16 34h8M42 31h2M46 37h2"/>',[m
+[31m-    "Figuras 3D": '<path d="M32 8l22 12v24L32 56 10 44V20z"/><path d="M10 20l22 12 22-12M32 32v24"/>'[m
+[32m+[m[32m    "Figuras 3D": '<path d="M32 8l22 12v24L32 56 10 44V20z"/><path d="M10 20l22 12 22-12M32 32v24"/>',[m
+[32m+[m[32m    "Combos": '<rect x="10" y="6" width="34" height="52" rx="3"/><circle cx="27" cy="21" r="6"/><circle cx="27" cy="39" r="6"/><path d="M18 51h18M51 12v14M44 19h14"/>'[m
+   };[m
+   const icono = cat => `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONOS[cat] || ""}</svg>`;[m
+ [m
+[31m-  /* ESTADO: carrito y favoritos se guardan en el navegador */[m
+[32m+[m[32m  /* PRECIOS: "precio" es el normal. Si el producto tiene "oferta" (menor), "venta" es el precio que se cobra[m
+[32m+[m[32m     y "dto" el porcentaje de rebaja. "_q" es el texto en el que busca el buscador (se arma una sola vez). */[m
+[32m+[m[32m  for (const p of productos) {[m
+[32m+[m[32m    const o = Math.round(Number(p.oferta));[m
+[32m+[m[32m    p.venta = o > 0 && o < p.precio ? o : p.precio;[m
+[32m+[m[32m    p.dto = p.venta < p.precio ? Math.max(1, Math.round((1 - p.venta / p.precio) * 100)) : 0;[m
+[32m+[m[32m    p._q = norm(`${p.nombre} ${p.marca} ${p.cat}`);[m
+[32m+[m[32m  }[m
+   const porId = new Map(productos.map(p => [p.id, p]));[m
+[32m+[m
+[32m+[m[32m  /* COMBOS (js/combos.js): PC completas armadas con piezas del catálogo. Funcionan como "productos virtuales":[m
+[32m+[m[32m     entran al carrito y tienen su ficha como cualquier producto, pero no salen en el listado del catálogo. */[m
+[32m+[m[32m  const combos = [];[m
+[32m+[m[32m  for (const c of Array.isArray(window.COMBOS) ? window.COMBOS : []) {[m
+[32m+[m[32m    const id = /^combo-/.test(String(c.id)) ? String(c.id) : `combo-${c.id}`;[m
+[32m+[m[32m    const items = Array.isArray(c.items) ? c.items.map(String) : [];[m
+[32m+[m[32m    const faltan = items.filter(i => !porId.has(i) || porId.get(i).combo);[m
+[32m+[m[32m    if (!items.length || faltan.length || porId.has(id)) {[m
+[32m+[m[32m      console.warn(`[Combos] "${c.nombre || id}" no se muestra: ${!items.length ? "no tiene piezas" : porId.has(id) ? "su id ya existe" : "estos ids no existen en data.js → " + faltan.join(", ")}`);[m
+[32m+[m[32m      continue;[m
+[32m+[m[32m    }[m
+[32m+[m[32m    const suma = items.reduce((s, i) => s + porId.get(i).venta, 0);              // precio de las piezas por separado[m
+[32m+[m[32m    const pct = Number.isFinite(Number(c.descuento)) ? Math.min(Math.max(Number(c.descuento), 0), 90) : 5;[m
+[32m+[m[32m    const fijo = Math.round(Number(c.precio)) > 0 ? Math.round(Number(c.precio)) : 0;[m
+[32m+[m[32m    const venta = fijo || Math.min(suma, Math.round(suma * (1 - pct / 100) / 100) * 100);[m
+[32m+[m[32m    const antes = Math.max(suma, venta);[m
+[32m+[m[32m    const usos = {}; items.forEach(i => { usos[i] = (usos[i] || 0) + 1; });[m
+[32m+[m[32m    const stock = Math.min(...Object.entries(usos).map(([i, n]) => Math.floor(porId.get(i).stock / n)));[m
+[32m+[m[32m    const combo = {[m
+[32m+[m[32m      id, combo: true, cat: "Combos", marca: "Combo", nombre: String(c.nombre || id),[m
+[32m+[m[32m      etiqueta: String(c.etiqueta || "PC completa"), lema: String(c.lema || ""), nota: String(c.nota || ""),[m
+[32m+[m[32m      items, precio: antes, venta, dto: venta < antes ? Math.max(1, Math.round((1 - venta / antes) * 100)) : 0,[m
+[32m+[m[32m      ahorro: antes - venta, stock, img: c.img ? String(c.img) : "", nuevo: false[m
+[32m+[m[32m    };[m
+[32m+[m[32m    combos.push(combo); porId.set(id, combo);[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  /* ESTADO: carrito y favoritos se guardan en el navegador */[m
+   let carrito = store.get("trcg.carrito", {});[m
+   if (!carrito || typeof carrito !== "object" || Array.isArray(carrito)) carrito = {};[m
+   for (const [id, q] of Object.entries(carrito)) {[m
+[36m@@ -41,9 +84,11 @@[m
+     else carrito[id] = Math.min(q, p.stock);[m
+   }[m
+   const favsGuardados = store.get("trcg.favs", []);[m
+[31m-  const favs = new Set(Array.isArray(favsGuardados) ? favsGuardados.filter(id => porId.has(id)) : []);[m
+[31m-  const tope = Math.ceil(Math.max(...productos.map(p => p.precio)) / 1000) * 1000;[m
+[31m-  const filtro = { q: "", cat: "Todas", marca: "Todas", max: tope, stock: false, favs: false, orden: "relevancia" };[m
+[32m+[m[32m  const favs = new Set(Array.isArray(favsGuardados) ? favsGuardados.filter(id => porId.has(id) && !porId.get(id).combo) : []);[m
+[32m+[m[32m  const tope = Math.ceil(Math.max(...productos.map(p => p.venta)) / 1000) * 1000;[m
+[32m+[m[32m  const filtro = { q: "", cat: "Todas", marca: "Todas", max: tope, stock: false, ofertas: false, favs: false, orden: "relevancia" };[m
+[32m+[m[32m  const PAGINA = 24;                       // productos que se muestran cada vez en el catálogo ("Ver más" agrega otros 24)[m
+[32m+[m[32m  let lista = [], mostrados = PAGINA;[m
+ [m
+   /* CATÁLOGO: filtrar, ordenar y pintar */[m
+   function visibles() {[m
+[36m@@ -51,24 +96,30 @@[m
+     const l = productos.filter(p =>[m
+       (filtro.cat === "Todas" || p.cat === filtro.cat) &&[m
+       (filtro.marca === "Todas" || p.marca === filtro.marca) &&[m
+[31m-      p.precio <= filtro.max &&[m
+[32m+[m[32m      p.venta <= filtro.max &&[m
+       (!filtro.stock || p.stock > 0) &&[m
+[32m+[m[32m      (!filtro.ofertas || p.dto > 0) &&[m
+       (!filtro.favs || favs.has(p.id)) &&[m
+[31m-      (!q || norm(`${p.nombre} ${p.marca} ${p.cat}`).includes(q)));[m
+[32m+[m[32m      (!q || p._q.includes(q)));[m
+     const cmp = {[m
+[31m-      "precio-asc": (a, b) => a.precio - b.precio,[m
+[31m-      "precio-desc": (a, b) => b.precio - a.precio,[m
+[32m+[m[32m      "precio-asc": (a, b) => a.venta - b.venta,[m
+[32m+[m[32m      "precio-desc": (a, b) => b.venta - a.venta,[m
+       "nombre": (a, b) => a.nombre.localeCompare(b.nombre, "es"),[m
+[31m-      "novedad": (a, b) => Number(!!b.nuevo) - Number(!!a.nuevo)[m
+[32m+[m[32m      "novedad": (a, b) => Number(!!b.nuevo) - Number(!!a.nuevo),[m
+[32m+[m[32m      "dto": (a, b) => b.dto - a.dto[m
+     }[filtro.orden];[m
+     return cmp ? l.sort(cmp) : l;[m
+   }[m
+[32m+[m[32m  /* Precio de una tarjeta: si hay oferta, muestra el precio rebajado y el normal tachado */[m
+[32m+[m[32m  const precioHtml = p => p.dto[m
+[32m+[m[32m    ? `<p class="price"><span class="sr">Precio actual: </span>${fmt(p.venta)} <s class="antes"><span class="sr">Precio anterior: </span>${fmt(p.precio)}</s></p>`[m
+[32m+[m[32m    : `<p class="price">${fmt(p.venta)}</p>`;[m
+   function tarjeta(p) {[m
+     const agot = p.stock < 1, fav = favs.has(p.id);[m
+[31m-    const foto = p.img ? `<img src="${esc(p.img)}" alt="${esc(p.nombre)}" loading="lazy">` : `${icono(p.cat)}<small>Imagen de ejemplo</small>`;[m
+[32m+[m[32m    const foto = p.img ? `<img src="${esc(p.img)}" alt="${esc(p.nombre)}" loading="lazy" decoding="async">` : `${icono(p.cat)}<small>Imagen de ejemplo</small>`;[m
+     return `<article class="card" data-id="${esc(p.id)}">[m
+[31m-      <div class="img">${foto}${agot ? '<span class="tag out">Agotado</span>' : p.nuevo ? '<span class="tag">Nuevo</span>' : ""}<span class="ojo" aria-hidden="true">Ver detalles</span></div>[m
+[31m-      <div class="info"><p class="meta">${esc(p.marca)}</p><h3><button class="ver" type="button" data-ver="${esc(p.id)}">${esc(p.nombre)}</button></h3><p class="price">${fmt(p.precio)}</p>[m
+[32m+[m[32m      <div class="img">${foto}${agot ? '<span class="tag out">Agotado</span>' : p.nuevo ? '<span class="tag">Nuevo</span>' : ""}${p.dto && !agot ? `<span class="tag dto">−${p.dto}%<span class="sr"> de descuento</span></span>` : ""}<span class="ojo" aria-hidden="true">Ver detalles</span></div>[m
+[32m+[m[32m      <div class="info"><p class="meta">${esc(p.marca)}</p><h3><button class="ver" type="button" data-ver="${esc(p.id)}">${esc(p.nombre)}</button></h3>${precioHtml(p)}[m
+         <p class="stock ${agot ? "no" : ""}">${agot ? "Sin existencias" : `${p.stock} disponibles`}</p></div>[m
+       <div class="acc">[m
+         <button class="btn" type="button" data-add="${esc(p.id)}" ${agot ? "disabled" : ""}>Agregar al carrito</button>[m
+[36m@@ -77,13 +128,26 @@[m
+   }[m
+   /* Animación de entrada: solo las tarjetas nuevas; si cambia categoría, marca, orden o favoritos, entran todas */[m
+   let previos = new Set(), ultimaVista = "";[m
+[31m-  function render() {[m
+[31m-    const l = visibles();[m
+[31m-    $("#resumen").textContent = `${l.length} ${l.length === 1 ? "producto" : "productos"}`;[m
+[32m+[m[32m  function pintarMas() {[m
+[32m+[m[32m    const resto = lista.length - mostrados, caja = $("#mas-caja");[m
+[32m+[m[32m    $("#resumen").textContent = resto > 0[m
+[32m+[m[32m      ? `Mostrando ${mostrados} de ${lista.length} productos`[m
+[32m+[m[32m      : `${lista.length} ${lista.length === 1 ? "producto" : "productos"}`;[m
+[32m+[m[32m    if (!caja) return;[m
+[32m+[m[32m    caja.hidden = resto <= 0;[m
+[32m+[m[32m    if (resto > 0) $("#mas").textContent = `Ver más productos (${resto} más)`;[m
+[32m+[m[32m  }[m
+[32m+[m[32m  /* render(true) conserva cuántos productos ya se estaban mostrando; si no, vuelve a los primeros 24 */[m
+[32m+[m[32m  function render(mantener = false) {[m
+[32m+[m[32m    lista = visibles();[m
+[32m+[m[32m    if (!mantener) mostrados = PAGINA;[m
+[32m+[m[32m    mostrados = Math.min(Math.max(mostrados, PAGINA), Math.max(lista.length, PAGINA));[m
+[32m+[m[32m    const l = lista.slice(0, mostrados);[m
+     const sinFavs = filtro.favs && !favs.size;[m
+     grid.innerHTML = l.length ? l.map(tarjeta).join("") :[m
+       `<div class="vacio"><p>${sinFavs ? "Aún no tienes favoritos. Toca el corazón de un producto para guardarlo." : "Ningún producto coincide con tu búsqueda o filtros."}</p><button class="btn ghost" type="button" id="vacio-limpiar">Limpiar filtros</button></div>`;[m
+[31m-    const vista = [filtro.cat, filtro.marca, filtro.orden, filtro.favs].join("|");[m
+[32m+[m[32m    pintarMas();[m
+[32m+[m[32m    const vista = [filtro.cat, filtro.marca, filtro.orden, filtro.favs, filtro.ofertas].join("|");[m
+     if (vista !== ultimaVista) previos = new Set();[m
+     ultimaVista = vista;[m
+     let n = 0;[m
+[36m@@ -94,14 +158,72 @@[m
+     });[m
+     previos = new Set(l.map(p => p.id));[m
+   }[m
+[32m+[m[32m  /* "Ver más": agrega los siguientes productos sin volver a dibujar los que ya están */[m
+[32m+[m[32m  function verMas(conTeclado) {[m
+[32m+[m[32m    const desde = mostrados;[m
+[32m+[m[32m    mostrados = Math.min(lista.length, mostrados + PAGINA);[m
+[32m+[m[32m    grid.insertAdjacentHTML("beforeend", lista.slice(desde, mostrados).map(tarjeta).join(""));[m
+[32m+[m[32m    const nuevas = [...grid.querySelectorAll(".card")].slice(desde);[m
+[32m+[m[32m    nuevas.forEach((c, i) => { c.style.setProperty("--i", i); c.classList.add("entra"); previos.add(c.dataset.id); });[m
+[32m+[m[32m    pintarMas();[m
+[32m+[m[32m    const primero = nuevas[0] && nuevas[0].querySelector(".ver");[m
+[32m+[m[32m    if (primero && (conTeclado || $("#mas-caja").hidden)) primero.focus({ preventScroll: !conTeclado }); // el foco no se pierde[m
+[32m+[m[32m  }[m
+   function limpiarFiltros() {[m
+[31m-    Object.assign(filtro, { q: "", cat: "Todas", marca: "Todas", max: tope, stock: false, favs: false, orden: "relevancia" });[m
+[32m+[m[32m    Object.assign(filtro, { q: "", cat: "Todas", marca: "Todas", max: tope, stock: false, ofertas: false, favs: false, orden: "relevancia" });[m
+     $("#q").value = ""; $("#f-marca").value = "Todas"; $("#f-precio").value = tope;[m
+     $("#f-stock").checked = false; $("#orden").value = "relevancia";[m
+[32m+[m[32m    if ($("#f-ofertas")) $("#f-ofertas").checked = false;[m
+     $("#btn-fav").setAttribute("aria-pressed", "false");[m
+     pintarChips(); $("#o-precio").textContent = fmt(tope); render();[m
+   }[m
+   const pintarChips = () => document.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.cat === filtro.cat));[m
+[32m+[m[32m  /* Lleva al catálogo mostrando solo lo que está en oferta, de mayor a menor descuento */[m
+[32m+[m[32m  function verOfertas() {[m
+[32m+[m[32m    limpiarFiltros();[m
+[32m+[m[32m    filtro.ofertas = true; filtro.orden = "dto";[m
+[32m+[m[32m    if ($("#f-ofertas")) $("#f-ofertas").checked = true;[m
+[32m+[m[32m    $("#orden").value = "dto";[m
+[32m+[m[32m    render(); irACatalogo();[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  /* OFERTAS Y COMBOS (secciones del inicio) */[m
+[32m+[m[32m  function pintarOfertas() {[m
+[32m+[m[32m    const sec = $("#ofertas"), pista = $("#of-pista"); if (!sec || !pista) return;[m
+[32m+[m[32m    const l = productos.filter(p => p.dto > 0 && p.stock > 0).sort((a, b) => b.dto - a.dto).slice(0, 12);[m
+[32m+[m[32m    sec.hidden = !l.length;[m
+[32m+[m[32m    pista.innerHTML = l.map(tarjeta).join("");[m
+[32m+[m[32m    flechasOfertas();[m
+[32m+[m[32m  }[m
+[32m+[m[32m  function flechasOfertas() {[m
+[32m+[m[32m    const pista = $("#of-pista"), a = $("#of-prev"), s = $("#of-sig"); if (!pista || !a || !s) return;[m
+[32m+[m[32m    a.disabled = pista.scrollLeft < 8;[m
+[32m+[m[32m    s.disabled = pista.scrollLeft + pista.clientWidth >= pista.scrollWidth - 8;[m
+[32m+[m[32m  }[m
+[32m+[m[32m  function tarjetaCombo(c) {[m
+[32m+[m[32m    const agot = c.stock < 1;[m
+[32m+[m[32m    const foto = c.img ? `<img src="${esc(c.img)}" alt="" loading="lazy" decoding="async">` : icono("Combos");[m
+[32m+[m[32m    return `<article class="combo" data-id="${esc(c.id)}">[m
+[32m+[m[32m      <div class="combo-cab"><span class="combo-ico">${foto}</span>[m
+[32m+[m[32m        <div><p class="combo-nivel">${esc(c.etiqueta)}</p><h3><button class="ver" type="button" data-ver="${esc(c.id)}">${esc(c.nombre)}</button></h3></div></div>[m
+[32m+[m[32m      ${c.lema ? `<p class="combo-lema">${esc(c.lema)}</p>` : ""}[m
+[32m+[m[32m      <ul class="combo-piezas" aria-label="Piezas del combo">${c.items.map(i => { const p = porId.get(i); return `<li><span class="pz-ico">${icono(p.cat)}</span><span>${esc(p.nombre)}</span></li>`; }).join("")}</ul>[m
+[32m+[m[32m      <div class="combo-pie">[m
+[32m+[m[32m        ${c.dto ? `<p class="combo-antes">Por separado: <s>${fmt(c.precio)}</s></p>` : ""}[m
+[32m+[m[32m        <p class="price">${fmt(c.venta)}</p>[m
+[32m+[m[32m        ${c.dto ? `<p class="combo-ahorro">Ahorras ${fmt(c.ahorro)} (${c.dto}%)</p>` : ""}[m
+[32m+[m[32m        <p class="stock ${agot ? "no" : ""}">${agot ? "Sin existencias" : `${c.stock} ${c.stock === 1 ? "combo disponible" : "combos disponibles"}`}</p>[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m      <div class="acc">[m
+[32m+[m[32m        <button class="btn brillo" type="button" data-add="${esc(c.id)}" ${agot ? "disabled" : ""}>Agregar combo</button>[m
+[32m+[m[32m        <button class="btn ghost" type="button" data-ver="${esc(c.id)}">Ver piezas</button>[m
+[32m+[m[32m      </div></article>`;[m
+[32m+[m[32m  }[m
+[32m+[m[32m  function pintarCombos() {[m
+[32m+[m[32m    const sec = $("#combos"), caja = $("#combos-lista"); if (!sec || !caja) return;[m
+[32m+[m[32m    sec.hidden = !combos.length;[m
+[32m+[m[32m    caja.innerHTML = combos.map(tarjetaCombo).join("");[m
+[32m+[m[32m  }[m
+ [m
+   /* AVISOS */[m
+   function aviso(msg, error = false) {[m
+[36m@@ -112,14 +234,18 @@[m
+     setTimeout(() => t.classList.add("sale"), 2900);[m
+     setTimeout(() => t.remove(), 3200);[m
+   }[m
+[32m+[m[32m  const soloHay = p => p.combo[m
+[32m+[m[32m    ? `Solo hay ${p.stock} ${p.stock === 1 ? "combo disponible" : "combos disponibles"}.`[m
+[32m+[m[32m    : `Solo hay ${p.stock} disponibles de este producto.`;[m
+ [m
+[31m-  /* FAVORITOS: actualiza todos los corazones del producto (tarjeta y ficha) */[m
+[32m+[m[32m  /* FAVORITOS: actualiza todos los corazones del producto (tarjeta, ofertas y ficha) */[m
+   function alternarFav(id) {[m
+[32m+[m[32m    if (!porId.has(id) || porId.get(id).combo) return;[m
+     favs.has(id) ? favs.delete(id) : favs.add(id);[m
+     store.set("trcg.favs", [...favs]);[m
+     $("#n-fav").textContent = favs.size;[m
+     const on = favs.has(id);[m
+[31m-    if (filtro.favs) render();[m
+[32m+[m[32m    if (filtro.favs) render(true);[m
+     document.querySelectorAll(`[data-fav="${CSS.escape(id)}"]`).forEach(btn => {[m
+       btn.setAttribute("aria-pressed", on);[m
+       btn.setAttribute("aria-label", `${on ? "Quitar de" : "Agregar a"} favoritos: ${porId.get(id).nombre}`);[m
+[36m@@ -133,16 +259,17 @@[m
+   function pintarCarrito() {[m
+     const ids = Object.keys(carrito);[m
+     $("#n-cart").textContent = ids.reduce((s, id) => s + carrito[id], 0);[m
+[31m-    $("#total").textContent = fmt(ids.reduce((s, id) => s + carrito[id] * porId.get(id).precio, 0));[m
+[32m+[m[32m    $("#total").textContent = fmt(ids.reduce((s, id) => s + carrito[id] * porId.get(id).venta, 0));[m
+     $("#vacio").hidden = ids.length > 0;[m
+     $("#vaciar").disabled = !ids.length;[m
+     $("#pagar").disabled = !ids.length;[m
+     $("#lista-cart").innerHTML = ids.map(id => {[m
+       const p = porId.get(id), q = carrito[id];[m
+[32m+[m[32m      const extra = p.combo ? ` · ${p.items.length} piezas` : "";[m
+       return `<li class="line"><div class="mini">${p.img ? `<img src="${esc(p.img)}" alt="">` : icono(p.cat)}</div>[m
+[31m-        <div><p class="n">${esc(p.nombre)}</p><p class="u">${fmt(p.precio)} c/u</p>[m
+[32m+[m[32m        <div><p class="n">${esc(p.nombre)}</p><p class="u">${fmt(p.venta)} c/u${p.dto ? ` <s class="antes">${fmt(p.precio)}</s>` : ""}${extra}</p>[m
+           <div class="qty"><button type="button" data-q="${esc(id)}" data-d="-1" aria-label="Quitar una unidad de ${esc(p.nombre)}">−</button><output>${q}</output><button type="button" data-q="${esc(id)}" data-d="1" aria-label="Agregar una unidad de ${esc(p.nombre)}" ${q >= p.stock ? "disabled" : ""}>+</button></div></div>[m
+[31m-        <div class="r"><p class="sub">${fmt(p.precio * q)}</p><button class="link" type="button" data-rm="${esc(id)}">Eliminar</button></div></li>`;[m
+[32m+[m[32m        <div class="r"><p class="sub">${fmt(p.venta * q)}</p><button class="link" type="button" data-rm="${esc(id)}">Eliminar</button></div></li>`;[m
+     }).join("");[m
+   }[m
+   function guardarCarrito() { store.set("trcg.carrito", carrito); pintarCarrito(); }[m
+[36m@@ -150,8 +277,8 @@[m
+   function agregar(id, cantidad = 1, origen = null) {[m
+     const p = porId.get(id); if (!p) return false;[m
+     const actual = carrito[id] || 0;[m
+[31m-    if (p.stock < 1) { aviso("Este producto está agotado.", true); return false; }[m
+[31m-    if (actual >= p.stock) { aviso(`Solo hay ${p.stock} disponibles de este producto.`, true); return false; }[m
+[32m+[m[32m    if (p.stock < 1) { aviso(p.combo ? "Este combo está agotado." : "Este producto está agotado.", true); return false; }[m
+[32m+[m[32m    if (actual >= p.stock) { aviso(soloHay(p), true); return false; }[m
+     const nuevo = Math.min(actual + cantidad, p.stock), sumadas = nuevo - actual;[m
+     carrito[id] = nuevo; guardarCarrito();[m
+     aviso(sumadas < cantidad[m
+[36m@@ -166,7 +293,7 @@[m
+   function cambiar(id, d) {[m
+     const p = porId.get(id), q = (carrito[id] || 0) + d;[m
+     if (q < 1) return quitar(id);[m
+[31m-    if (q > p.stock) return aviso(`Solo hay ${p.stock} disponibles de este producto.`, true);[m
+[32m+[m[32m    if (q > p.stock) return aviso(soloHay(p), true);[m
+     carrito[id] = q; guardarCarrito();[m
+     ($(`[data-q="${id}"][data-d="${d}"]:not(:disabled)`) || $(`[data-q="${id}"]:not(:disabled)`))?.focus();[m
+   }[m
+[36m@@ -178,17 +305,29 @@[m
+   }[m
+ [m
+   /* EVENTOS */[m
+[31m-  grid.addEventListener("click", e => {[m
+[32m+[m[32m  /* Un solo manejador para las tarjetas del catálogo, de las ofertas y de los combos */[m
+[32m+[m[32m  function clicTarjeta(e) {[m
+     const a = e.target.closest("[data-add]"), f = e.target.closest("[data-fav]");[m
+     if (a) agregar(a.dataset.add, 1, a);[m
+     else if (f) alternarFav(f.dataset.fav);[m
+     else if (e.target.id === "vacio-limpiar") limpiarFiltros();[m
+     else {[m
+[31m-      /* clic en cualquier parte de la tarjeta (imagen, nombre...) abre la ficha del producto */[m
+[31m-      const c = e.target.closest(".card");[m
+[32m+[m[32m      /* clic en cualquier parte de la tarjeta (imagen, nombre...) abre la ficha */[m
+[32m+[m[32m      const c = e.target.closest(".card, .combo");[m
+       if (c) document.dispatchEvent(new CustomEvent("trcg:ver", { detail: { id: c.dataset.id, origen: c } }));[m
+     }[m
+[31m-  });[m
+[32m+[m[32m  }[m
+[32m+[m[32m  [grid, $("#of-pista"), $("#combos-lista")].forEach(el => { if (el) el.addEventListener("click", clicTarjeta); });[m
+[32m+[m[32m  $("#mas")?.addEventListener("click", e => verMas(e.detail === 0));[m
+[32m+[m[32m  $("#of-todas")?.addEventListener("click", verOfertas);[m
+[32m+[m[32m  const pistaOf = $("#of-pista");[m
+[32m+[m[32m  if (pistaOf) {[m
+[32m+[m[32m    const mover = dir => pistaOf.scrollBy({ left: dir * Math.max(240, Math.round(pistaOf.clientWidth * .85)), behavior: reducido ? "auto" : "smooth" });[m
+[32m+[m[32m    $("#of-prev")?.addEventListener("click", () => mover(-1));[m
+[32m+[m[32m    $("#of-sig")?.addEventListener("click", () => mover(1));[m
+[32m+[m[32m    pistaOf.addEventListener("scroll", enFrame(flechasOfertas), { passive: true });[m
+[32m+[m[32m    addEventListener("resize", enFrame(flechasOfertas), { passive: true });[m
+[32m+[m[32m  }[m
+   $("#pagar").onclick = () => {[m
+     abrir(false);[m
+     document.dispatchEvent(new CustomEvent("trcg:comprar", { detail: { items: itemsCarrito(), desdeCarrito: true } }));[m
+[36m@@ -213,6 +352,7 @@[m
+   $("#f-marca").onchange = e => { filtro.marca = e.target.value; render(); };[m
+   $("#f-precio").oninput = e => { filtro.max = Number(e.target.value); $("#o-precio").textContent = fmt(filtro.max); render(); };[m
+   $("#f-stock").onchange = e => { filtro.stock = e.target.checked; render(); };[m
+[32m+[m[32m  $("#f-ofertas")?.addEventListener("change", e => { filtro.ofertas = e.target.checked; render(); });[m
+   $("#orden").onchange = e => { filtro.orden = e.target.value; render(); };[m
+   $("#f-limpiar").onclick = limpiarFiltros;[m
+   $("#btn-fav").onclick = e => {[m
+[36m@@ -222,21 +362,20 @@[m
+     if (filtro.favs) $("#catalogo").scrollIntoView();[m
+   };[m
+   $("#cats").addEventListener("click", e => {[m
+[31m-  const c = e.target.closest("[data-cat]");[m
+[31m-  if (!c) return;[m
+[31m-[m
+[31m-  filtro.cat = c.dataset.cat;[m
+[31m-  pintarChips();[m
+[31m-  render();[m
+[31m-  irACatalogo();[m
+[31m-});[m
+[32m+[m[32m    const c = e.target.closest("[data-cat]");[m
+[32m+[m[32m    if (!c) return;[m
+[32m+[m[32m    filtro.cat = c.dataset.cat;[m
+[32m+[m[32m    pintarChips();[m
+[32m+[m[32m    render();[m
+[32m+[m[32m    irACatalogo();[m
+[32m+[m[32m  });[m
+ [m
+   /* Si una imagen no carga, se muestra el icono de la categoría */[m
+[32m+[m[32m  const catPorImg = new Map([...productos, ...combos].filter(p => p.img).map(p => [p.img, p.cat]));[m
+   document.addEventListener("error", e => {[m
+     const im = e.target;[m
+[31m-    if (!(im instanceof HTMLImageElement) || !im.closest(".img, .mini, .pf-img")) return;[m
+[31m-    const p = productos.find(x => im.getAttribute("src") === x.img);[m
+[31m-    im.replaceWith(Object.assign(document.createElement("span"), { innerHTML: icono(p ? p.cat : "") }).firstChild);[m
+[32m+[m[32m    if (!(im instanceof HTMLImageElement) || !im.closest(".img, .mini, .pf-img, .combo-ico")) return;[m
+[32m+[m[32m    im.replaceWith(Object.assign(document.createElement("span"), { innerHTML: icono(catPorImg.get(im.getAttribute("src")) || "") }).firstChild);[m
+   }, true);[m
+ [m
+   /* MENÚ PRINCIPAL */[m
+[36m@@ -244,11 +383,8 @@[m
+   function abrirMenu(v) { menu.classList.toggle("open", v); menuBtn.setAttribute("aria-expanded", v); }[m
+   function abrirSub(v) { sub.hidden = !v; subBtn.setAttribute("aria-expanded", v); }[m
+   function irACatalogo() {[m
+[31m-  $("#catalogo").scrollIntoView({[m
+[31m-    behavior: "smooth",[m
+[31m-    block: "start"[m
+[31m-  });[m
+[31m-}[m
+[32m+[m[32m    $("#catalogo").scrollIntoView({ behavior: reducido ? "auto" : "smooth", block: "start" });[m
+[32m+[m[32m  }[m
+   sub.innerHTML = ["Todas", ...categorias].map(c => `<li><button type="button" data-menu-cat="${esc(c)}">${esc(c)}</button></li>`).join("");[m
+   menuBtn.onclick = () => abrirMenu(!menu.classList.contains("open"));[m
+   subBtn.onclick = () => abrirSub(sub.hidden);[m
+[36m@@ -271,18 +407,19 @@[m
+   $("#o-precio").textContent = fmt(tope);[m
+   $("#n-fav").textContent = favs.size;[m
+   if (matchMedia("(max-width: 899px)").matches) $("#det-filtros").open = false;[m
+[31m-  pintarCarrito(); render();[m
+[32m+[m[32m  pintarCarrito(); render(); pintarOfertas(); pintarCombos();[m
+ [m
+   /* API para los demás módulos (ficha de producto, compra y efectos) */[m
+   window.TRCG = {[m
+[31m-    productos, categorias, porId, fmt, esc, icono, aviso,[m
+[32m+[m[32m    productos, categorias, combos, porId, fmt, esc, icono, aviso,[m
+     agregar, alternarFav,[m
+     esFav: id => favs.has(id),[m
+     itemsCarrito,[m
+     quitarDelCarrito: ids => { ids.forEach(id => delete carrito[id]); guardarCarrito(); },[m
+     abrirCarrito: () => abrir(true),[m
+     verCategoria: cat => { filtro.cat = cat; pintarChips(); render(); irACatalogo(); },[m
+[31m-    verMarca: m => { filtro.marca = m; $("#f-marca").value = m; render(); irACatalogo(); }[m
+[32m+[m[32m    verMarca: m => { filtro.marca = m; $("#f-marca").value = m; render(); irACatalogo(); },[m
+[32m+[m[32m    verOfertas[m
+   };[m
+   document.dispatchEvent(new CustomEvent("trcg:listo"));[m
+ })();[m
+[1mdiff --git a/js/checkout.js b/js/checkout.js[m
+[1mindex 9d6fe7d..1a3eff0 100644[m
+[1m--- a/js/checkout.js[m
+[1m+++ b/js/checkout.js[m
+[36m@@ -27,7 +27,7 @@[m
+     const p = porId.get(i.id); if (!p || p.stock < 1) return null;[m
+     return { id: p.id, cantidad: Math.max(1, Math.min(Math.floor(Number(i.cantidad)) || 1, p.stock)) };[m
+   }).filter(Boolean);[m
+[31m-  const total = () => ctx.items.reduce((s, i) => s + porId.get(i.id).precio * i.cantidad, 0);[m
+[32m+[m[32m  const total = () => ctx.items.reduce((s, i) => s + porId.get(i.id).venta * i.cantidad, 0); // "venta" = precio actual (con oferta si la tiene)[m
+   const unidades = () => ctx.items.reduce((s, i) => s + i.cantidad, 0);[m
+   const codigoNuevo = () => "TRCG-" + Date.now().toString(36).toUpperCase().slice(-5) + Math.floor(Math.random() * 36).toString(36).toUpperCase();[m
+ [m
+[36m@@ -45,7 +45,7 @@[m
+     const filas = ctx.items.map(i => {[m
+       const p = porId.get(i.id);[m
+       return `<li class="co-item"><span class="mini">${p.img ? `<img src="${esc(p.img)}" alt="">` : icono(p.cat)}</span>[m
+[31m-        <div><p class="n">${esc(p.nombre)}</p><p class="u">${i.cantidad} × ${fmt(p.precio)}</p></div><p class="s">${fmt(p.precio * i.cantidad)}</p></li>`;[m
+[32m+[m[32m        <div><p class="n">${esc(p.nombre)}</p><p class="u">${i.cantidad} × ${fmt(p.venta)}${p.dto ? ` <s class="antes">${fmt(p.precio)}</s>` : ""}${p.combo ? ` · ${p.items.length} piezas` : ""}</p></div><p class="s">${fmt(p.venta * i.cantidad)}</p></li>`;[m
+     }).join("");[m
+     return `<aside class="co-side" aria-label="Resumen del pedido">[m
+       <h3>Tu pedido</h3><ul class="co-items">${filas}</ul>[m
+[36m@@ -94,7 +94,11 @@[m
+     if (d.pago) L.push(`Pago preferido: ${d.pago}`);[m
+     if (d.notas) L.push(`Notas: ${d.notas}`);[m
+     L.push("", b("Productos"));[m
+[31m-    ctx.items.forEach(i => { const p = porId.get(i.id); L.push(`${i.cantidad} x ${p.nombre} (ref. ${p.id}) - ${fmt(p.precio)} c/u = ${fmt(p.precio * i.cantidad)}`); });[m
+[32m+[m[32m    ctx.items.forEach(i => {[m
+[32m+[m[32m      const p = porId.get(i.id);[m
+[32m+[m[32m      L.push(`${i.cantidad} x ${p.nombre}${p.combo ? " (combo)" : ""} (ref. ${p.id}) - ${fmt(p.venta)} c/u${p.dto ? ` (oferta -${p.dto}%)` : ""} = ${fmt(p.venta * i.cantidad)}`);[m
+[32m+[m[32m      if (p.combo) p.items.forEach(x => L.push(`   - ${porId.get(x).nombre}`)); // piezas del combo[m
+[32m+[m[32m    });[m
+     L.push("", `${b("Total de referencia")}: ${fmt(total())}`, "El total es de referencia: la tienda confirma disponibilidad, envío y precio final antes de cobrar.");[m
+     return L.join("\n");[m
+   }[m
+[1mdiff --git a/js/config.js b/js/config.js[m
+[1mindex c2f7b85..9ddae3f 100644[m
+[1m--- a/js/config.js[m
+[1m+++ b/js/config.js[m
+[36m@@ -1,16 +1,16 @@[m
+[31m-// CONFIGURACIÓN DE LA TIENDA: completa estos datos para que los pedidos lleguen a ti.[m
+[32m+[m[32m// CONFIGURACIÓN DE LA TIENDA: datos para que los pedidos lleguen a ti.[m
+ // La página no tiene servidor, así que el pedido se envía desde el teléfono o la computadora del cliente[m
+[31m-// por WhatsApp o por correo (con el texto ya armado). Mientras estén vacíos, el cliente solo puede copiar el resumen.[m
+[32m+[m[32m// por WhatsApp o por correo (con el texto ya armado). Si dejas WhatsApp o correo vacíos, ese botón no aparece y el cliente solo puede copiar el resumen.[m
+ window.TIENDA = {[m
+   nombre: "Tus Reales Componentes Gamers",[m
+ [m
+[31m-  // PENDIENTE: tu WhatsApp con código de país, solo números (ejemplo RD: "18095551234"). Activa "Enviar por WhatsApp".[m
+[31m-  whatsapp: "",[m
+[32m+[m[32m  // Tu WhatsApp con código de país, solo números (RD: 1 + 809/829/849 + número). Activa "Enviar por WhatsApp".[m
+[32m+[m[32m  whatsapp: "18099247413",[m
+ [m
+[31m-  // PENDIENTE: el correo donde quieres recibir pedidos (ejemplo: "ventas@tutienda.com"). Activa "Enviar por correo".[m
+[31m-  email: "",[m
+[32m+[m[32m  // El correo donde recibes los pedidos. Activa "Enviar por correo".[m
+[32m+[m[32m  email: "algenissperezz05@gmail.com",[m
+ [m
+   // Formas de pago que el cliente puede elegir como preferencia (la tienda las confirma al contactarlo).[m
+[31m-  // Cambia esta lista por las que realmente aceptas.[m
+[32m+[m[32m  // OJO: esta lista es de ejemplo. Cámbiala por las que realmente aceptas.[m
+   pagos: ["Efectivo", "Transferencia bancaria", "Tarjeta (se coordina con la tienda)"][m
+ };[m
+[1mdiff --git a/js/data.js b/js/data.js[m
+[1mindex b56002c..841cf4b 100644[m
+[1m--- a/js/data.js[m
+[1m+++ b/js/data.js[m
+[36m@@ -1,82 +1,175 @@[m
+ // CATÁLOGO. Modelos reales con su marca y categoría.[m
+ // IMPORTANTE: los precios (RD$) y las existencias siguen siendo de referencia; confírmalos con tu inventario real.[m
+ // Cada producto: id único, cat (una de "categorias"), marca, nombre, precio (entero en RD$), stock (entero),[m
+[31m-// y opcionales: nuevo:true, img:"assets/images/archivo.ext".[m
+[31m-// Para usar una foto real, guarda el archivo en assets/images/ y cambia el valor de "img" (solo fotos con permiso de uso).[m
+[32m+[m[32m// y opcionales: nuevo:true, oferta:<precio rebajado en RD$, menor que "precio">, img:"assets/images/archivo.ext".[m
+[32m+[m[32m// Las ofertas salen en la sección "Ofertas" del inicio. Para quitar una oferta, borra su campo "oferta" (las que hay son de ejemplo).[m
+[32m+[m[32m// Para usar una foto real, guarda el archivo en assets/images/ con el nombre del id (ejemplo: cpu-01.png) o cambia el valor de "img"[m
+[32m+[m[32m// (solo fotos con permiso de uso). Si falta la foto, la tarjeta muestra el icono de la categoría.[m
+ window.CATALOGO = {[m
+   moneda: "RD$",[m
+   categorias: [[m
+[31m-  "Tarjetas gráficas",[m
+[31m-  "Procesadores",[m
+[31m-  "Memoria RAM",[m
+[31m-  "Almacenamiento",[m
+[31m-  "Monitores",[m
+[31m-  "Periféricos",[m
+[31m-  "Placas base",[m
+[31m-  "Refrigeración",[m
+[31m-  "Fuentes de alimentación",[m
+[31m-  "Cajas PC",[m
+[31m-  "Cámaras y streaming",[m
+[31m-  "Audio",[m
+[31m-  "Accesorios gamer",[m
+[31m-  "Figuras 3D"[m
+[31m-],[m
+[32m+[m[32m    "Tarjetas gráficas",[m
+[32m+[m[32m    "Procesadores",[m
+[32m+[m[32m    "Memoria RAM",[m
+[32m+[m[32m    "Almacenamiento",[m
+[32m+[m[32m    "Monitores",[m
+[32m+[m[32m    "Periféricos",[m
+[32m+[m[32m    "Placas base",[m
+[32m+[m[32m    "Refrigeración",[m
+[32m+[m[32m    "Fuentes de alimentación",[m
+[32m+[m[32m    "Cajas PC",[m
+[32m+[m[32m    "Cámaras y streaming",[m
+[32m+[m[32m    "Audio",[m
+[32m+[m[32m    "Accesorios gamer",[m
+[32m+[m[32m    "Figuras 3D"[m
+[32m+[m[32m  ],[m
+   productos: [[m
+[31m-    { id: "gpu-01", cat: "Tarjetas gráficas", marca: "ASUS", nombre: "ASUS ROG Strix GeForce RTX 2080 8GB GDDR6", precio: 38500, stock: 4, nuevo: true,  img: "assets/images/gpu-01.png" },[m
+[32m+[m[41m    [m
+[32m+[m[32m    // ===== PRODUCTOS NUEVOS (modelos reales; precios y existencias de referencia) =====[m
+[32m+[m
+[32m+[m[32m    // TARJETAS GRÁFICAS[m
+[32m+[m[32m    { id: "gpu-01", cat: "Tarjetas gráficas", marca: "ASUS", nombre: "ASUS ROG Strix GeForce RTX 2080 8GB GDDR6", precio: 38500, oferta: 34900, stock: 4, nuevo: true,  img: "assets/images/gpu-01.png" },[m
+     { id: "gpu-02", cat: "Tarjetas gráficas", marca: "MSI", nombre: "MSI GeForce RTX 4070 Ventus 2X 12GB GDDR6X", precio: 62900, stock: 0, img: "assets/images/gpu-02.png" },[m
+[31m-    { id: "cpu-01", cat: "Procesadores", marca: "AMD", nombre: "AMD Ryzen 5 5600X 6 núcleos 4.6 GHz AM4", precio: 18900, stock: 8, img: "assets/images/cpu-01.png" },[m
+[31m-    { id: "cpu-02", cat: "Procesadores", marca: "Intel", nombre: "Intel Core i5-13600K 14 núcleos LGA1700", precio: 27400, stock: 3, nuevo: true, img: "assets/images/cpu-02.png" },[m
+[31m-    { id: "ram-01", cat: "Memoria RAM", marca: "Corsair", nombre: "Corsair Vengeance LPX 16GB (2x8GB) DDR4 3200 MHz", precio: 5200, stock: 15, img: "assets/images/ram-01.png" },[m
+[31m-    { id: "ram-02", cat: "Memoria RAM", marca: "Kingston", nombre: "Kingston FURY Beast 32GB (2x16GB) DDR4 3200 MHz", precio: 8900, stock: 6, img: "assets/images/ram-02.png" },[m
+[31m-    { id: "ssd-01", cat: "Almacenamiento", marca: "Western Digital", nombre: "WD Blue SN570 1TB SSD NVMe M.2", precio: 4300, stock: 20, img: "assets/images/ssd-01.png" },[m
+[31m-    { id: "ssd-02", cat: "Almacenamiento", marca: "Samsung", nombre: "Samsung 980 PRO 1TB SSD NVMe PCIe 4.0", precio: 9800, stock: 2, img: "assets/images/ssd-02.png" },[m
+[31m-    { id: "mon-01", cat: "Monitores", marca: "AOC", nombre: "AOC 24G2 24\" Full HD IPS 144 Hz", precio: 14500, stock: 5, img: "assets/images/mon-01.png" },[m
+[31m-    { id: "mon-02", cat: "Monitores", marca: "LG", nombre: "LG UltraGear 27GL850 27\" QHD Nano IPS 144 Hz", precio: 23900, stock: 0, img: "assets/images/mon-02.png" },[m
+[31m-    { id: "per-01", cat: "Periféricos", marca: "Redragon", nombre: "Redragon Kumara K552 Teclado mecánico TKL RGB", precio: 3600, stock: 12, nuevo: true, img: "assets/images/per-01.png" },[m
+[31m-    { id: "per-02", cat: "Periféricos", marca: "Logitech", nombre: "Logitech G203 LIGHTSYNC Ratón gaming RGB", precio: 1900, stock: 30, img: "assets/images/per-02.png" },[m
+[31m-    { id: "per-03", cat: "Periféricos", marca: "HyperX", nombre: "HyperX Cloud II Gaming Headset", precio: 4500, stock: 8, img: "assets/images/per-03.png" },[m
+[31m-    // TARJETA GRÁFICA[m
+     { id: "gpu-03", cat: "Tarjetas gráficas", marca: "ASUS ROG", nombre: "ROG Astral GeForce RTX 5090 32GB GDDR7", precio: 250000, stock: 1, nuevo: true, img: "assets/images/gpu-03.png" },[m
+[31m-    // PROCESADOR[m
+[32m+[m[32m    { id: "gpu-04", cat: "Tarjetas gráficas", marca: "Gigabyte", nombre: "Gigabyte GeForce RTX 5060 Windforce OC 8GB GDDR7", precio: 36900, stock: 6, nuevo: true, img: "assets/images/gpu-04.png" },[m
+[32m+[m[32m    { id: "gpu-05", cat: "Tarjetas gráficas", marca: "MSI", nombre: "MSI GeForce RTX 5060 Ti Ventus 2X OC 16GB GDDR7", precio: 52900, stock: 4, nuevo: true, img: "assets/images/gpu-05.png" },[m
+[32m+[m[32m    { id: "gpu-06", cat: "Tarjetas gráficas", marca: "Gigabyte", nombre: "Gigabyte GeForce RTX 5070 Windforce OC 12GB GDDR7", precio: 66900, stock: 3, nuevo: true, img: "assets/images/gpu-06.png" },[m
+[32m+[m[32m    { id: "gpu-07", cat: "Tarjetas gráficas", marca: "ASUS", nombre: "ASUS Prime GeForce RTX 5070 Ti OC 16GB GDDR7", precio: 89900, stock: 2, nuevo: true, img: "assets/images/gpu-07.png" },[m
+[32m+[m[32m    { id: "gpu-08", cat: "Tarjetas gráficas", marca: "MSI", nombre: "MSI GeForce RTX 5080 Gaming Trio OC 16GB GDDR7", precio: 121900, stock: 2, nuevo: true, img: "assets/images/gpu-08.png" },[m
+[32m+[m[32m    { id: "gpu-09", cat: "Tarjetas gráficas", marca: "ASUS", nombre: "ASUS Dual GeForce RTX 4060 OC 8GB GDDR6", precio: 34900, oferta: 31900, stock: 7, img: "assets/images/gpu-09.png" },[m
+[32m+[m[32m    { id: "gpu-10", cat: "Tarjetas gráficas", marca: "Sapphire", nombre: "Sapphire Pulse Radeon RX 9070 XT 16GB GDDR6", precio: 69900, stock: 3, nuevo: true, img: "assets/images/gpu-10.png" },[m
+[32m+[m[32m    { id: "gpu-11", cat: "Tarjetas gráficas", marca: "XFX", nombre: "XFX Swift Radeon RX 9070 16GB GDDR6", precio: 63900, stock: 3, img: "assets/images/gpu-11.png" },[m
+[32m+[m[32m    { id: "gpu-12", cat: "Tarjetas gráficas", marca: "Sapphire", nombre: "Sapphire Pulse Radeon RX 9060 XT 16GB GDDR6", precio: 41900, stock: 5, nuevo: true, img: "assets/images/gpu-12.png" },[m
+[32m+[m[32m    { id: "gpu-13", cat: "Tarjetas gráficas", marca: "ASRock", nombre: "ASRock Intel Arc B580 Challenger OC 12GB GDDR6", precio: 28900, stock: 4, img: "assets/images/gpu-13.png" },[m
+[32m+[m
+[32m+[m[32m    // PROCESADORES[m
+[32m+[m[32m    { id: "cpu-01", cat: "Procesadores", marca: "AMD", nombre: "AMD Ryzen 5 5600X 6 núcleos 4.6 GHz AM4", precio: 18900, oferta: 16900, stock: 8, img: "assets/images/cpu-01.png" },[m
+[32m+[m[32m    { id: "cpu-02", cat: "Procesadores", marca: "Intel", nombre: "Intel Core i5-13600K 14 núcleos LGA1700", precio: 27400, stock: 3, nuevo: true, img: "assets/images/cpu-02.png" },[m
+     { id: "cpu-03", cat: "Procesadores", marca: "AMD", nombre: "AMD Ryzen 9 9950X3D 16 núcleos AM5", precio: 45000, stock: 2, nuevo: true, img: "assets/images/cpu-03.png" },[m
+[31m-    // PLACA BASE[m
+[32m+[m[32m    { id: "cpu-04", cat: "Procesadores", marca: "AMD", nombre: "AMD Ryzen 5 5600 6 núcleos 4.4 GHz AM4", precio: 16900, stock: 9, img: "assets/images/cpu-04.png" },[m
+[32m+[m[32m    { id: "cpu-05", cat: "Procesadores", marca: "AMD", nombre: "AMD Ryzen 5 7600 6 núcleos 5.1 GHz AM5", precio: 19900, stock: 6, img: "assets/images/cpu-05.png" },[m
+[32m+[m[32m    { id: "cpu-06", cat: "Procesadores", marca: "AMD", nombre: "AMD Ryzen 7 7800X3D 8 núcleos AM5", precio: 34900, stock: 3, img: "assets/images/cpu-06.png" },[m
+[32m+[m[32m    { id: "cpu-07", cat: "Procesadores", marca: "AMD", nombre: "AMD Ryzen 5 9600X 6 núcleos 5.4 GHz AM5", precio: 21900, stock: 5, nuevo: true, img: "assets/images/cpu-07.png" },[m
+[32m+[m[32m    { id: "cpu-08", cat: "Procesadores", marca: "AMD", nombre: "AMD Ryzen 7 9800X3D 8 núcleos AM5", precio: 38900, stock: 2, nuevo: true, img: "assets/images/cpu-08.png" },[m
+[32m+[m[32m    { id: "cpu-09", cat: "Procesadores", marca: "Intel", nombre: "Intel Core i5-12400F 6 núcleos LGA1700", precio: 12900, stock: 10, img: "assets/images/cpu-09.png" },[m
+[32m+[m[32m    { id: "cpu-10", cat: "Procesadores", marca: "Intel", nombre: "Intel Core i5-14600K 14 núcleos LGA1700", precio: 28900, stock: 4, img: "assets/images/cpu-10.png" },[m
+[32m+[m[32m    { id: "cpu-11", cat: "Procesadores", marca: "Intel", nombre: "Intel Core i7-14700K 20 núcleos LGA1700", precio: 38900, stock: 3, img: "assets/images/cpu-11.png" },[m
+[32m+[m[32m    { id: "cpu-12", cat: "Procesadores", marca: "Intel", nombre: "Intel Core Ultra 7 265K 20 núcleos LGA1851", precio: 33900, stock: 3, nuevo: true, img: "assets/images/cpu-12.png" },[m
+[32m+[m
+[32m+[m[32m    // PLACAS BASE[m
+     { id: "mb-01", cat: "Placas base", marca: "ASUS ROG", nombre: "ROG Crosshair X870E Hero AM5 DDR5", precio: 42000, stock: 2, img: "assets/images/mb-01.png" },[m
+[32m+[m[32m    { id: "mb-02", cat: "Placas base", marca: "Gigabyte", nombre: "Gigabyte B550M DS3H AM4 DDR4 Micro-ATX", precio: 6900, stock: 8, img: "assets/images/mb-02.png" },[m
+[32m+[m[32m    { id: "mb-03", cat: "Placas base", marca: "ASUS", nombre: "ASUS TUF Gaming B550-PLUS WiFi II AM4 DDR4 ATX", precio: 12900, stock: 6, img: "assets/images/mb-03.png" },[m
+[32m+[m[32m    { id: "mb-04", cat: "Placas base", marca: "MSI", nombre: "MSI MAG B650 Tomahawk WiFi AM5 DDR5 ATX", precio: 15900, stock: 4, img: "assets/images/mb-04.png" },[m
+[32m+[m[32m    { id: "mb-05", cat: "Placas base", marca: "ASUS ROG", nombre: "ROG Strix B650E-F Gaming WiFi AM5 DDR5 ATX", precio: 21900, stock: 3, img: "assets/images/mb-05.png" },[m
+[32m+[m[32m    { id: "mb-06", cat: "Placas base", marca: "ASUS", nombre: "ASUS TUF Gaming B760-PLUS WiFi D4 LGA1700 DDR4 ATX", precio: 13900, stock: 5, img: "assets/images/mb-06.png" },[m
+[32m+[m[32m    { id: "mb-07", cat: "Placas base", marca: "MSI", nombre: "MSI MAG Z790 Tomahawk WiFi LGA1700 DDR5 ATX", precio: 18900, stock: 3, img: "assets/images/mb-07.png" },[m
+[32m+[m[32m    { id: "mb-08", cat: "Placas base", marca: "Gigabyte", nombre: "Gigabyte Z890 AORUS Elite WiFi7 LGA1851 DDR5 ATX", precio: 21900, stock: 2, nuevo: true, img: "assets/images/mb-08.png" },[m
+[32m+[m
+     // MEMORIA RAM[m
+[32m+[m[32m    { id: "ram-01", cat: "Memoria RAM", marca: "Corsair", nombre: "Corsair Vengeance LPX 16GB (2x8GB) DDR4 3200 MHz", precio: 5200, stock: 15, img: "assets/images/ram-01.png" },[m
+[32m+[m[32m    { id: "ram-02", cat: "Memoria RAM", marca: "Kingston", nombre: "Kingston FURY Beast 32GB (2x16GB) DDR4 3200 MHz", precio: 8900, oferta: 7500, stock: 6, img: "assets/images/ram-02.png" },[m
+     { id: "ram-04", cat: "Memoria RAM", marca: "Corsair", nombre: "Dominator Titanium 64GB (2x32GB) DDR5", precio: 18000, stock: 4, img: "assets/images/ram-04.png" },[m
+[31m-    // SSD[m
+[32m+[m[32m    { id: "ram-05", cat: "Memoria RAM", marca: "Corsair", nombre: "Corsair Vengeance 32GB (2x16GB) DDR5 6000 MHz CL30", precio: 9900, stock: 8, img: "assets/images/ram-05.png" },[m
+[32m+[m[32m    { id: "ram-06", cat: "Memoria RAM", marca: "G.Skill", nombre: "G.Skill Trident Z5 RGB 32GB (2x16GB) DDR5 6000 MHz CL30", precio: 11900, stock: 5, img: "assets/images/ram-06.png" },[m
+[32m+[m[32m    { id: "ram-07", cat: "Memoria RAM", marca: "Kingston", nombre: "Kingston FURY Beast 32GB (2x16GB) DDR5 6000 MHz", precio: 9500, stock: 7, img: "assets/images/ram-07.png" },[m
+[32m+[m[32m    { id: "ram-08", cat: "Memoria RAM", marca: "TeamGroup", nombre: "TeamGroup T-Force Delta RGB 16GB (2x8GB) DDR4 3200 MHz", precio: 5900, stock: 10, img: "assets/images/ram-08.png" },[m
+[32m+[m[32m    { id: "ram-09", cat: "Memoria RAM", marca: "Crucial", nombre: "Crucial Pro 32GB (2x16GB) DDR5 5600 MHz", precio: 8900, stock: 6, img: "assets/images/ram-09.png" },[m
+[32m+[m
+[32m+[m[32m    // ALMACENAMIENTO[m
+[32m+[m[32m    { id: "ssd-01", cat: "Almacenamiento", marca: "Western Digital", nombre: "WD Blue SN570 1TB SSD NVMe M.2", precio: 4300, oferta: 3700, stock: 20, img: "assets/images/ssd-01.png" },[m
+[32m+[m[32m    { id: "ssd-02", cat: "Almacenamiento", marca: "Samsung", nombre: "Samsung 980 PRO 1TB SSD NVMe PCIe 4.0", precio: 9800, stock: 2, img: "assets/images/ssd-02.png" },[m
+     { id: "ssd-03", cat: "Almacenamiento", marca: "Samsung", nombre: "Samsung 9100 PRO 4TB NVMe PCIe 5.0", precio: 32000, stock: 3, img: "assets/images/ssd-03.png" },[m
+[31m-   // MONITOR[m
+[32m+[m[32m    { id: "ssd-04", cat: "Almacenamiento", marca: "Crucial", nombre: "Crucial P3 Plus 1TB SSD NVMe PCIe 4.0 M.2", precio: 4900, stock: 14, img: "assets/images/ssd-04.png" },[m
+[32m+[m[32m    { id: "ssd-05", cat: "Almacenamiento", marca: "Western Digital", nombre: "WD Black SN850X 2TB SSD NVMe PCIe 4.0 M.2", precio: 13900, oferta: 11900, stock: 5, img: "assets/images/ssd-05.png" },[m
+[32m+[m[32m    { id: "ssd-06", cat: "Almacenamiento", marca: "Samsung", nombre: "Samsung 990 PRO 2TB SSD NVMe PCIe 4.0 M.2", precio: 16900, stock: 4, img: "assets/images/ssd-06.png" },[m
+[32m+[m[32m    { id: "ssd-07", cat: "Almacenamiento", marca: "Crucial", nombre: "Crucial MX500 1TB SSD SATA 2.5\"", precio: 6500, stock: 9, img: "assets/images/ssd-07.png" },[m
+[32m+[m[32m    { id: "hdd-01", cat: "Almacenamiento", marca: "Seagate", nombre: "Seagate BarraCuda 2TB Disco duro 3.5\" 7200 RPM", precio: 4900, stock: 12, img: "assets/images/hdd-01.png" },[m
+[32m+[m[32m    { id: "ext-01", cat: "Almacenamiento", marca: "Samsung", nombre: "Samsung T7 1TB SSD externo portátil USB 3.2", precio: 8900, stock: 6, img: "assets/images/ext-01.png" },[m
+[32m+[m
+[32m+[m[32m    // MONITORES[m
+[32m+[m[32m    { id: "mon-01", cat: "Monitores", marca: "AOC", nombre: "AOC 24G2 24\" Full HD IPS 144 Hz", precio: 14500, oferta: 12900, stock: 5, img: "assets/images/mon-01.png" },[m
+[32m+[m[32m    { id: "mon-02", cat: "Monitores", marca: "LG", nombre: "LG UltraGear 27GL850 27\" QHD Nano IPS 144 Hz", precio: 23900, stock: 0, img: "assets/images/mon-02.png" },[m
+     { id: "mon-03", cat: "Monitores", marca: "ASUS ROG", nombre: "ROG Swift OLED PG32UCDM 32 pulgadas 4K 240Hz", precio: 65000, stock: 2, nuevo: true, img: "assets/images/mon-03.png" },[m
+[31m-   // TECLADO[m
+[32m+[m[32m    { id: "mon-04", cat: "Monitores", marca: "Gigabyte", nombre: "Gigabyte G27F 2 27\" Full HD IPS 165 Hz", precio: 13900, stock: 6, img: "assets/images/mon-04.png" },[m
+[32m+[m[32m    { id: "mon-05", cat: "Monitores", marca: "ASUS", nombre: "ASUS TUF Gaming VG27AQ3A 27\" QHD IPS 180 Hz", precio: 21900, stock: 4, img: "assets/images/mon-05.png" },[m
+[32m+[m[32m    { id: "mon-06", cat: "Monitores", marca: "Samsung", nombre: "Samsung Odyssey G5 27\" QHD 144 Hz curvo", precio: 19900, stock: 5, img: "assets/images/mon-06.png" },[m
+[32m+[m[32m    { id: "mon-07", cat: "Monitores", marca: "LG", nombre: "LG UltraGear 27GR95QE 27\" OLED QHD 240 Hz", precio: 54900, stock: 2, nuevo: true, img: "assets/images/mon-07.png" },[m
+[32m+[m[32m    { id: "mon-08", cat: "Monitores", marca: "Alienware", nombre: "Alienware AW3423DWF 34\" QD-OLED ultrapanorámico 165 Hz", precio: 59900, stock: 2, img: "assets/images/mon-08.png" },[m
+[32m+[m
+[32m+[m[32m    // PERIFÉRICOS[m
+[32m+[m[32m    { id: "per-01", cat: "Periféricos", marca: "Redragon", nombre: "Redragon Kumara K552 Teclado mecánico TKL RGB", precio: 3600, oferta: 2900, stock: 12, nuevo: true, img: "assets/images/per-01.png" },[m
+[32m+[m[32m    { id: "per-02", cat: "Periféricos", marca: "Logitech", nombre: "Logitech G203 LIGHTSYNC Ratón gaming RGB", precio: 1900, stock: 30, img: "assets/images/per-02.png" },[m
+[32m+[m[32m    { id: "per-03", cat: "Periféricos", marca: "HyperX", nombre: "HyperX Cloud II Gaming Headset", precio: 4500, oferta: 3600, stock: 8, img: "assets/images/per-03.png" },[m
+     { id: "per-04", cat: "Periféricos", marca: "Wooting", nombre: "Wooting 80HE Teclado gaming Hall Effect", precio: 15000, stock: 3, img: "assets/images/per-04.png" },[m
+[31m-   // MOUSE GAMER[m
+     { id: "per-05", cat: "Periféricos", marca: "Logitech G", nombre: "PRO X SUPERLIGHT 2 Ratón gaming inalámbrico", precio: 9500, stock: 4, img: "assets/images/per-05.png" },[m
+[31m-   // AURICULARES[m
+     { id: "per-06", cat: "Periféricos", marca: "Audeze", nombre: "Maxwell Auriculares gaming inalámbricos", precio: 22000, stock: 2, img: "assets/images/per-06.png" },[m
+[31m-   // REFRIGERACIÓN[m
+[31m-    { id: "cool-01", cat: "Refrigeración", marca: "ARCTIC", nombre: "Liquid Freezer III 360 A-RGB", precio: 11000, stock: 3, img: "assets/images/cool-01.png" },[m
+[31m-   // FUENTE DE ALIMENTACIÓN[m
+[32m+[m[32m    { id: "per-07", cat: "Periféricos", marca: "Logitech G", nombre: "Logitech G PRO X TKL LIGHTSPEED Teclado mecánico inalámbrico", precio: 14900, stock: 3, img: "assets/images/per-07.png" },[m
+[32m+[m[32m    { id: "per-08", cat: "Periféricos", marca: "Corsair", nombre: "Corsair K70 RGB PRO Teclado mecánico", precio: 11900, stock: 4, img: "assets/images/per-08.png" },[m
+[32m+[m[32m    { id: "per-09", cat: "Periféricos", marca: "Razer", nombre: "Razer BlackWidow V4 X Teclado mecánico RGB", precio: 9900, stock: 5, img: "assets/images/per-09.png" },[m
+[32m+[m[32m    { id: "per-10", cat: "Periféricos", marca: "Redragon", nombre: "Redragon K630 Dragonborn Teclado mecánico 60% RGB", precio: 3200, stock: 15, img: "assets/images/per-10.png" },[m
+[32m+[m[32m    { id: "per-11", cat: "Periféricos", marca: "Razer", nombre: "Razer DeathAdder V3 Ratón gaming ergonómico", precio: 6500, stock: 8, img: "assets/images/per-11.png" },[m
+[32m+[m[32m    { id: "per-12", cat: "Periféricos", marca: "Logitech G", nombre: "Logitech G502 HERO Ratón gaming", precio: 4500, oferta: 3700, stock: 14, img: "assets/images/per-12.png" },[m
+[32m+[m[32m    { id: "per-13", cat: "Periféricos", marca: "Razer", nombre: "Razer Viper V3 Pro Ratón gaming inalámbrico", precio: 12900, stock: 3, nuevo: true, img: "assets/images/per-13.png" },[m
+[32m+[m[32m    { id: "per-14", cat: "Periféricos", marca: "Redragon", nombre: "Redragon M711 Cobra Ratón gaming RGB", precio: 1600, stock: 25, img: "assets/images/per-14.png" },[m
+[32m+[m[32m    { id: "per-15", cat: "Periféricos", marca: "HyperX", nombre: "HyperX Cloud III Auriculares gaming", precio: 6900, stock: 7, img: "assets/images/per-15.png" },[m
+[32m+[m[32m    { id: "per-16", cat: "Periféricos", marca: "SteelSeries", nombre: "SteelSeries Arctis Nova 7 Auriculares gaming inalámbricos", precio: 14500, stock: 3, img: "assets/images/per-16.png" },[m
+[32m+[m[32m    { id: "per-17", cat: "Periféricos", marca: "Razer", nombre: "Razer BlackShark V2 X Auriculares gaming", precio: 4200, stock: 9, img: "assets/images/per-17.png" },[m
+[32m+[m
+[32m+[m[32m    // REFRIGERACIÓN[m
+[32m+[m[32m    { id: "cool-01", cat: "Refrigeración", marca: "ARCTIC", nombre: "Liquid Freezer III 360 A-RGB", precio: 11000, oferta: 9500, stock: 3, img: "assets/images/cool-01.png" },[m
+[32m+[m[32m    { id: "cool-02", cat: "Refrigeración", marca: "DeepCool", nombre: "DeepCool AK620 Disipador de aire doble torre", precio: 4900, stock: 8, img: "assets/images/cool-02.png" },[m
+[32m+[m[32m    { id: "cool-03", cat: "Refrigeración", marca: "Cooler Master", nombre: "Cooler Master Hyper 212 Black Edition Disipador de aire", precio: 2900, stock: 10, img: "assets/images/cool-03.png" },[m
+[32m+[m[32m    { id: "cool-04", cat: "Refrigeración", marca: "Noctua", nombre: "Noctua NH-D15 Disipador de aire doble torre", precio: 8900, stock: 3, img: "assets/images/cool-04.png" },[m
+[32m+[m[32m    { id: "cool-05", cat: "Refrigeración", marca: "ARCTIC", nombre: "ARCTIC Liquid Freezer III 240 A-RGB", precio: 8500, stock: 4, img: "assets/images/cool-05.png" },[m
+[32m+[m[32m    { id: "cool-06", cat: "Refrigeración", marca: "ARCTIC", nombre: "ARCTIC P12 PWM PST Ventiladores 120 mm (paquete de 5)", precio: 2400, stock: 12, img: "assets/images/cool-06.png" },[m
+[32m+[m
+[32m+[m[32m    // FUENTES DE ALIMENTACIÓN[m
+[32m+[m[41m   [m
+     { id: "psu-01", cat: "Fuentes de alimentación", marca: "Seasonic", nombre: "PRIME TX-1300 Fuente 1300W 80 PLUS Titanium", precio: 24000, stock: 2, img: "assets/images/psu-01.png" },[m
+[31m-   // CAJA PC[m
+[32m+[m[32m    { id: "psu-02", cat: "Fuentes de alimentación", marca: "Corsair", nombre: "Corsair CV650 Fuente 650W 80 PLUS Bronze", precio: 4500, stock: 9, img: "assets/images/psu-02.png" },[m
+[32m+[m[32m    { id: "psu-03", cat: "Fuentes de alimentación", marca: "Corsair", nombre: "Corsair RM750e Fuente 750W 80 PLUS Gold modular", precio: 8900, oferta: 7900, stock: 6, img: "assets/images/psu-03.png" },[m
+[32m+[m[32m    { id: "psu-04", cat: "Fuentes de alimentación", marca: "MSI", nombre: "MSI MAG A650BN Fuente 650W 80 PLUS Bronze", precio: 4200, stock: 8, img: "assets/images/psu-04.png" },[m
+[32m+[m[32m    { id: "psu-05", cat: "Fuentes de alimentación", marca: "Cooler Master", nombre: "Cooler Master MWE Gold 850 V2 Full Modular Fuente 850W 80 PLUS Gold", precio: 8500, stock: 5, img: "assets/images/psu-05.png" },[m
+[32m+[m[32m    { id: "psu-06", cat: "Fuentes de alimentación", marca: "Seasonic", nombre: "Seasonic FOCUS GX-850 Fuente 850W 80 PLUS Gold modular", precio: 11500, stock: 4, img: "assets/images/psu-06.png" },[m
+[32m+[m
+[32m+[m[32m    // CAJAS PC[m
+     { id: "case-01", cat: "Cajas PC", marca: "Lian Li", nombre: "O11D EVO RGB Torre gaming panorámica", precio: 16000, stock: 3, img: "assets/images/case-01.png" },[m
+[31m-   // CÁMARA PARA STREAMING[m
+[32m+[m[32m    { id: "case-02", cat: "Cajas PC", marca: "Corsair", nombre: "Corsair 4000D Airflow Torre media ATX", precio: 7900, oferta: 6900, stock: 7, img: "assets/images/case-02.png" },[m
+[32m+[m[32m    { id: "case-03", cat: "Cajas PC", marca: "NZXT", nombre: "NZXT H5 Flow Torre media ATX", precio: 7500, stock: 5, img: "assets/images/case-03.png" },[m
+[32m+[m[32m    { id: "case-04", cat: "Cajas PC", marca: "Cooler Master", nombre: "Cooler Master MasterBox Q300L Torre Micro-ATX", precio: 3500, stock: 9, img: "assets/images/case-04.png" },[m
+[32m+[m[32m    { id: "case-05", cat: "Cajas PC", marca: "Lian Li", nombre: "Lian Li LANCOOL 216 Torre media ATX", precio: 9900, stock: 4, img: "assets/images/case-05.png" },[m
+[32m+[m[32m    { id: "case-06", cat: "Cajas PC", marca: "Fractal Design", nombre: "Fractal Design North Torre media ATX", precio: 11900, stock: 3, img: "assets/images/case-06.png" },[m
+[32m+[m
+[32m+[m[32m    // CÁMARAS Y STREAMING[m
+     { id: "cam-01", cat: "Cámaras y streaming", marca: "Elgato", nombre: "Facecam 4K Webcam Ultra HD 60 FPS", precio: 12000, stock: 4, img: "assets/images/cam-01.png" },[m
+[31m-   // CAPTURADORA[m
+     { id: "cam-02", cat: "Cámaras y streaming", marca: "Elgato", nombre: "4K X Capturadora de vídeo HDMI", precio: 18000, stock: 2, img: "assets/images/cam-02.png" },[m
+[31m-   // MICRÓFONO[m
+[32m+[m[32m    { id: "cam-03", cat: "Cámaras y streaming", marca: "Logitech", nombre: "Logitech C920 HD Pro Webcam Full HD 1080p", precio: 3900, stock: 12, img: "assets/images/cam-03.png" },[m
+[32m+[m[32m    { id: "cam-04", cat: "Cámaras y streaming", marca: "Logitech", nombre: "Logitech StreamCam Webcam Full HD 1080p 60 fps", precio: 7900, stock: 5, img: "assets/images/cam-04.png" },[m
+[32m+[m[32m    { id: "cam-05", cat: "Cámaras y streaming", marca: "Elgato", nombre: "Elgato HD60 X Capturadora de vídeo 4K HDR", precio: 10900, stock: 4, img: "assets/images/cam-05.png" },[m
+[32m+[m
+[32m+[m[32m    // AUDIO[m
+     { id: "aud-01", cat: "Audio", marca: "Shure", nombre: "SM7dB Micrófono dinámico para streaming", precio: 35000, stock: 2, img: "assets/images/aud-01.png" },[m
+[31m-   // CONTROL DE STREAMING[m
+[31m-    { id: "str-01", cat: "Cámaras y streaming", marca: "Elgato", nombre: "Stream Deck XL Controlador de 32 teclas", precio: 14000, stock: 3, img: "assets/images/str-01.png" },[m
+[31m-   // FIGURA 3D DECORATIVA[m
+[32m+[m[32m    { id: "aud-02", cat: "Audio", marca: "Blue", nombre: "Blue Yeti Micrófono USB de condensador", precio: 6500, oferta: 5500, stock: 8, img: "assets/images/aud-02.png" },[m
+[32m+[m[32m    { id: "aud-03", cat: "Audio", marca: "HyperX", nombre: "HyperX QuadCast S Micrófono USB RGB", precio: 7900, stock: 5, img: "assets/images/aud-03.png" },[m
+[32m+[m[32m    { id: "aud-04", cat: "Audio", marca: "Elgato", nombre: "Elgato Wave:3 Micrófono de condensador USB", precio: 9900, stock: 4, img: "assets/images/aud-04.png" },[m
+[32m+[m[32m    { id: "aud-05", cat: "Audio", marca: "Edifier", nombre: "Edifier R1280DB Altavoces Bluetooth 2.0", precio: 5900, stock: 6, img: "assets/images/aud-05.png" },[m
+[32m+[m
+[32m+[m[32m    // ACCESORIOS GAMER[m
+[32m+[m[32m    { id: "acc-01", cat: "Accesorios gamer", marca: "Elgato", nombre: "Key Light Iluminación LED para streaming", precio: 12000, stock: 3, img: "assets/images/acc-01.png" },[m
+[32m+[m[32m    { id: "acc-02", cat: "Accesorios gamer", marca: "SteelSeries", nombre: "SteelSeries QcK Heavy XXL Alfombrilla para ratón", precio: 2900, stock: 10, img: "assets/images/acc-02.png" },[m
+[32m+[m[32m    { id: "acc-03", cat: "Accesorios gamer", marca: "Razer", nombre: "Razer Gigantus V2 XXL Alfombrilla para ratón", precio: 2400, stock: 12, img: "assets/images/acc-03.png" },[m
+[32m+[m[32m    { id: "acc-04", cat: "Accesorios gamer", marca: "Microsoft", nombre: "Xbox Wireless Controller Control inalámbrico", precio: 4900, oferta: 4200, stock: 8, img: "assets/images/acc-04.png" },[m
+[32m+[m[32m    { id: "acc-05", cat: "Accesorios gamer", marca: "Sony", nombre: "Sony DualSense Control inalámbrico para PS5", precio: 5500, stock: 6, img: "assets/images/acc-05.png" },[m
+[32m+[m[32m    { id: "acc-06", cat: "Accesorios gamer", marca: "Elgato", nombre: "Elgato Wave Mic Arm LP Brazo de micrófono de perfil bajo", precio: 4500, stock: 5, img: "assets/images/acc-06.png" },[m
+[32m+[m
+[32m+[m[32m    // FIGURAS 3D[m
+     { id: "fig-01", cat: "Figuras 3D", marca: "Decoración gamer", nombre: "Figura 3D de dragón RGB para setup gamer", precio: 2500, stock: 5, img: "assets/images/fig-01.png" },[m
+[31m-   // ACCESORIO DE ILUMINACIÓN[m
+[31m-    { id: "acc-01", cat: "Accesorios gamer", marca: "Elgato", nombre: "Key Light Iluminación LED para streaming", precio: 12000, stock: 3, img: "assets/images/acc-01.png" }[m
+[31m-[m
+[31m- [m
+[31m- [m
+[31m- [m
+[31m- [m
+[31m- [m
+[31m- [m
+[32m+[m[32m    { id: "fig-02", cat: "Figuras 3D", marca: "Decoración gamer", nombre: "Figura 3D de robot articulado para setup gamer", precio: 2200, stock: 6, img: "assets/images/fig-02.png" },[m
+[32m+[m[32m    { id: "fig-03", cat: "Figuras 3D", marca: "Decoración gamer", nombre: "Lámpara 3D de calavera con luz RGB para setup gamer", precio: 2800, stock: 4, img: "assets/images/fig-03.png" },[m
+[32m+[m
+[32m+[m[32m   //camara streaming//[m
+[32m+[m
+[32m+[m[32m   { id: "str-01", cat: "Cámaras y streaming", marca: "Elgato", nombre: "Stream Deck XL Controlador de 32 teclas", precio: 14000, stock: 3, img: "assets/images/str-01.png" },[m
+   ][m
+[31m-};[m
+\ No newline at end of file[m
+[32m+[m[32m};[m
+[1mdiff --git a/js/efectos.js b/js/efectos.js[m
+[1mindex 88318f4..4289b98 100644[m
+[1m--- a/js/efectos.js[m
+[1m+++ b/js/efectos.js[m
+[36m@@ -1,5 +1,5 @@[m
+[31m-/* EFECTOS: progreso de lectura, cabecera, aparición al desplazarse, luz del cursor, tarjetas con inclinación,[m
+[31m-   cifras que cuentan, marquesina de marcas, vuelo al carrito, ondas en botones y botón "volver arriba". */[m
+[32m+[m[32m/* EFECTOS: cabecera, aparición al desplazarse, luz del cursor, tarjetas con inclinación,[m
+[32m+[m[32m   cifras que cuentan, vuelo al carrito, ondas en botones y botón "volver arriba". */[m
+ (() => {[m
+   "use strict";[m
+   const T = window.TRCG;[m
+[36m@@ -8,13 +8,11 @@[m
+   const reducido = matchMedia("(prefers-reduced-motion: reduce)").matches;[m
+   const conMouse = matchMedia("(hover: hover)").matches;[m
+ [m
+[31m-  /* 1. Progreso, cabecera compacta y botón de subir (un solo listener, ligero) */[m
+[31m-  const prog = $("#progreso"), cab = $(".top"), subir = $("#subir");[m
+[32m+[m[32m  /* 1. Cabecera compacta y botón de subir (un solo listener, ligero) */[m
+[32m+[m[32m  const cab = $(".top"), subir = $("#subir");[m
+   let espera = false;[m
+   const alScroll = () => {[m
+     espera = false;[m
+[31m-    const max = document.documentElement.scrollHeight - innerHeight;[m
+[31m-    prog.style.setProperty("--p", max > 0 ? (scrollY / max).toFixed(4) : 0);[m
+     cab.classList.toggle("compacta", scrollY > 40);[m
+     subir.hidden = scrollY < 700;[m
+   };[m
+[36m@@ -22,6 +20,19 @@[m
+   alScroll();[m
+   subir.addEventListener("click", () => scrollTo({ top: 0, behavior: reducido ? "auto" : "smooth" }));[m
+ [m
+[32m+[m[32m  /* La altura real de la cabecera decide cuánto margen se deja al saltar a una sección (#ofertas, #combos, #catalogo...).[m
+[32m+[m[32m     Se mide con el menú desplegable del celular CERRADO: ese menú se cierra al tocar un enlace, y el salto tiene que[m
+[32m+[m[32m     contar con la cabecera ya cerrada (si no, la sección quedaría a media pantalla, o fuera de ella). */[m
+[32m+[m[32m  const panelMenu = $("#menu"), botonMenu = $("#menu-toggle");[m
+[32m+[m[32m  const medirCab = () => {[m
+[32m+[m[32m    let alto = cab.offsetHeight;[m
+[32m+[m[32m    if (panelMenu && botonMenu && panelMenu.classList.contains("open") && getComputedStyle(botonMenu).display !== "none")[m
+[32m+[m[32m      alto -= panelMenu.offsetHeight + (parseFloat(getComputedStyle(cab).rowGap) || 0);[m
+[32m+[m[32m    document.documentElement.style.scrollPaddingTop = (alto + 12) + "px";[m
+[32m+[m[32m  };[m
+[32m+[m[32m  medirCab();[m
+[32m+[m[32m  if ("ResizeObserver" in window) new ResizeObserver(medirCab).observe(cab); else addEventListener("resize", medirCab);[m
+[32m+[m
+   /* 2. Aparición suave de los bloques marcados con .reveal */[m
+   const rev = [...document.querySelectorAll(".reveal")];[m
+   if (!("IntersectionObserver" in window)) rev.forEach(e => e.classList.add("visto"));[m
+[36m@@ -43,21 +54,36 @@[m
+     document.documentElement.addEventListener("pointerleave", () => luz.classList.remove("on"));[m
+   }[m
+ [m
+[31m-  /* 4. Tarjetas: inclinación 3D suave y luz que sigue al cursor */[m
+[31m-  const grid = $("#grid");[m
+[31m-  if (grid && !reducido && conMouse) {[m
+[31m-    grid.addEventListener("pointermove", e => {[m
+[31m-      const c = e.target.closest(".card"); if (!c) return;[m
+[31m-      const r = c.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;[m
+[31m-      c.style.setProperty("--mx", x + "px"); c.style.setProperty("--my", y + "px");[m
+[31m-      c.style.setProperty("--ry", ((x / r.width - .5) * 8).toFixed(2) + "deg");[m
+[31m-      c.style.setProperty("--rx", ((.5 - y / r.height) * 8).toFixed(2) + "deg");[m
+[31m-      c.classList.add("inclinada");[m
+[31m-    });[m
+[31m-    grid.addEventListener("pointerout", e => {[m
+[31m-      const c = e.target.closest(".card");[m
+[31m-      if (c && !c.contains(e.relatedTarget)) c.classList.remove("inclinada");[m
+[32m+[m[32m  /* 4. Tarjetas (catálogo, ofertas y combos): inclinación 3D suave y luz que sigue al cursor.[m
+[32m+[m[32m        Se calcula una sola vez por cuadro de pantalla, aunque el mouse mande cientos de movimientos por segundo. */[m
+[32m+[m[32m  if (!reducido && conMouse) {[m
+[32m+[m[32m    let activa = null, caja = null, ult = null, raf = 0;[m
+[32m+[m[32m    const soltar = () => { if (activa) activa.classList.remove("inclinada"); activa = caja = null; };[m
+[32m+[m[32m    const pintar = () => {[m
+[32m+[m[32m      raf = 0;[m
+[32m+[m[32m      if (!activa || !ult) return;[m
+[32m+[m[32m      if (!caja) caja = activa.getBoundingClientRect();[m
+[32m+[m[32m      const x = ult.clientX - caja.left, y = ult.clientY - caja.top, g = activa.classList.contains("combo") ? 5 : 8;[m
+[32m+[m[32m      activa.style.setProperty("--mx", x + "px"); activa.style.setProperty("--my", y + "px");[m
+[32m+[m[32m      activa.style.setProperty("--ry", ((x / caja.width - .5) * g).toFixed(2) + "deg");[m
+[32m+[m[32m      activa.style.setProperty("--rx", ((.5 - y / caja.height) * g).toFixed(2) + "deg");[m
+[32m+[m[32m      activa.classList.add("inclinada");[m
+[32m+[m[32m    };[m
+[32m+[m[32m    const mover = e => {[m
+[32m+[m[32m      const c = e.target.closest(".card, .combo");[m
+[32m+[m[32m      if (!c) { soltar(); return; }[m
+[32m+[m[32m      if (c !== activa) { soltar(); activa = c; }[m
+[32m+[m[32m      ult = e;[m
+[32m+[m[32m      if (!raf) raf = requestAnimationFrame(pintar);[m
+[32m+[m[32m    };[m
+[32m+[m[32m    ["#grid", "#of-pista", "#combos-lista"].forEach(sel => {[m
+[32m+[m[32m      const z = $(sel); if (!z) return;[m
+[32m+[m[32m      z.addEventListener("pointermove", mover, { passive: true });[m
+[32m+[m[32m      z.addEventListener("pointerleave", soltar);[m
+     });[m
+[32m+[m[32m    /* si la página o la fila de ofertas se desplaza, la posición medida ya no vale */[m
+[32m+[m[32m    addEventListener("scroll", () => { caja = null; }, { passive: true, capture: true });[m
+[32m+[m[32m    addEventListener("resize", () => { caja = null; }, { passive: true });[m
+   }[m
+ [m
+   /* 5. Cifras (calculadas con tu catálogo) que cuentan hacia arriba al aparecer */[m
+[36m@@ -87,22 +113,12 @@[m
+     document.querySelectorAll(".dato").forEach(d => co.observe(d));[m
+   } else document.querySelectorAll(".dato b").forEach(contar);[m
+ [m
+[31m-  /* 6. Marquesina de marcas: clic en una marca filtra el catálogo */[m
+[31m-  const pista = $("#pista-marcas");[m
+[31m-  if (pista) {[m
+[31m-    const marcas = [...new Set(T.productos.map(p => p.marca))];[m
+[31m-    pista.innerHTML =[m
+[31m-      marcas.map(m => `<button type="button" data-marca="${T.esc(m)}">${T.esc(m)}</button>`).join("") +[m
+[31m-      marcas.map(m => `<button type="button" tabindex="-1" aria-hidden="true" data-marca="${T.esc(m)}">${T.esc(m)}</button>`).join("");[m
+[31m-    pista.addEventListener("click", e => { const b = e.target.closest("[data-marca]"); if (b) T.verMarca(b.dataset.marca); });[m
+[31m-  }[m
+[31m-[m
+[31m-  /* 7. Al agregar al carrito, la imagen del producto vuela hasta el botón del carrito */[m
+[32m+[m[32m  /* 6. Al agregar al carrito, la imagen del producto vuela hasta el botón del carrito */[m
+   document.addEventListener("trcg:agregado", e => {[m
+     if (reducido) return;[m
+     const origen = e.detail && e.detail.origen;[m
+[31m-    const cont = origen && origen.closest ? origen.closest(".card, .pf") : null;[m
+[31m-    const src = cont && cont.querySelector(".img img, .pf-img img, .img > svg, .pf-img svg");[m
+[32m+[m[32m    const cont = origen && origen.closest ? origen.closest(".card, .pf, .combo") : null;[m
+[32m+[m[32m    const src = cont && cont.querySelector(".img img, .pf-img img, .img > svg, .pf-img svg, .combo-ico img, .combo-ico svg");[m
+     const dest = $("#btn-cart");[m
+     if (!src || !dest) return;[m
+     const a = src.getBoundingClientRect(), b = dest.getBoundingClientRect();[m
+[36m@@ -120,7 +136,7 @@[m
+     setTimeout(() => n.remove(), 850);[m
+   });[m
+ [m
+[31m-  /* 8. Onda al hacer clic en los botones */[m
+[32m+[m[32m  /* 7. Onda al hacer clic en los botones */[m
+   document.addEventListener("pointerdown", e => {[m
+     const b = e.target.closest(".btn");[m
+     if (!b || b.disabled || reducido) return;[m
+[1mdiff --git a/js/fichas.js b/js/fichas.js[m
+[1mindex e1f7126..e4b4cf2 100644[m
+[1m--- a/js/fichas.js[m
+[1m+++ b/js/fichas.js[m
+[36m@@ -19,41 +19,138 @@[m [mwindow.FICHAS_CAT = {[m
+ };[m
+ [m
+ window.FICHAS = {[m
+[32m+[m[41m  [m
+[32m+[m[32m  /* ===== PRODUCTOS NUEVOS ===== */[m
+[32m+[m
+[32m+[m[32m  /* Tarjetas gráficas */[m
+   "gpu-01": { desc: "Tarjeta gráfica ROG Strix con chip GeForce RTX 2080 y 8 GB de memoria GDDR6, pensada para jugar con calidad alta.",[m
+     specs: [["Chip gráfico", "NVIDIA GeForce RTX 2080"], ["Memoria", "8 GB GDDR6"], ["Interfaz", "PCI Express 3.0 x16"], ["Serie", "ROG Strix"]] },[m
+   "gpu-02": { desc: "Tarjeta gráfica MSI Ventus 2X con GeForce RTX 4070, 12 GB de memoria GDDR6X y refrigeración de doble ventilador.",[m
+     specs: [["Chip gráfico", "NVIDIA GeForce RTX 4070"], ["Memoria", "12 GB GDDR6X"], ["Interfaz", "PCI Express 4.0 x16"], ["Refrigeración", "Doble ventilador (Ventus 2X)"]] },[m
+   "gpu-03": { desc: "Tarjeta gráfica de la serie ROG Astral con GeForce RTX 5090 y 32 GB de memoria GDDR7, de la gama más alta para gaming y creación.",[m
+     specs: [["Chip gráfico", "NVIDIA GeForce RTX 5090"], ["Memoria", "32 GB GDDR7"], ["Interfaz", "PCI Express 5.0 x16"], ["Serie", "ROG Astral"]] },[m
+[32m+[m[32m  "gpu-04": { desc: "Tarjeta gráfica GeForce RTX 5060 con 8 GB de memoria GDDR7 y DLSS 4, pensada para jugar en Full HD.",[m
+[32m+[m[32m    specs: [["Chip gráfico", "NVIDIA GeForce RTX 5060"], ["Memoria", "8 GB GDDR7"], ["Interfaz", "PCI Express 5.0 x8"], ["Serie", "WINDFORCE OC"]] },[m
+[32m+[m[32m  "gpu-05": { desc: "Tarjeta gráfica GeForce RTX 5060 Ti con 16 GB de memoria GDDR7, para jugar en 1440p con DLSS 4.",[m
+[32m+[m[32m    specs: [["Chip gráfico", "NVIDIA GeForce RTX 5060 Ti"], ["Memoria", "16 GB GDDR7"], ["Interfaz", "PCI Express 5.0 x8"], ["Serie", "Ventus 2X OC (doble ventilador)"]] },[m
+[32m+[m[32m  "gpu-06": { desc: "Tarjeta gráfica GeForce RTX 5070 con 12 GB de memoria GDDR7, para jugar en 1440p con DLSS 4.",[m
+[32m+[m[32m    specs: [["Chip gráfico", "NVIDIA GeForce RTX 5070"], ["Memoria", "12 GB GDDR7"], ["Interfaz", "PCI Express 5.0 x16"], ["Serie", "WINDFORCE OC"]] },[m
+[32m+[m[32m  "gpu-07": { desc: "Tarjeta gráfica GeForce RTX 5070 Ti con 16 GB de memoria GDDR7, para jugar en 1440p y 4K.",[m
+[32m+[m[32m    specs: [["Chip gráfico", "NVIDIA GeForce RTX 5070 Ti"], ["Memoria", "16 GB GDDR7"], ["Interfaz", "PCI Express 5.0 x16"], ["Serie", "Prime OC"]] },[m
+[32m+[m[32m  "gpu-08": { desc: "Tarjeta gráfica GeForce RTX 5080 con 16 GB de memoria GDDR7, de gama alta para jugar en 4K.",[m
+[32m+[m[32m    specs: [["Chip gráfico", "NVIDIA GeForce RTX 5080"], ["Memoria", "16 GB GDDR7"], ["Interfaz", "PCI Express 5.0 x16"], ["Serie", "Gaming Trio OC (triple ventilador)"]] },[m
+[32m+[m[32m  "gpu-09": { desc: "Tarjeta gráfica GeForce RTX 4060 con 8 GB de memoria GDDR6 y DLSS 3, ideal para jugar en Full HD.",[m
+[32m+[m[32m    specs: [["Chip gráfico", "NVIDIA GeForce RTX 4060"], ["Memoria", "8 GB GDDR6"], ["Interfaz", "PCI Express 4.0 x8"], ["Serie", "Dual OC (doble ventilador)"]] },[m
+[32m+[m[32m  "gpu-10": { desc: "Tarjeta gráfica Radeon RX 9070 XT con 16 GB de memoria GDDR6 y arquitectura RDNA 4, para jugar en 1440p y 4K.",[m
+[32m+[m[32m    specs: [["Chip gráfico", "AMD Radeon RX 9070 XT"], ["Memoria", "16 GB GDDR6"], ["Interfaz", "PCI Express 5.0 x16"], ["Serie", "Pulse"]] },[m
+[32m+[m[32m  "gpu-11": { desc: "Tarjeta gráfica Radeon RX 9070 con 16 GB de memoria GDDR6 y arquitectura RDNA 4, para jugar en 1440p.",[m
+[32m+[m[32m    specs: [["Chip gráfico", "AMD Radeon RX 9070"], ["Memoria", "16 GB GDDR6"], ["Interfaz", "PCI Express 5.0 x16"], ["Serie", "Swift"]] },[m
+[32m+[m[32m  "gpu-12": { desc: "Tarjeta gráfica Radeon RX 9060 XT con 16 GB de memoria GDDR6 y arquitectura RDNA 4, para jugar en Full HD y 1440p.",[m
+[32m+[m[32m    specs: [["Chip gráfico", "AMD Radeon RX 9060 XT"], ["Memoria", "16 GB GDDR6"], ["Serie", "Pulse"]] },[m
+[32m+[m[32m  "gpu-13": { desc: "Tarjeta gráfica Intel Arc B580 con 12 GB de memoria GDDR6, para jugar en Full HD y 1440p.",[m
+[32m+[m[32m    specs: [["Chip gráfico", "Intel Arc B580"], ["Memoria", "12 GB GDDR6"], ["Interfaz", "PCI Express 4.0 x8"], ["Serie", "Challenger OC"]] },[m
+ [m
+[32m+[m[32m  /* Procesadores */[m
+   "cpu-01": { desc: "Procesador Ryzen 5 de 6 núcleos para socket AM4, una opción equilibrada para jugar y para el uso diario.",[m
+     specs: [["Núcleos / hilos", "6 / 12"], ["Frecuencia máxima", "Hasta 4.6 GHz"], ["Socket", "AM4"], ["Consumo (TDP)", "65 W"]] },[m
+   "cpu-02": { desc: "Procesador Intel Core i5 de 13.ª generación con 14 núcleos, desbloqueado para overclock, para socket LGA1700.",[m
+     specs: [["Núcleos", "14 (6 de rendimiento + 8 eficientes)"], ["Hilos", "20"], ["Frecuencia máxima", "Hasta 5.1 GHz"], ["Socket", "LGA1700"], ["Multiplicador", "Desbloqueado (serie K)"]] },[m
+   "cpu-03": { desc: "Procesador Ryzen 9 de 16 núcleos con tecnología AMD 3D V-Cache para socket AM5, orientado a gaming extremo y trabajo pesado.",[m
+     specs: [["Núcleos / hilos", "16 / 32"], ["Socket", "AM5"], ["Tecnología", "AMD 3D V-Cache"], ["Memoria compatible", "DDR5"]] },[m
+[32m+[m[32m  "cpu-04": { desc: "Procesador Ryzen 5 de 6 núcleos para socket AM4 que incluye disipador, una opción accesible para jugar y trabajar.",[m
+[32m+[m[32m    specs: [["Núcleos / hilos", "6 / 12"], ["Frecuencia máxima", "Hasta 4.4 GHz"], ["Socket", "AM4"], ["Consumo (TDP)", "65 W"], ["Disipador", "Incluido (Wraith Stealth)"]] },[m
+[32m+[m[32m  "cpu-05": { desc: "Procesador Ryzen 5 de 6 núcleos para socket AM5 con memoria DDR5, un buen punto de partida en la plataforma más nueva de AMD.",[m
+[32m+[m[32m    specs: [["Núcleos / hilos", "6 / 12"], ["Frecuencia máxima", "Hasta 5.1 GHz"], ["Socket", "AM5"], ["Consumo (TDP)", "65 W"], ["Memoria compatible", "DDR5"], ["Disipador", "Incluido (Wraith Stealth)"]] },[m
+[32m+[m[32m  "cpu-06": { desc: "Procesador Ryzen 7 de 8 núcleos con tecnología AMD 3D V-Cache, pensado para jugar.",[m
+[32m+[m[32m    specs: [["Núcleos / hilos", "8 / 16"], ["Frecuencia máxima", "Hasta 5.0 GHz"], ["Socket", "AM5"], ["Caché L3", "96 MB (3D V-Cache)"], ["Consumo (TDP)", "120 W"]] },[m
+[32m+[m[32m  "cpu-07": { desc: "Procesador Ryzen 5 de 6 núcleos con arquitectura Zen 5 para socket AM5.",[m
+[32m+[m[32m    specs: [["Núcleos / hilos", "6 / 12"], ["Frecuencia máxima", "Hasta 5.4 GHz"], ["Socket", "AM5"], ["Consumo (TDP)", "65 W"], ["Arquitectura", "Zen 5"]] },[m
+[32m+[m[32m  "cpu-08": { desc: "Procesador Ryzen 7 de 8 núcleos con arquitectura Zen 5 y AMD 3D V-Cache, pensado para jugar.",[m
+[32m+[m[32m    specs: [["Núcleos / hilos", "8 / 16"], ["Frecuencia máxima", "Hasta 5.2 GHz"], ["Socket", "AM5"], ["Caché L3", "96 MB (3D V-Cache)"], ["Consumo (TDP)", "120 W"]] },[m
+[32m+[m[32m  "cpu-09": { desc: "Procesador Intel Core i5 de 12.ª generación con 6 núcleos para socket LGA1700; no incluye gráficos integrados.",[m
+[32m+[m[32m    specs: [["Núcleos / hilos", "6 / 12"], ["Frecuencia máxima", "Hasta 4.4 GHz"], ["Socket", "LGA1700"], ["Gráficos integrados", "No (modelo F)"], ["Disipador", "Incluido"]] },[m
+[32m+[m[32m  "cpu-10": { desc: "Procesador Intel Core i5 de 14.ª generación con 14 núcleos, desbloqueado para overclock, para socket LGA1700.",[m
+[32m+[m[32m    specs: [["Núcleos", "14 (6 de rendimiento + 8 eficientes)"], ["Hilos", "20"], ["Frecuencia máxima", "Hasta 5.3 GHz"], ["Socket", "LGA1700"], ["Multiplicador", "Desbloqueado (serie K)"]] },[m
+[32m+[m[32m  "cpu-11": { desc: "Procesador Intel Core i7 de 14.ª generación con 20 núcleos, desbloqueado, para jugar y crear contenido.",[m
+[32m+[m[32m    specs: [["Núcleos", "20 (8 de rendimiento + 12 eficientes)"], ["Hilos", "28"], ["Frecuencia máxima", "Hasta 5.6 GHz"], ["Socket", "LGA1700"], ["Multiplicador", "Desbloqueado (serie K)"]] },[m
+[32m+[m[32m  "cpu-12": { desc: "Procesador Intel Core Ultra 7 de la serie 200S con 20 núcleos para socket LGA1851 y memoria DDR5.",[m
+[32m+[m[32m    specs: [["Núcleos", "20 (8 de rendimiento + 12 eficientes)"], ["Frecuencia máxima", "Hasta 5.5 GHz"], ["Socket", "LGA1851"], ["Memoria compatible", "DDR5"], ["Multiplicador", "Desbloqueado (serie K)"]] },[m
+ [m
+[32m+[m[32m  /* Placas base */[m
+[32m+[m[32m  "mb-01": { desc: "Placa base ATX de gama alta para procesadores AMD Ryzen en socket AM5, con memoria DDR5.",[m
+[32m+[m[32m    specs: [["Socket", "AM5"], ["Chipset", "AMD X870E"], ["Memoria", "DDR5"], ["Formato", "ATX"]] },[m
+[32m+[m[32m  "mb-02": { desc: "Placa base Micro-ATX para procesadores AMD Ryzen en socket AM4, con memoria DDR4.",[m
+[32m+[m[32m    specs: [["Socket", "AM4"], ["Chipset", "AMD B550"], ["Memoria", "DDR4"], ["Formato", "Micro-ATX"]] },[m
+[32m+[m[32m  "mb-03": { desc: "Placa base ATX para procesadores AMD Ryzen en socket AM4, con memoria DDR4 y Wi-Fi integrado.",[m
+[32m+[m[32m    specs: [["Socket", "AM4"], ["Chipset", "AMD B550"], ["Memoria", "DDR4"], ["Formato", "ATX"], ["Conectividad", "Wi-Fi 6"]] },[m
+[32m+[m[32m  "mb-04": { desc: "Placa base ATX para procesadores AMD Ryzen en socket AM5, con memoria DDR5 y Wi-Fi integrado.",[m
+[32m+[m[32m    specs: [["Socket", "AM5"], ["Chipset", "AMD B650"], ["Memoria", "DDR5"], ["Formato", "ATX"], ["Conectividad", "Wi-Fi 6E"]] },[m
+[32m+[m[32m  "mb-05": { desc: "Placa base ATX ROG Strix para procesadores AMD Ryzen en socket AM5, con memoria DDR5 y Wi-Fi integrado.",[m
+[32m+[m[32m    specs: [["Socket", "AM5"], ["Chipset", "AMD B650E"], ["Memoria", "DDR5"], ["Formato", "ATX"], ["Conectividad", "Wi-Fi 6E"]] },[m
+[32m+[m[32m  "mb-06": { desc: "Placa base ATX para procesadores Intel de 12.ª a 14.ª generación en socket LGA1700, con memoria DDR4 y Wi-Fi integrado.",[m
+[32m+[m[32m    specs: [["Socket", "LGA1700"], ["Chipset", "Intel B760"], ["Memoria", "DDR4"], ["Formato", "ATX"], ["Conectividad", "Wi-Fi 6"]] },[m
+[32m+[m[32m  "mb-07": { desc: "Placa base ATX para procesadores Intel en socket LGA1700, con memoria DDR5, Wi-Fi integrado y soporte para overclock.",[m
+[32m+[m[32m    specs: [["Socket", "LGA1700"], ["Chipset", "Intel Z790"], ["Memoria", "DDR5"], ["Formato", "ATX"], ["Conectividad", "Wi-Fi 6E"]] },[m
+[32m+[m[32m  "mb-08": { desc: "Placa base ATX para procesadores Intel Core Ultra (serie 200S) en socket LGA1851, con memoria DDR5 y Wi-Fi 7.",[m
+[32m+[m[32m    specs: [["Socket", "LGA1851"], ["Chipset", "Intel Z890"], ["Memoria", "DDR5"], ["Formato", "ATX"], ["Conectividad", "Wi-Fi 7"]] },[m
+[32m+[m
+[32m+[m[32m  /* Memoria RAM */[m
+   "ram-01": { desc: "Kit de memoria DDR4 de perfil bajo, ideal para equipos con disipadores de procesador grandes.",[m
+     specs: [["Capacidad", "16 GB (2 × 8 GB)"], ["Tipo", "DDR4"], ["Velocidad", "3200 MHz"], ["Formato", "DIMM de perfil bajo (LPX)"]] },[m
+   "ram-02": { desc: "Kit de memoria DDR4 de 32 GB con disipador, para multitarea y juegos exigentes.",[m
+     specs: [["Capacidad", "32 GB (2 × 16 GB)"], ["Tipo", "DDR4"], ["Velocidad", "3200 MHz"], ["Serie", "FURY Beast"]] },[m
+   "ram-04": { desc: "Kit de memoria DDR5 de alta capacidad de la serie Dominator Titanium, para equipos de gama alta.",[m
+     specs: [["Capacidad", "64 GB (2 × 32 GB)"], ["Tipo", "DDR5"], ["Serie", "Dominator Titanium"]] },[m
+[32m+[m[32m  "ram-05": { desc: "Kit de memoria DDR5 de 32 GB con latencia CL30, para equipos de gama media y alta.",[m
+[32m+[m[32m    specs: [["Capacidad", "32 GB (2 × 16 GB)"], ["Tipo", "DDR5"], ["Velocidad", "6000 MHz"], ["Latencia", "CL30"], ["Serie", "Vengeance"]] },[m
+[32m+[m[32m  "ram-06": { desc: "Kit de memoria DDR5 de 32 GB con iluminación RGB y latencia CL30.",[m
+[32m+[m[32m    specs: [["Capacidad", "32 GB (2 × 16 GB)"], ["Tipo", "DDR5"], ["Velocidad", "6000 MHz"], ["Latencia", "CL30"], ["Iluminación", "RGB"]] },[m
+[32m+[m[32m  "ram-07": { desc: "Kit de memoria DDR5 de 32 GB con disipador, para jugar y trabajar con fluidez.",[m
+[32m+[m[32m    specs: [["Capacidad", "32 GB (2 × 16 GB)"], ["Tipo", "DDR5"], ["Velocidad", "6000 MHz"], ["Serie", "FURY Beast"]] },[m
+[32m+[m[32m  "ram-08": { desc: "Kit de memoria DDR4 de 16 GB con iluminación RGB, una opción accesible para equipos con memoria DDR4.",[m
+[32m+[m[32m    specs: [["Capacidad", "16 GB (2 × 8 GB)"], ["Tipo", "DDR4"], ["Velocidad", "3200 MHz"], ["Iluminación", "RGB"]] },[m
+[32m+[m[32m  "ram-09": { desc: "Kit de memoria DDR5 de 32 GB de la serie Pro, para uso general y juegos.",[m
+[32m+[m[32m    specs: [["Capacidad", "32 GB (2 × 16 GB)"], ["Tipo", "DDR5"], ["Velocidad", "5600 MHz"], ["Serie", "Crucial Pro"]] },[m
+ [m
+[32m+[m[32m  /* Almacenamiento */[m
+   "ssd-01": { desc: "Unidad SSD NVMe de 1 TB en formato M.2 para que el sistema y tus juegos carguen más rápido.",[m
+     specs: [["Capacidad", "1 TB"], ["Interfaz", "NVMe PCIe 3.0 x4"], ["Formato", "M.2 2280"], ["Serie", "WD Blue SN570"]] },[m
+   "ssd-02": { desc: "SSD NVMe PCIe 4.0 de 1 TB con velocidades de lectura de hasta 7,000 MB/s.",[m
+     specs: [["Capacidad", "1 TB"], ["Interfaz", "NVMe PCIe 4.0 x4"], ["Formato", "M.2 2280"], ["Lectura secuencial", "Hasta 7,000 MB/s"]] },[m
+   "ssd-03": { desc: "SSD NVMe PCIe 5.0 de 4 TB de la serie 9100 PRO, pensado para cargas de trabajo y juegos de gran tamaño.",[m
+     specs: [["Capacidad", "4 TB"], ["Interfaz", "NVMe PCIe 5.0"], ["Formato", "M.2"], ["Serie", "9100 PRO"]] },[m
+[32m+[m[32m  "ssd-04": { desc: "SSD NVMe PCIe 4.0 de 1 TB con lecturas de hasta 5,000 MB/s, para el sistema y tus juegos.",[m
+[32m+[m[32m    specs: [["Capacidad", "1 TB"], ["Interfaz", "NVMe PCIe 4.0 x4"], ["Formato", "M.2 2280"], ["Lectura secuencial", "Hasta 5,000 MB/s"]] },[m
+[32m+[m[32m  "ssd-05": { desc: "SSD NVMe PCIe 4.0 de 2 TB de alto rendimiento, con lecturas de hasta 7,300 MB/s.",[m
+[32m+[m[32m    specs: [["Capacidad", "2 TB"], ["Interfaz", "NVMe PCIe 4.0 x4"], ["Formato", "M.2 2280"], ["Lectura secuencial", "Hasta 7,300 MB/s"]] },[m
+[32m+[m[32m  "ssd-06": { desc: "SSD NVMe PCIe 4.0 de 2 TB con lecturas de hasta 7,450 MB/s.",[m
+[32m+[m[32m    specs: [["Capacidad", "2 TB"], ["Interfaz", "NVMe PCIe 4.0 x4"], ["Formato", "M.2 2280"], ["Lectura secuencial", "Hasta 7,450 MB/s"]] },[m
+[32m+[m[32m  "ssd-07": { desc: "SSD SATA de 1 TB en formato de 2.5 pulgadas, ideal para renovar un equipo que usa disco duro.",[m
+[32m+[m[32m    specs: [["Capacidad", "1 TB"], ["Interfaz", "SATA III (6 Gb/s)"], ["Formato", "2.5 pulgadas"], ["Lectura secuencial", "Hasta 560 MB/s"]] },[m
+[32m+[m[32m  "hdd-01": { desc: "Disco duro interno de 2 TB para guardar muchos archivos, juegos y copias de seguridad.",[m
+[32m+[m[32m    specs: [["Capacidad", "2 TB"], ["Velocidad", "7200 RPM"], ["Formato", "3.5 pulgadas"], ["Interfaz", "SATA III (6 Gb/s)"], ["Caché", "256 MB"]] },[m
+[32m+[m[32m  "ext-01": { desc: "SSD externo portátil de 1 TB con conexión USB 3.2, para llevar tus archivos a todas partes.",[m
+[32m+[m[32m    specs: [["Capacidad", "1 TB"], ["Interfaz", "USB 3.2 Gen 2"], ["Lectura secuencial", "Hasta 1,050 MB/s"], ["Tipo", "SSD externo portátil"]] },[m
+ [m
+[32m+[m[32m  /* Monitores */[m
+   "mon-01": { desc: "Monitor gamer de 24 pulgadas Full HD con panel IPS y 144 Hz de frecuencia de actualización.",[m
+     specs: [["Tamaño", "24 pulgadas"], ["Resolución", "1920 × 1080 (Full HD)"], ["Panel", "IPS"], ["Frecuencia", "144 Hz"], ["Tiempo de respuesta", "1 ms (MPRT)"]] },[m
+   "mon-02": { desc: "Monitor gamer de 27 pulgadas QHD con panel Nano IPS y 144 Hz.",[m
+     specs: [["Tamaño", "27 pulgadas"], ["Resolución", "2560 × 1440 (QHD)"], ["Panel", "Nano IPS"], ["Frecuencia", "144 Hz"], ["Tiempo de respuesta", "1 ms (GtG)"]] },[m
+   "mon-03": { desc: "Monitor gamer OLED de 32 pulgadas con resolución 4K y 240 Hz.",[m
+     specs: [["Tamaño", "32 pulgadas"], ["Resolución", "3840 × 2160 (4K)"], ["Panel", "OLED"], ["Frecuencia", "240 Hz"]] },[m
+[32m+[m[32m  "mon-04": { desc: "Monitor gamer de 27 pulgadas Full HD con panel IPS y 165 Hz de frecuencia de actualización.",[m
+[32m+[m[32m    specs: [["Tamaño", "27 pulgadas"], ["Resolución", "1920 × 1080 (Full HD)"], ["Panel", "IPS"], ["Frecuencia", "165 Hz"]] },[m
+[32m+[m[32m  "mon-05": { desc: "Monitor gamer de 27 pulgadas QHD con panel IPS y 180 Hz de frecuencia de actualización.",[m
+[32m+[m[32m    specs: [["Tamaño", "27 pulgadas"], ["Resolución", "2560 × 1440 (QHD)"], ["Panel", "IPS"], ["Frecuencia", "180 Hz"]] },[m
+[32m+[m[32m  "mon-06": { desc: "Monitor gamer curvo de 27 pulgadas QHD con panel VA y 144 Hz.",[m
+[32m+[m[32m    specs: [["Tamaño", "27 pulgadas"], ["Resolución", "2560 × 1440 (QHD)"], ["Panel", "VA curvo (1000R)"], ["Frecuencia", "144 Hz"], ["Tiempo de respuesta", "1 ms (MPRT)"]] },[m
+[32m+[m[32m  "mon-07": { desc: "Monitor gamer OLED de 27 pulgadas QHD con 240 Hz y tiempo de respuesta ultrarrápido.",[m
+[32m+[m[32m    specs: [["Tamaño", "27 pulgadas"], ["Resolución", "2560 × 1440 (QHD)"], ["Panel", "OLED"], ["Frecuencia", "240 Hz"], ["Tiempo de respuesta", "0.03 ms (GtG)"]] },[m
+[32m+[m[32m  "mon-08": { desc: "Monitor gamer curvo ultrapanorámico de 34 pulgadas con panel QD-OLED y 165 Hz.",[m
+[32m+[m[32m    specs: [["Tamaño", "34 pulgadas"], ["Resolución", "3440 × 1440 (UWQHD)"], ["Panel", "QD-OLED curvo (1800R)"], ["Frecuencia", "165 Hz"]] },[m
+ [m
+[32m+[m[32m  /* Periféricos */[m
+   "per-01": { desc: "Teclado mecánico compacto TKL (sin teclado numérico) con iluminación RGB.",[m
+     specs: [["Formato", "TKL (sin teclado numérico)"], ["Tipo", "Mecánico"], ["Iluminación", "RGB"], ["Conexión", "Cable USB"]] },[m
+   "per-02": { desc: "Ratón gamer con cable, sensor de hasta 8,000 DPI e iluminación RGB LIGHTSYNC.",[m
+[36m@@ -66,27 +163,119 @@[m [mwindow.FICHAS = {[m
+     specs: [["Conexión", "Inalámbrica LIGHTSPEED"], ["Peso", "Aprox. 60 g"], ["Sensor", "HERO 2 (hasta 44,000 DPI)"]] },[m
+   "per-06": { desc: "Auriculares gamer inalámbricos con drivers planar magnéticos de 90 mm.",[m
+     specs: [["Conexión", "Inalámbrica"], ["Drivers", "Planar magnéticos de 90 mm"], ["Micrófono", "Incluido"]] },[m
+[32m+[m[32m  "per-07": { desc: "Teclado mecánico compacto TKL inalámbrico para esports, con iluminación RGB.",[m
+[32m+[m[32m    specs: [["Formato", "TKL (sin teclado numérico)"], ["Tipo", "Mecánico"], ["Conexión", "Inalámbrica LIGHTSPEED, Bluetooth y cable USB"], ["Iluminación", "RGB LIGHTSYNC"]] },[m
+[32m+[m[32m  "per-08": { desc: "Teclado mecánico de tamaño completo con iluminación RGB por tecla y modo torneo.",[m
+[32m+[m[32m    specs: [["Formato", "Tamaño completo"], ["Tipo", "Mecánico (switches Cherry MX)"], ["Iluminación", "RGB por tecla"], ["Conexión", "Cable USB"]] },[m
+[32m+[m[32m  "per-09": { desc: "Teclado mecánico de tamaño completo con teclas macro dedicadas e iluminación Razer Chroma RGB.",[m
+[32m+[m[32m    specs: [["Formato", "Tamaño completo"], ["Tipo", "Mecánico"], ["Iluminación", "Razer Chroma RGB"], ["Conexión", "Cable USB"]] },[m
+[32m+[m[32m  "per-10": { desc: "Teclado mecánico compacto de formato 60 % con iluminación RGB.",[m
+[32m+[m[32m    specs: [["Formato", "60 %"], ["Tipo", "Mecánico"], ["Iluminación", "RGB"], ["Conexión", "Cable USB"]] },[m
+[32m+[m[32m  "per-11": { desc: "Ratón gamer ergonómico y ligero para diestros, con sensor óptico de alta precisión.",[m
+[32m+[m[32m    specs: [["Sensor", "Focus Pro 30K"], ["Peso", "Aprox. 59 g"], ["Botones", "6 programables"], ["Conexión", "Cable USB"]] },[m
+[32m+[m[32m  "per-12": { desc: "Ratón gamer con sensor HERO, 11 botones programables y pesas ajustables.",[m
+[32m+[m[32m    specs: [["Sensor", "HERO (hasta 25,600 DPI)"], ["Botones", "11 programables"], ["Iluminación", "RGB LIGHTSYNC"], ["Conexión", "Cable USB"]] },[m
+[32m+[m[32m  "per-13": { desc: "Ratón gamer inalámbrico ultraligero pensado para esports.",[m
+[32m+[m[32m    specs: [["Conexión", "Inalámbrica (2.4 GHz)"], ["Peso", "Aprox. 54 g"], ["Sensor", "Focus Pro 35K"]] },[m
+[32m+[m[32m  "per-14": { desc: "Ratón gamer con cable, sensor de hasta 10,000 DPI e iluminación RGB.",[m
+[32m+[m[32m    specs: [["Sensor", "Hasta 10,000 DPI"], ["Botones", "7 programables"], ["Iluminación", "RGB"], ["Conexión", "Cable USB"]] },[m
+[32m+[m[32m  "per-15": { desc: "Auriculares gamer con micrófono desmontable y drivers de 53 mm.",[m
+[32m+[m[32m    specs: [["Drivers", "53 mm"], ["Micrófono", "Desmontable con cancelación de ruido"], ["Conexión", "Cable"]] },[m
+[32m+[m[32m  "per-16": { desc: "Auriculares gamer inalámbricos con conexión 2.4 GHz y Bluetooth, y micrófono retráctil.",[m
+[32m+[m[32m    specs: [["Conexión", "Inalámbrica 2.4 GHz y Bluetooth"], ["Drivers", "40 mm"], ["Micrófono", "Retráctil"], ["Autonomía", "Hasta 38 horas"]] },[m
+[32m+[m[32m  "per-17": { desc: "Auriculares gamer con micrófono cardioide, drivers de 50 mm y sonido envolvente virtual 7.1.",[m
+[32m+[m[32m    specs: [["Drivers", "50 mm"], ["Micrófono", "Cardioide"], ["Sonido", "Envolvente virtual 7.1"], ["Conexión", "Cable 3.5 mm"]] },[m
+ [m
+[31m-  "mb-01": { desc: "Placa base ATX de gama alta para procesadores AMD Ryzen en socket AM5, con memoria DDR5.",[m
+[31m-    specs: [["Socket", "AM5"], ["Chipset", "AMD X870E"], ["Memoria", "DDR5"], ["Formato", "ATX"]] },[m
+[32m+[m[32m  /* Refrigeración */[m
+   "cool-01": { desc: "Refrigeración líquida todo en uno con radiador de 360 mm e iluminación A-RGB.",[m
+     specs: [["Tipo", "Líquida AIO"], ["Radiador", "360 mm (3 ventiladores de 120 mm)"], ["Iluminación", "A-RGB"], ["Compatibilidad", "AMD AM5 / AM4 e Intel LGA1700"]] },[m
+[32m+[m[32m  "cool-02": { desc: "Disipador de aire de doble torre con dos ventiladores de 120 mm, para procesadores de alto consumo.",[m
+[32m+[m[32m    specs: [["Tipo", "Aire, doble torre"], ["Tubos de calor", "6"], ["Ventiladores", "2 × 120 mm"], ["Compatibilidad", "AMD AM5 / AM4 e Intel LGA1700"]] },[m
+[32m+[m[32m  "cool-03": { desc: "Disipador de aire de torre con ventilador de 120 mm, una mejora sencilla sobre el disipador de caja.",[m
+[32m+[m[32m    specs: [["Tipo", "Aire, torre sencilla"], ["Tubos de calor", "4"], ["Ventilador", "1 × 120 mm"], ["Compatibilidad", "Intel y AMD (confirma el socket de tu placa)"]] },[m
+[32m+[m[32m  "cool-04": { desc: "Disipador de aire de doble torre con dos ventiladores de 140 mm, pensado para un rendimiento alto y silencioso.",[m
+[32m+[m[32m    specs: [["Tipo", "Aire, doble torre"], ["Tubos de calor", "6"], ["Ventiladores", "2 × 140 mm"], ["Altura", "165 mm"]] },[m
+[32m+[m[32m  "cool-05": { desc: "Refrigeración líquida todo en uno con radiador de 240 mm e iluminación A-RGB.",[m
+[32m+[m[32m    specs: [["Tipo", "Líquida AIO"], ["Radiador", "240 mm (2 ventiladores de 120 mm)"], ["Iluminación", "A-RGB"], ["Compatibilidad", "AMD AM5 / AM4 e Intel LGA1700"]] },[m
+[32m+[m[32m  "cool-06": { desc: "Paquete de 5 ventiladores de 120 mm con control PWM para mejorar el flujo de aire de tu caja.",[m
+[32m+[m[32m    specs: [["Tamaño", "120 mm"], ["Cantidad", "5 ventiladores"], ["Control", "PWM"], ["Velocidad", "Hasta 1800 RPM"]] },[m
+[32m+[m
+[32m+[m[32m  /* Fuentes de alimentación */[m
+   "psu-01": { desc: "Fuente de poder de 1300 W con certificación 80 PLUS Titanium para equipos de alto rendimiento.",[m
+     specs: [["Potencia", "1300 W"], ["Certificación", "80 PLUS Titanium"], ["Formato", "ATX"], ["Cableado", "Modular"]] },[m
+[32m+[m[32m  "psu-02": { desc: "Fuente de poder de 650 W con certificación 80 PLUS Bronze, una base confiable para equipos de gama media.",[m
+[32m+[m[32m    specs: [["Potencia", "650 W"], ["Certificación", "80 PLUS Bronze"], ["Formato", "ATX"], ["Cableado", "No modular"]] },[m
+[32m+[m[32m  "psu-03": { desc: "Fuente de poder de 750 W con certificación 80 PLUS Gold, cableado modular y conector para tarjetas gráficas modernas.",[m
+[32m+[m[32m    specs: [["Potencia", "750 W"], ["Certificación", "80 PLUS Gold"], ["Formato", "ATX"], ["Cableado", "Modular"], ["Estándar", "ATX 3.0 o superior"]] },[m
+[32m+[m[32m  "psu-04": { desc: "Fuente de poder de 650 W con certificación 80 PLUS Bronze.",[m
+[32m+[m[32m    specs: [["Potencia", "650 W"], ["Certificación", "80 PLUS Bronze"], ["Formato", "ATX"], ["Cableado", "No modular"]] },[m
+[32m+[m[32m  "psu-05": { desc: "Fuente de poder de 850 W con certificación 80 PLUS Gold y cableado totalmente modular.",[m
+[32m+[m[32m    specs: [["Potencia", "850 W"], ["Certificación", "80 PLUS Gold"], ["Formato", "ATX"], ["Cableado", "Totalmente modular"]] },[m
+[32m+[m[32m  "psu-06": { desc: "Fuente de poder de 850 W con certificación 80 PLUS Gold y cableado totalmente modular.",[m
+[32m+[m[32m    specs: [["Potencia", "850 W"], ["Certificación", "80 PLUS Gold"], ["Formato", "ATX"], ["Cableado", "Totalmente modular"]] },[m
+[32m+[m
+[32m+[m[32m  /* Cajas PC */[m
+   "case-01": { desc: "Torre de cámara doble con panel panorámico de vidrio templado para lucir tu hardware.",[m
+     specs: [["Tipo", "Torre media"], ["Panel", "Vidrio templado panorámico"], ["Placas compatibles", "Hasta E-ATX"]] },[m
+[32m+[m[32m  "case-02": { desc: "Torre media ATX con frontal de malla para buen flujo de aire y panel lateral de vidrio templado.",[m
+[32m+[m[32m    specs: [["Tipo", "Torre media ATX"], ["Panel lateral", "Vidrio templado"], ["Frontal", "Malla (flujo de aire)"], ["Ventiladores incluidos", "2 × 120 mm"]] },[m
+[32m+[m[32m  "case-03": { desc: "Torre media ATX con frontal perforado para buen flujo de aire y panel lateral de vidrio templado.",[m
+[32m+[m[32m    specs: [["Tipo", "Torre media ATX"], ["Panel lateral", "Vidrio templado"], ["Ventiladores incluidos", "2 × 120 mm"]] },[m
+[32m+[m[32m  "case-04": { desc: "Torre compacta Micro-ATX, una opción económica para armar un equipo pequeño.",[m
+[32m+[m[32m    specs: [["Tipo", "Torre Micro-ATX"], ["Placas compatibles", "Micro-ATX y Mini-ITX"], ["Panel lateral", "Acrílico transparente"]] },[m
+[32m+[m[32m  "case-05": { desc: "Torre media ATX con dos ventiladores frontales de 160 mm y panel lateral de vidrio templado.",[m
+[32m+[m[32m    specs: [["Tipo", "Torre media ATX"], ["Panel lateral", "Vidrio templado"], ["Ventiladores incluidos", "Frontales de 160 mm y uno trasero"]] },[m
+[32m+[m[32m  "case-06": { desc: "Torre media ATX de diseño compacto con frontal de madera (según la versión) y buen flujo de aire.",[m
+[32m+[m[32m    specs: [["Tipo", "Torre media ATX"], ["Diseño", "Frontal con acabado de madera (según versión)"]] },[m
+ [m
+[32m+[m[32m  /* Cámaras y streaming */[m
+   "cam-01": { desc: "Webcam 4K Ultra HD a 60 FPS para streaming y videollamadas.",[m
+     specs: [["Resolución", "4K Ultra HD"], ["Fotogramas", "60 FPS"], ["Uso", "Streaming y videollamadas"]] },[m
+   "cam-02": { desc: "Capturadora de vídeo HDMI 4K para grabar o transmitir tu consola o tu PC.",[m
+     specs: [["Entrada", "HDMI"], ["Resolución", "Hasta 4K"], ["Uso", "Grabación y streaming"]] },[m
+[31m-  "str-01": { desc: "Controlador de 32 teclas LCD personalizables para lanzar acciones y escenas con un toque.",[m
+[31m-    specs: [["Teclas", "32 con pantalla LCD"], ["Uso", "Streaming y automatización"], ["Conexión", "USB"]] },[m
+[32m+[m[32m  "cam-03": { desc: "Webcam Full HD con enfoque automático y micrófono estéreo integrado, para videollamadas y streaming.",[m
+[32m+[m[32m    specs: [["Resolución", "1080p (Full HD) a 30 FPS"], ["Enfoque", "Automático"], ["Micrófono", "Estéreo integrado"], ["Conexión", "USB"]] },[m
+[32m+[m[32m  "cam-04": { desc: "Webcam Full HD a 60 FPS con conexión USB-C, pensada para streaming.",[m
+[32m+[m[32m    specs: [["Resolución", "1080p (Full HD) a 60 FPS"], ["Enfoque", "Automático"], ["Conexión", "USB-C"], ["Orientación", "Horizontal y vertical"]] },[m
+[32m+[m[32m  "cam-05": { desc: "Capturadora externa para grabar y transmitir, con paso de señal 4K a 60 FPS con HDR.",[m
+[32m+[m[32m    specs: [["Captura", "Hasta 4K a 30 FPS o 1080p a 60 FPS"], ["Paso de señal", "Hasta 4K a 60 FPS con HDR"], ["Entrada", "HDMI"], ["Conexión", "USB"]] },[m
+[32m+[m
+[32m+[m[32m  /* Audio */[m
+   "aud-01": { desc: "Micrófono dinámico de estudio con preamplificador integrado, para streaming, podcast y voz.",[m
+     specs: [["Tipo", "Dinámico cardioide"], ["Preamplificador", "Integrado"], ["Conexión", "XLR"]] },[m
+[32m+[m[32m  "aud-02": { desc: "Micrófono USB de condensador con cuatro patrones de captación, para streaming, podcast y videollamadas.",[m
+[32m+[m[32m    specs: [["Tipo", "Condensador"], ["Conexión", "USB"], ["Patrones de captación", "4 (cardioide, estéreo, omnidireccional y bidireccional)"]] },[m
+[32m+[m[32m  "aud-03": { desc: "Micrófono USB de condensador con iluminación RGB y sensor táctil para silenciarlo.",[m
+[32m+[m[32m    specs: [["Tipo", "Condensador"], ["Conexión", "USB"], ["Iluminación", "RGB"], ["Patrones de captación", "4"]] },[m
+[32m+[m[32m  "aud-04": { desc: "Micrófono de condensador USB-C con patrón cardioide y protección contra saturación (Clipguard).",[m
+[32m+[m[32m    specs: [["Tipo", "Condensador cardioide"], ["Conexión", "USB-C"], ["Calidad de audio", "24 bits / 96 kHz"]] },[m
+[32m+[m[32m  "aud-05": { desc: "Altavoces de escritorio 2.0 con Bluetooth y varias entradas, para música, juegos y películas.",[m
+[32m+[m[32m    specs: [["Configuración", "2.0"], ["Potencia", "42 W RMS"], ["Conexión", "Bluetooth, RCA, óptica y coaxial"]] },[m
+ [m
+[32m+[m[32m  /* Accesorios gamer */[m
+[32m+[m[32m  "acc-01": { desc: "Panel de luz LED para streaming y videollamadas con temperatura de color ajustable.",[m
+[32m+[m[32m    specs: [["Tipo", "Panel LED"], ["Brillo", "Hasta 2,800 lúmenes"], ["Temperatura de color", "2900 – 7000 K"], ["Control", "Por aplicación (Wi-Fi)"]] },[m
+[32m+[m[32m  "acc-02": { desc: "Alfombrilla extragrande de tela para ratón y teclado, con base de goma antideslizante.",[m
+[32m+[m[32m    specs: [["Tamaño", "900 × 400 mm"], ["Superficie", "Tela"], ["Base", "Goma antideslizante"]] },[m
+[32m+[m[32m  "acc-03": { desc: "Alfombrilla extragrande de tela para ratón y teclado, con base de goma antideslizante.",[m
+[32m+[m[32m    specs: [["Tamaño", "940 × 410 mm"], ["Superficie", "Tela"], ["Base", "Goma antideslizante"]] },[m
+[32m+[m[32m  "acc-04": { desc: "Control inalámbrico compatible con Xbox, PC con Windows y dispositivos móviles.",[m
+[32m+[m[32m    specs: [["Conexión", "Bluetooth e inalámbrica Xbox"], ["Compatibilidad", "Xbox Series X|S, Xbox One, Windows, Android e iOS"]] },[m
+[32m+[m[32m  "acc-05": { desc: "Control inalámbrico para PlayStation 5 con retroalimentación háptica y gatillos adaptativos.",[m
+[32m+[m[32m    specs: [["Compatibilidad", "PlayStation 5 y PC"], ["Características", "Háptica y gatillos adaptativos"], ["Batería", "Recargable por USB-C"]] },[m
+[32m+[m[32m  "acc-06": { desc: "Brazo para micrófono de perfil bajo que se sujeta al escritorio y deja libre el espacio de trabajo.",[m
+[32m+[m[32m    specs: [["Tipo", "Brazo de perfil bajo"], ["Montaje", "Abrazadera de escritorio"]] },[m
+[32m+[m
+[32m+[m[32m  /* Figuras 3D */[m
+   "fig-01": { desc: "Figura decorativa 3D de dragón con iluminación RGB para darle personalidad a tu setup.",[m
+     specs: [["Tipo", "Figura decorativa 3D"], ["Iluminación", "RGB"], ["Uso", "Decoración de setup"]] },[m
+[31m-  "acc-01": { desc: "Panel de luz LED para streaming y videollamadas con temperatura de color ajustable.",[m
+[31m-    specs: [["Tipo", "Panel LED"], ["Brillo", "Hasta 2,800 lúmenes"], ["Temperatura de color", "2900 – 7000 K"], ["Control", "Por aplicación (Wi-Fi)"]] }[m
+[32m+[m[32m  "fig-02": { desc: "Figura decorativa 3D de robot articulado para darle personalidad a tu escritorio o a tu setup.",[m
+[32m+[m[32m    specs: [["Tipo", "Figura decorativa 3D"], ["Uso", "Decoración de setup"]] },[m
+[32m+[m[32m  "fig-03": { desc: "Lámpara decorativa 3D con forma de calavera y luz RGB para ambientar tu setup.",[m
+[32m+[m[32m    specs: [["Tipo", "Lámpara decorativa 3D"], ["Iluminación", "RGB"], ["Uso", "Decoración de setup"]] }[m
+[32m+[m
+[32m+[m[32m  /*streaming*/[m
+[32m+[m[32m  "str-01": { desc: "Controlador de 32 teclas LCD personalizables para lanzar acciones y escenas con un toque.",[m
+[32m+[m[32m    specs: [["Teclas", "32 con pantalla LCD"], ["Uso", "Streaming y automatización"], ["Conexión", "USB"]] },[m
+[32m+[m
+ };[m
+[1mdiff --git a/js/hero3d.js b/js/hero3d.js[m
+[1mindex 0a841f4..c517616 100644[m
+[1m--- a/js/hero3d.js[m
+[1m+++ b/js/hero3d.js[m
+[36m@@ -1,4 +1,5 @@[m
+[31m-/* HÉROE: la escena 3D mira hacia el cursor, partículas de fondo y palabra que cambia de categoría */[m
+[32m+[m[32m/* HÉROE: la escena 3D mira hacia el cursor, partículas de fondo y palabra que cambia de categoría.[m
+[32m+[m[32m   Cuando el héroe no se ve (porque bajaste en la página, cambiaste de pestaña o hay una ventana abierta) todo se pausa. */[m
+ (() => {[m
+   "use strict";[m
+   const hero = document.getElementById("inicio");[m
+[36m@@ -6,66 +7,94 @@[m
+   const reducido = matchMedia("(prefers-reduced-motion: reduce)").matches;[m
+   const conMouse = matchMedia("(hover: hover)").matches;[m
+ [m
+[31m-  /* 1. Inclinación hacia el cursor (grados, suaves) */[m
+[32m+[m[32m  /* 1. Inclinación hacia el cursor (grados, suaves). Un cálculo por cuadro de pantalla, no uno por cada movimiento del mouse. */[m
+   const inclina = document.getElementById("inclina");[m
+   if (inclina && !reducido && conMouse) {[m
+[31m-    hero.addEventListener("pointermove", e => {[m
+[32m+[m[32m    let ev = null, raf = 0;[m
+[32m+[m[32m    const pinta = () => {[m
+[32m+[m[32m      raf = 0;[m
+[32m+[m[32m      if (!ev) return;[m
+       const r = hero.getBoundingClientRect();[m
+[31m-      const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;[m
+[32m+[m[32m      const x = (ev.clientX - r.left) / r.width - .5, y = (ev.clientY - r.top) / r.height - .5;[m
+       inclina.style.setProperty("--tx", (x * 16).toFixed(2));[m
+       inclina.style.setProperty("--ty", (-y * 12).toFixed(2));[m
+[31m-    });[m
+[32m+[m[32m    };[m
+[32m+[m[32m    hero.addEventListener("pointermove", e => { ev = e; if (!raf) raf = requestAnimationFrame(pinta); }, { passive: true });[m
+     hero.addEventListener("pointerleave", () => {[m
+[32m+[m[32m      ev = null;[m
+       inclina.style.setProperty("--tx", 0);[m
+       inclina.style.setProperty("--ty", 0);[m
+     });[m
+   }[m
+ [m
+[31m-  /* 2. Partículas con líneas entre las cercanas. Se pausan fuera de pantalla y con la pestaña oculta. */[m
+[32m+[m[32m  /* 2. Partículas con líneas entre las cercanas. Van a ~30 cuadros por segundo (sobra para puntos tan lentos),[m
+[32m+[m[32m        dibujan las líneas por grupos y se pausan fuera de pantalla y con la pestaña oculta. */[m
+   const cv = document.getElementById("particulas");[m
+[32m+[m[32m  let arrancar = () => {}, parar = () => {};[m
+   if (cv && !reducido) {[m
+     const ctx = cv.getContext("2d");[m
+[31m-    const N = matchMedia("(max-width: 700px)").matches ? 24 : 46;[m
+[31m-    let w = 0, h = 0, ps = [], corriendo = false, visible = true, raf = 0;[m
+[32m+[m[32m    const N = matchMedia("(max-width: 700px)").matches ? 22 : 40;[m
+[32m+[m[32m    const COLORES = ["0,229,255", "139,92,246"], NIVELES = 5, D2 = 13000;[m
+[32m+[m[32m    const segs = Array.from({ length: COLORES.length * NIVELES }, () => []);[m
+[32m+[m[32m    let w = 0, h = 0, ps = [], raf = 0, ult = 0;[m
+     const medir = () => {[m
+[31m-      const dpr = Math.min(window.devicePixelRatio || 1, 2);[m
+       w = cv.clientWidth; h = cv.clientHeight;[m
+[31m-      cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);[m
+[31m-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);[m
+[32m+[m[32m      cv.width = Math.max(1, Math.round(w)); cv.height = Math.max(1, Math.round(h)); // sin multiplicar por la densidad de píxeles: son puntos y líneas tenues[m
+       ps = Array.from({ length: N }, () => ({[m
+         x: Math.random() * w, y: Math.random() * h,[m
+         vx: (Math.random() - .5) * .28, vy: (Math.random() - .5) * .28,[m
+[31m-        r: Math.random() * 1.5 + .6, c: Math.random() < .55 ? "0,229,255" : "139,92,246"[m
+[32m+[m[32m        r: Math.random() * 1.5 + .6, c: Math.random() < .55 ? 0 : 1[m
+       }));[m
+     };[m
+[31m-    const paso = () => {[m
+[32m+[m[32m    const paso = t => {[m
+[32m+[m[32m      raf = requestAnimationFrame(paso);[m
+[32m+[m[32m      const dt = t - ult;[m
+[32m+[m[32m      if (dt < 30) return;[m
+[32m+[m[32m      ult = t;[m
+[32m+[m[32m      const k = Math.min(dt, 100) / 16.67; // misma velocidad aparente aunque se salten cuadros[m
+       ctx.clearRect(0, 0, w, h);[m
+       for (const p of ps) {[m
+[31m-        p.x += p.vx; p.y += p.vy;[m
+[32m+[m[32m        p.x += p.vx * k; p.y += p.vy * k;[m
+         if (p.x < 0 || p.x > w) p.vx *= -1;[m
+         if (p.y < 0 || p.y > h) p.vy *= -1;[m
+       }[m
+[32m+[m[32m      for (const s of segs) s.length = 0;[m
+       for (let i = 0; i < ps.length; i++) {[m
+         const a = ps[i];[m
+[31m-        ctx.fillStyle = `rgba(${a.c},.85)`;[m
+[31m-        ctx.beginPath(); ctx.arc(a.x, a.y, a.r, 0, 6.2832); ctx.fill();[m
+         for (let j = i + 1; j < ps.length; j++) {[m
+           const b = ps[j], dx = a.x - b.x, dy = a.y - b.y, d2 = dx * dx + dy * dy;[m
+[31m-          if (d2 < 13000) {[m
+[31m-            ctx.strokeStyle = `rgba(${a.c},${((1 - d2 / 13000) * .3).toFixed(3)})`;[m
+[31m-            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();[m
+[31m-          }[m
+[32m+[m[32m          if (d2 < D2) segs[a.c * NIVELES + Math.min(NIVELES - 1, ((1 - d2 / D2) * NIVELES) | 0)].push(a.x, a.y, b.x, b.y);[m
+         }[m
+       }[m
+[31m-      raf = requestAnimationFrame(paso);[m
+[32m+[m[32m      for (let c = 0; c < COLORES.length; c++) {[m
+[32m+[m[32m        for (let n = 0; n < NIVELES; n++) {[m
+[32m+[m[32m          const s = segs[c * NIVELES + n];[m
+[32m+[m[32m          if (!s.length) continue;[m
+[32m+[m[32m          ctx.strokeStyle = `rgba(${COLORES[c]},${(((n + .5) / NIVELES) * .3).toFixed(3)})`;[m
+[32m+[m[32m          ctx.beginPath();[m
+[32m+[m[32m          for (let q = 0; q < s.length; q += 4) { ctx.moveTo(s[q], s[q + 1]); ctx.lineTo(s[q + 2], s[q + 3]); }[m
+[32m+[m[32m          ctx.stroke();[m
+[32m+[m[32m        }[m
+[32m+[m[32m        ctx.fillStyle = `rgba(${COLORES[c]},.85)`;[m
+[32m+[m[32m        ctx.beginPath();[m
+[32m+[m[32m        for (const p of ps) if (p.c === c) { ctx.moveTo(p.x + p.r, p.y); ctx.arc(p.x, p.y, p.r, 0, 6.2832); }[m
+[32m+[m[32m        ctx.fill();[m
+[32m+[m[32m      }[m
+     };[m
+[32m+[m[32m    arrancar = () => { if (!raf) { ult = performance.now(); raf = requestAnimationFrame(paso); } };[m
+[32m+[m[32m    parar = () => { if (raf) { cancelAnimationFrame(raf); raf = 0; } };[m
+[32m+[m[32m    medir();[m
+[32m+[m[32m    if ("ResizeObserver" in window) new ResizeObserver(medir).observe(hero);[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  /* Pausa todo (partículas y animaciones CSS del héroe, con la clase "pausa") cuando el héroe no se ve */[m
+[32m+[m[32m  if (!reducido) {[m
+[32m+[m[32m    let visible = true;[m
+     const ajustar = () => {[m
+       const debe = visible && !document.hidden;[m
+[31m-      if (debe && !corriendo) { corriendo = true; raf = requestAnimationFrame(paso); }[m
+[31m-      else if (!debe && corriendo) { corriendo = false; cancelAnimationFrame(raf); }[m
+[32m+[m[32m      hero.classList.toggle("pausa", !debe);[m
+[32m+[m[32m      if (debe) arrancar(); else parar();[m
+     };[m
+[31m-    medir();[m
+[31m-    if ("ResizeObserver" in window) new ResizeObserver(medir).observe(hero);[m
+     if ("IntersectionObserver" in window) new IntersectionObserver(([en]) => { visible = en.isIntersecting; ajustar(); }).observe(hero);[m
+     document.addEventListener("visibilitychange", ajustar);[m
+     ajustar();[m
+[36m@@ -82,7 +111,7 @@[m
+     poner();[m
+     pal.addEventListener("click", () => T.verCategoria(pal.dataset.cat));[m
+     if (!reducido) setInterval(() => {[m
+[31m-      if (document.hidden) return;[m
+[32m+[m[32m      if (document.hidden || hero.classList.contains("pausa")) return;[m
+       pal.classList.add("cambia");[m
+       setTimeout(() => { i = (i + 1) % T.categorias.length; poner(); pal.classList.remove("cambia"); }, 260);[m
+     }, 2600);[m
+[1mdiff --git a/js/producto.js b/js/producto.js[m
+[1mindex be102ff..295cb3c 100644[m
+[1m--- a/js/producto.js[m
+[1m+++ b/js/producto.js[m
+[36m@@ -1,6 +1,6 @@[m
+[31m-/* FICHA DE PRODUCTO: al tocar un producto se abre una ventana con foto, datos, características,[m
+[32m+[m[32m/* FICHA DE PRODUCTO: al tocar un producto (o un combo) se abre una ventana con foto, datos, características,[m
+    cantidad, "Añadir al carrito", "Comprar ahora", favoritos y productos relacionados.[m
+[31m-   Los textos salen de js/fichas.js; precio, marca, categoría y existencias salen de js/data.js. */[m
+[32m+[m[32m   Los textos salen de js/fichas.js; precio, marca, categoría y existencias salen de js/data.js; los combos, de js/combos.js. */[m
+ (() => {[m
+   "use strict";[m
+   const T = window.TRCG, M = T && T.modal;[m
+[36m@@ -9,57 +9,115 @@[m
+   const { esc, fmt, porId, icono } = T;[m
+   const reducido = matchMedia("(prefers-reduced-motion: reduce)").matches;[m
+   const conMouse = matchMedia("(hover: hover)").matches;[m
+[31m-  let id = null, cant = 1, origen = null;[m
+[32m+[m[32m  let id = null, cant = 1, origen = null, deCombo = null; // deCombo: combo desde el que se abrió una pieza (para "Volver al combo")[m
+ [m
+   const enCarrito = i => (T.itemsCarrito().find(x => x.id === i) || {}).cantidad || 0;[m
+   const relacionados = p => {[m
+[32m+[m[32m    if (p.combo) return T.combos.filter(x => x.id !== p.id).slice(0, 4);[m
+     const otros = T.productos.filter(x => x.id !== p.id);[m
+     return [...otros.filter(x => x.cat === p.cat), ...otros.filter(x => x.cat !== p.cat && x.marca === p.marca)].slice(0, 4);[m
+   };[m
+[32m+[m[32m  const miniatura = p => p.img ? `<img src="${esc(p.img)}" alt="" loading="lazy" decoding="async">` : icono(p.cat);[m
+ [m
+[31m-  /* Dibuja la ficha de un producto dentro de la ventana */[m
+[31m-  function pintar(nuevo) {[m
+[31m-    const p = porId.get(nuevo); if (!p) return;[m
+[31m-    id = p.id; cant = 1;[m
+[31m-    const f = (window.FICHAS || {})[p.id] || {};[m
+[31m-    const desc = f.desc || (window.FICHAS_CAT || {})[p.cat] || `${p.nombre}, de la marca ${p.marca}.`;[m
+[31m-    const filas = [["Marca", p.marca], ["Categoría", p.cat], ...(f.specs || []), ["Código", p.id.toUpperCase()]];[m
+[31m-    const agot = p.stock < 1, fav = T.esFav(p.id);[m
+[31m-    const foto = p.img ? `<img src="${esc(p.img)}" alt="${esc(p.nombre)}">` : icono(p.cat);[m
+[31m-    const stockTxt = agot ? "Sin existencias por ahora" : p.stock <= 3 ? `¡Quedan pocas! Solo ${p.stock} disponible${p.stock === 1 ? "" : "s"}` : `${p.stock} disponibles`;[m
+[31m-    const stockCls = agot ? "no" : p.stock <= 3 ? "poco" : "";[m
+[31m-    const rel = relacionados(p);[m
+[31m-    cuerpo.innerHTML = `<article class="pf" data-id="${esc(p.id)}">[m
+[31m-      <button class="mx" type="button" data-cerrar aria-label="Cerrar la ficha del producto">✕</button>[m
+[31m-      <div class="pf-img"><div class="pf-foto">${foto}</div>${agot ? '<span class="tag out">Agotado</span>' : p.nuevo ? '<span class="tag">Nuevo</span>' : ""}</div>[m
+[31m-      <div class="pf-info">[m
+[31m-        <p class="pf-meta"><button type="button" data-marca="${esc(p.marca)}">${esc(p.marca)}</button><button type="button" data-cat="${esc(p.cat)}">${esc(p.cat)}</button></p>[m
+[31m-        <h2 id="pf-nombre">${esc(p.nombre)}</h2>[m
+[31m-        <p class="pf-precio">${fmt(p.precio)}</p>[m
+[31m-        <p class="pf-stock ${stockCls}">${stockTxt}</p>[m
+[31m-        <p class="pf-desc">${esc(desc)}</p>[m
+[31m-        <div class="pf-compra">[m
+[32m+[m[32m  /* Precio grande de la ficha: con oferta, muestra el normal tachado */[m
+[32m+[m[32m  const precioFicha = p => p.dto[m
+[32m+[m[32m    ? `<p class="pf-precio"><span class="sr">Precio actual: </span>${fmt(p.venta)} <s class="antes"><span class="sr">Precio anterior: </span>${fmt(p.precio)}</s></p>`[m
+[32m+[m[32m    : `<p class="pf-precio">${fmt(p.venta)}</p>`;[m
+[32m+[m
+[32m+[m[32m  function infoStock(p) {[m
+[32m+[m[32m    const agot = p.stock < 1, poco = !agot && p.stock <= 3, n = p.stock;[m
+[32m+[m[32m    const txt = agot ? "Sin existencias por ahora"[m
+[32m+[m[32m      : p.combo ? (poco ? `¡Quedan pocos! Solo ${n} combo${n === 1 ? "" : "s"} disponible${n === 1 ? "" : "s"}` : `${n} combos disponibles`)[m
+[32m+[m[32m      : (poco ? `¡Quedan pocas! Solo ${n} disponible${n === 1 ? "" : "s"}` : `${n} disponibles`);[m
+[32m+[m[32m    return { agot, txt, cls: agot ? "no" : poco ? "poco" : "" };[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  /* Cantidad, total y botones de compra (iguales para productos y combos) */[m
+[32m+[m[32m  function panelCompra(p, agot) {[m
+[32m+[m[32m    const fav = T.esFav(p.id);[m
+[32m+[m[32m    return `<div class="pf-compra">[m
+           <div class="pf-fila">[m
+             <div class="qty" role="group" aria-label="Cantidad">[m
+               <button type="button" data-pf-menos aria-label="Quitar una unidad" disabled>−</button>[m
+               <output id="pf-cant">1</output>[m
+               <button type="button" data-pf-mas aria-label="Agregar una unidad" ${p.stock <= 1 ? "disabled" : ""}>+</button>[m
+             </div>[m
+[31m-            <p class="pf-total">Total: <b id="pf-total">${fmt(p.precio)}</b></p>[m
+[32m+[m[32m            <p class="pf-total">Total: <b id="pf-total">${fmt(p.venta)}</b></p>[m
+           </div>[m
+           <div class="pf-botones">[m
+[31m-            <button class="btn brillo" type="button" data-pf-add ${agot ? "disabled" : ""}>Añadir al carrito</button>[m
+[32m+[m[32m            <button class="btn brillo" type="button" data-pf-add ${agot ? "disabled" : ""}>${p.combo ? "Añadir combo al carrito" : "Añadir al carrito"}</button>[m
+             <button class="btn violeta" type="button" data-pf-comprar ${agot ? "disabled" : ""}>Comprar ahora</button>[m
+           </div>[m
+[31m-          <button class="btn ghost fav-txt" type="button" data-fav="${esc(p.id)}" aria-pressed="${fav}" aria-label="${fav ? "Quitar de" : "Agregar a"} favoritos: ${esc(p.nombre)}">${fav ? "♥ En favoritos" : "♡ Guardar"}</button>[m
+[32m+[m[32m          ${p.combo ? "" : `<button class="btn ghost fav-txt" type="button" data-fav="${esc(p.id)}" aria-pressed="${fav}" aria-label="${fav ? "Quitar de" : "Agregar a"} favoritos: ${esc(p.nombre)}">${fav ? "♥ En favoritos" : "♡ Guardar"}</button>`}[m
+           <p class="pf-aviso" id="pf-carrito" aria-live="polite"></p>[m
+[31m-          <p class="pf-nota">Precio y existencias de referencia: la tienda los confirma al recibir tu pedido.</p>[m
+[31m-        </div>[m
+[32m+[m[32m          <p class="pf-nota">${p.combo ? "Precios, piezas y existencias de referencia: la tienda confirma disponibilidad y compatibilidad al recibir tu pedido." : "Precio y existencias de referencia: la tienda los confirma al recibir tu pedido."}</p>[m
+[32m+[m[32m        </div>`;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  /* "También te puede interesar" (en un combo: los otros combos) */[m
+[32m+[m[32m  function seccionRelacionados(p) {[m
+[32m+[m[32m    const rel = relacionados(p);[m
+[32m+[m[32m    if (!rel.length) return "";[m
+[32m+[m[32m    return `<section class="pf-rel" aria-labelledby="pf-rel-t"><h3 id="pf-rel-t">${p.combo ? "Otros combos" : "También te puede interesar"}</h3><ul>${rel.map(r =>[m
+[32m+[m[32m      `<li><button type="button" data-rel="${esc(r.id)}"><span class="mini">${miniatura(r)}</span><span class="pf-rel-n">${esc(r.nombre)}</span><b>${fmt(r.venta)}</b></button></li>`).join("")}</ul></section>`;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  /* Ficha de un producto */[m
+[32m+[m[32m  function htmlProducto(p) {[m
+[32m+[m[32m    const f = (window.FICHAS || {})[p.id] || {};[m
+[32m+[m[32m    const desc = f.desc || (window.FICHAS_CAT || {})[p.cat] || `${p.nombre}, de la marca ${p.marca}.`;[m
+[32m+[m[32m    const filas = [["Marca", p.marca], ["Categoría", p.cat], ...(f.specs || []), ["Código", p.id.toUpperCase()]];[m
+[32m+[m[32m    const s = infoStock(p);[m
+[32m+[m[32m    const foto = p.img ? `<img src="${esc(p.img)}" alt="${esc(p.nombre)}" decoding="async">` : icono(p.cat);[m
+[32m+[m[32m    const combo = deCombo && porId.get(deCombo);[m
+[32m+[m[32m    return `<article class="pf" data-id="${esc(p.id)}">[m
+[32m+[m[32m      <button class="mx" type="button" data-cerrar aria-label="Cerrar la ficha del producto">✕</button>[m
+[32m+[m[32m      <div class="pf-img"><div class="pf-foto">${foto}</div>${s.agot ? '<span class="tag out">Agotado</span>' : p.nuevo ? '<span class="tag">Nuevo</span>' : ""}${p.dto && !s.agot ? `<span class="tag dto">−${p.dto}%<span class="sr"> de descuento</span></span>` : ""}</div>[m
+[32m+[m[32m      <div class="pf-info">[m
+[32m+[m[32m        ${combo ? `<p class="pf-volver"><button class="link" type="button" data-volver-combo>← Volver a ${esc(combo.nombre)}</button></p>` : ""}[m
+[32m+[m[32m        <p class="pf-meta"><button type="button" data-marca="${esc(p.marca)}">${esc(p.marca)}</button><button type="button" data-cat="${esc(p.cat)}">${esc(p.cat)}</button></p>[m
+[32m+[m[32m        <h2 id="pf-nombre">${esc(p.nombre)}</h2>[m
+[32m+[m[32m        ${precioFicha(p)}[m
+[32m+[m[32m        <p class="pf-stock ${s.cls}">${s.txt}</p>[m
+[32m+[m[32m        <p class="pf-desc">${esc(desc)}</p>[m
+[32m+[m[32m        ${panelCompra(p, s.agot)}[m
+         <dl class="pf-specs">${filas.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>[m
+       </div>[m
+[31m-      ${rel.length ? `<section class="pf-rel" aria-labelledby="pf-rel-t"><h3 id="pf-rel-t">También te puede interesar</h3><ul>${rel.map(r =>[m
+[31m-        `<li><button type="button" data-rel="${esc(r.id)}"><span class="mini">${r.img ? `<img src="${esc(r.img)}" alt="">` : icono(r.cat)}</span><span class="pf-rel-n">${esc(r.nombre)}</span><b>${fmt(r.precio)}</b></button></li>`).join("")}</ul></section>` : ""}[m
+[32m+[m[32m      ${seccionRelacionados(p)}[m
+     </article>`;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  /* Ficha de un combo: lo que incluye, el ahorro y las mismas opciones de compra */[m
+[32m+[m[32m  function htmlCombo(p) {[m
+[32m+[m[32m    const s = infoStock(p);[m
+[32m+[m[32m    const piezas = p.items.map(i => porId.get(i));[m
+[32m+[m[32m    const foto = p.img ? `<img src="${esc(p.img)}" alt="${esc(p.nombre)}" decoding="async">` : icono("Combos");[m
+[32m+[m[32m    return `<article class="pf pf-combo" data-id="${esc(p.id)}">[m
+[32m+[m[32m      <button class="mx" type="button" data-cerrar aria-label="Cerrar la ficha del combo">✕</button>[m
+[32m+[m[32m      <div class="pf-img"><div class="pf-foto">${foto}</div>${s.agot ? '<span class="tag out">Agotado</span>' : ""}${p.dto && !s.agot ? `<span class="tag dto">−${p.dto}%<span class="sr"> de descuento</span></span>` : ""}[m
+[32m+[m[32m        <p class="pf-nivel">${esc(p.etiqueta)}<small>${piezas.length} piezas incluidas</small></p></div>[m
+[32m+[m[32m      <div class="pf-info">[m
+[32m+[m[32m        <p class="pf-meta"><span class="pf-chip">PC completa</span><span class="pf-chip">${esc(p.etiqueta)}</span></p>[m
+[32m+[m[32m        <h2 id="pf-nombre">${esc(p.nombre)}</h2>[m
+[32m+[m[32m        ${precioFicha(p)}[m
+[32m+[m[32m        ${p.dto ? `<p class="pf-ahorro">Ahorras <b>${fmt(p.ahorro)}</b> (${p.dto}%) frente a comprar las piezas por separado</p>` : ""}[m
+[32m+[m[32m        <p class="pf-stock ${s.cls}">${s.txt}</p>[m
+[32m+[m[32m        <p class="pf-desc">${esc([p.lema, p.nota].filter(Boolean).join(" "))}</p>[m
+[32m+[m[32m        ${panelCompra(p, s.agot)}[m
+[32m+[m[32m        <h3 class="pf-sub">Qué incluye</h3>[m
+[32m+[m[32m        <ul class="pf-piezas">${piezas.map(x => `<li><button type="button" data-pieza="${esc(x.id)}" aria-label="Ver ${esc(x.nombre)}">[m
+[32m+[m[32m          <span class="mini">${miniatura(x)}</span><span class="pz-n"><b>${esc(x.nombre)}</b><small>${esc(x.cat)}${x.dto ? " · en oferta" : ""}</small></span><span class="pz-p">${fmt(x.venta)}</span></button></li>`).join("")}</ul>[m
+[32m+[m[32m        <p class="pf-suma"><span>Piezas por separado</span><b>${fmt(p.precio)}</b></p>[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m      ${seccionRelacionados(p)}[m
+[32m+[m[32m    </article>`;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  /* Dibuja la ficha dentro de la ventana */[m
+[32m+[m[32m  function pintar(nuevo) {[m
+[32m+[m[32m    const p = porId.get(nuevo); if (!p) return;[m
+[32m+[m[32m    id = p.id; cant = 1;[m
+[32m+[m[32m    cuerpo.innerHTML = p.combo ? htmlCombo(p) : htmlProducto(p);[m
+     [...cuerpo.querySelector(".pf-info").children].forEach((el, i) => el.style.setProperty("--k", i));[m
+     cuerpo.scrollTop = 0;[m
+     actualizarCarrito();[m
+[36m@@ -77,7 +135,7 @@[m
+     const p = porId.get(id);[m
+     cuerpo.querySelector("#pf-cant").textContent = cant;[m
+     const t = cuerpo.querySelector("#pf-total");[m
+[31m-    t.textContent = fmt(p.precio * cant);[m
+[32m+[m[32m    t.textContent = fmt(p.venta * cant);[m
+     t.classList.remove("pulse"); void t.offsetWidth; t.classList.add("pulse");[m
+     const menos = cuerpo.querySelector("[data-pf-menos]"), mas = cuerpo.querySelector("[data-pf-mas]");[m
+     menos.disabled = cant <= 1; mas.disabled = cant >= p.stock;[m
+[36m@@ -92,16 +150,22 @@[m
+     setTimeout(() => { if (b.isConnected) { b.textContent = t; b.classList.remove("listo"); } }, 1400);[m
+   }[m
+ [m
+[31m-  /* La foto se inclina un poco hacia el cursor y una luz la sigue (solo con mouse) */[m
+[32m+[m[32m  /* La foto se inclina un poco hacia el cursor y una luz la sigue (solo con mouse; un cálculo por cuadro) */[m
+   function inclinar() {[m
+     const el = cuerpo.querySelector(".pf-img");[m
+     if (!el || reducido || !conMouse) return;[m
+[32m+[m[32m    let raf = 0, ev = null;[m
+     el.addEventListener("pointermove", e => {[m
+[31m-      const r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;[m
+[31m-      el.style.setProperty("--ry", (x * 16).toFixed(1) + "deg");[m
+[31m-      el.style.setProperty("--rx", (-y * 16).toFixed(1) + "deg");[m
+[31m-      el.style.setProperty("--gx", ((x + .5) * 100).toFixed(1) + "%");[m
+[31m-      el.style.setProperty("--gy", ((y + .5) * 100).toFixed(1) + "%");[m
+[32m+[m[32m      ev = e;[m
+[32m+[m[32m      if (raf) return;[m
+[32m+[m[32m      raf = requestAnimationFrame(() => {[m
+[32m+[m[32m        raf = 0;[m
+[32m+[m[32m        const r = el.getBoundingClientRect(), x = (ev.clientX - r.left) / r.width - .5, y = (ev.clientY - r.top) / r.height - .5;[m
+[32m+[m[32m        el.style.setProperty("--ry", (x * 16).toFixed(1) + "deg");[m
+[32m+[m[32m        el.style.setProperty("--rx", (-y * 16).toFixed(1) + "deg");[m
+[32m+[m[32m        el.style.setProperty("--gx", ((x + .5) * 100).toFixed(1) + "%");[m
+[32m+[m[32m        el.style.setProperty("--gy", ((y + .5) * 100).toFixed(1) + "%");[m
+[32m+[m[32m      });[m
+     });[m
+     el.addEventListener("pointerleave", () => { el.style.removeProperty("--rx"); el.style.removeProperty("--ry"); });[m
+   }[m
+[36m@@ -120,7 +184,9 @@[m
+     else if (b.hasAttribute("data-pf-comprar")) comprarAhora(p);[m
+     else if (b.hasAttribute("data-pf-vercarrito")) { M.cerrar(dlg, true); setTimeout(T.abrirCarrito, 30); }[m
+     else if (b.dataset.fav) T.alternarFav(b.dataset.fav);[m
+[31m-    else if (b.dataset.rel) pintar(b.dataset.rel);[m
+[32m+[m[32m    else if (b.dataset.pieza) { deCombo = p.combo ? p.id : null; pintar(b.dataset.pieza); }      // pieza de un combo[m
+[32m+[m[32m    else if (b.hasAttribute("data-volver-combo")) { const c = deCombo; deCombo = null; if (c) pintar(c); }[m
+[32m+[m[32m    else if (b.dataset.rel) { deCombo = null; pintar(b.dataset.rel); }[m
+     else if (b.dataset.marca) { M.cerrar(dlg, true); setTimeout(() => T.verMarca(b.dataset.marca), 30); }[m
+     else if (b.dataset.cat) { M.cerrar(dlg, true); setTimeout(() => T.verCategoria(b.dataset.cat), 30); }[m
+   });[m
+[36m@@ -131,9 +197,11 @@[m
+     if (!porId.has(d.id) || dlg.open) return;[m
+     const c = d.origen;[m
+     origen = c && c.querySelector ? (c.querySelector(".ver") || c) : c;[m
+[32m+[m[32m    deCombo = null;[m
+     pintar(d.id);[m
+     M.abrir(dlg, { volverA: origen });[m
+   });[m
+[32m+[m[32m  dlg.addEventListener("close", () => { deCombo = null; });[m
+   /* si cambia el carrito mientras la ficha está abierta (por ejemplo al agregar), se actualiza el aviso */[m
+   document.addEventListener("trcg:agregado", () => { if (dlg.open) actualizarCarrito(); });[m
+ })();[m

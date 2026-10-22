@@ -1,0 +1,75 @@
+/* ============ SECCIONES DEL INICIO: Ofertas y Combos de hoy ============
+   Colores y tipografías salen de las variables de style.css. Aquí también está la etiqueta de descuento
+   y el precio tachado, que se usan en el catálogo, en las fichas y en el carrito. */
+:root{--oferta:#d6246e;--oro:#f0b429}
+
+/* etiqueta "−18%" y precio anterior tachado */
+.tag.dto{left:auto;right:.6rem;background:var(--oferta);color:#fff;box-shadow:0 0 14px -2px rgba(214,36,110,.75)}
+.price{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .5rem}
+.price .antes{margin-left:0}
+.antes{margin-left:.3rem;color:var(--mut);font:500 .62em var(--fb);text-decoration:line-through;text-shadow:none;white-space:nowrap}
+.line .u .antes,.co-item .u .antes{margin-left:.2rem;font-size:1em}
+
+/* encabezado de cada sección */
+.seccion{padding:2.5rem clamp(1rem,4vw,3rem) .5rem}
+.seccion[hidden]{display:none}
+.sec-cab{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1.25rem}
+.seccion h2{position:relative;display:inline-block;margin:0 0 .35rem;font-size:1.8rem}
+.seccion h2::after{content:"";display:block;height:3px;margin-top:.4rem;border-radius:3px;background:linear-gradient(90deg,var(--violet),var(--cyan));transform:scaleX(0);transform-origin:0 50%;transition:transform .8s .2s cubic-bezier(.2,.8,.2,1)}
+.seccion h2.visto::after{transform:scaleX(1)}
+.ofertas h2::after{background:linear-gradient(90deg,var(--oferta),#ff8a3d)}
+.sec-sub{margin:0;max-width:62ch;color:var(--mut)}
+.sec-nota{margin:1rem 0 0;color:var(--mut);font-size:.82rem}
+.sec-acc{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem}
+.flechas{display:flex;gap:.4rem}
+.flecha{width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:var(--panel);color:var(--txt);font-size:1.5rem;line-height:1;cursor:pointer;transition:border-color .2s,color .2s,transform .2s}
+.flecha:hover:not(:disabled){border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+.flecha:disabled{opacity:.35;cursor:not-allowed}
+
+/* OFERTAS: fila de tarjetas que se desliza hacia los lados (con el dedo, con las flechas o con el teclado) */
+.of-pista{display:flex;gap:1rem;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:.25rem;padding:.4rem .25rem 1rem;margin:0 -.25rem;scrollbar-width:thin;scrollbar-color:var(--violet) transparent}
+.of-pista::-webkit-scrollbar{height:6px}
+.of-pista::-webkit-scrollbar-track{background:transparent}
+.of-pista::-webkit-scrollbar-thumb{background:rgba(139,92,246,.6);border-radius:6px}
+.of-pista>.card{flex:0 0 min(260px,76vw);scroll-snap-align:start}
+
+/* COMBOS DE HOY: una tarjeta por PC completa. El color de cada una (--acc) cambia según su posición */
+.combos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1.25rem}
+.combo{--acc:var(--cyan);--rgb:0,229,255;position:relative;display:flex;flex-direction:column;gap:.9rem;padding:1.25rem;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,rgba(26,26,38,.9),rgba(18,18,26,.96));overflow:hidden;cursor:pointer;transition:border-color .25s,box-shadow .3s,transform .25s ease-out}
+.combo:nth-child(3n+2){--acc:var(--violet);--rgb:139,92,246}
+.combo:nth-child(3n){--acc:var(--oro);--rgb:240,180,41}
+.combo::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--acc)}
+.combo::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(var(--rgb),.13),transparent 60%)}
+.combo:hover{border-color:var(--acc);box-shadow:0 16px 40px -20px var(--acc)}
+.combo:hover::after{opacity:1}
+.combo.inclinada{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-4px)}
+.combo-cab{display:flex;align-items:center;gap:.9rem}
+.combo-ico{flex:none;display:grid;place-items:center;width:64px;height:64px;border-radius:14px;border:1px solid rgba(var(--rgb),.5);background:radial-gradient(circle at 50% 35%,rgba(var(--rgb),.3),transparent 70%),var(--panel2);color:var(--acc);overflow:hidden}
+.combo-ico svg{width:70%;height:70%}
+.combo-ico img{width:100%;height:100%;object-fit:contain}
+.combo-nivel{margin:0 0 .15rem;color:var(--acc);font:700 .78rem var(--ft);letter-spacing:.12em;text-transform:uppercase}
+.combo h3{margin:0;font-size:1.35rem;line-height:1.15}
+.combo-lema{margin:0;color:var(--mut);font-size:.95rem}
+.combo-piezas{display:grid;gap:.5rem;margin:0;padding:.9rem 0;list-style:none;border-block:1px dashed var(--line);font-size:.86rem}
+.combo-piezas li{display:flex;align-items:flex-start;gap:.55rem;line-height:1.3}
+.pz-ico{flex:none;width:18px;height:18px;margin-top:.05rem;color:var(--acc)}
+.pz-ico svg{display:block;width:100%;height:100%}
+.combo-pie{margin-top:auto}
+.combo-antes{margin:0;color:var(--mut);font-size:.85rem}
+.combo-antes s{text-decoration:line-through}
+.combo .price{font-size:1.85rem}
+.combo-ahorro{display:inline-block;margin:.3rem 0 0;padding:.12rem .65rem;border:1px solid rgba(var(--rgb),.45);border-radius:999px;background:rgba(var(--rgb),.14);color:#fff;font:600 .82rem var(--fb)}
+.combo .acc{padding:0}
+
+/* botón "Ver más productos" del catálogo */
+.mas{display:flex;justify-content:center;margin-top:1.5rem}
+.mas[hidden]{display:none}
+.mas .btn{min-width:min(100%,280px)}
+
+@media(max-width:640px){
+  .seccion h2{font-size:1.55rem}
+  .sec-acc{width:100%;justify-content:space-between}
+}
+@media(prefers-reduced-motion:reduce){
+  .seccion h2::after{transform:scaleX(1)}
+}

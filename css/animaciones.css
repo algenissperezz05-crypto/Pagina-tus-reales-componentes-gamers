@@ -1,16 +1,16 @@
 /* ============ AMBIENTE Y ANIMACIONES GENERALES ============
    Todo se apaga solo si el visitante tiene activado "reducir movimiento" (ver regla al final de style.css). */
 
-/* barra de progreso de lectura (arriba del todo) */
-.progreso{position:fixed;left:0;top:0;z-index:90;width:100%;height:3px;transform-origin:0 50%;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--violet),var(--cyan));box-shadow:0 0 10px rgba(0,229,255,.7);pointer-events:none}
-
 /* luces de fondo que flotan despacio */
 .ambiente{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
-.orbe{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;animation:deriva 22s ease-in-out infinite}
-.o1{left:-8%;top:18%;width:42vmax;height:42vmax;background:rgba(139,92,246,.45)}
-.o2{right:-10%;top:48%;width:38vmax;height:38vmax;background:rgba(0,229,255,.28);animation-delay:-8s;animation-duration:27s}
-.o3{left:30%;bottom:-18%;width:34vmax;height:34vmax;background:rgba(79,124,255,.3);animation-delay:-14s}
+.orbe{position:absolute;border-radius:50%;opacity:.35;animation:deriva 22s ease-in-out infinite}
+.o1{left:-8%;top:18%;width:50vmax;height:50vmax;background:radial-gradient(closest-side,rgba(139,92,246,.55),rgba(139,92,246,.3) 50%,transparent)}
+.o2{right:-12%;top:46%;width:46vmax;height:46vmax;background:radial-gradient(closest-side,rgba(0,229,255,.34),rgba(0,229,255,.18) 50%,transparent);animation-delay:-8s;animation-duration:27s}
+.o3{left:26%;bottom:-24%;width:42vmax;height:42vmax;background:radial-gradient(closest-side,rgba(79,124,255,.36),rgba(79,124,255,.18) 50%,transparent);animation-delay:-14s}
 @keyframes deriva{50%{transform:translate3d(6vmax,-5vmax,0) scale(1.12)}}
+/* en celulares y mientras hay una ventana abierta, las luces se quedan quietas (ahorra batería) */
+@media(hover:none),(max-width:700px){.orbe{animation:none}}
+body.lock .orbe{animation-play-state:paused}
 
 /* luz suave que sigue al cursor (solo con mouse) */
 .luz{position:fixed;left:0;top:0;z-index:1;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,229,255,.1),rgba(139,92,246,.06) 55%,transparent);pointer-events:none;opacity:0;transition:opacity .4s;will-change:transform}
@@ -19,7 +19,7 @@
 
 /* cabecera: se compacta y proyecta sombra al desplazarte */
 .top{transition:padding .3s,box-shadow .3s,background .3s}
-.top.compacta{padding-block:.4rem;box-shadow:0 10px 30px -12px rgba(0,0,0,.8);background:rgba(7,7,11,.97)}
+.top.compacta{padding-block:.4rem;box-shadow:0 10px 30px -12px rgba(0,0,0,.8);background:#07070b}
 .logo{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 .brand:hover .logo{transform:rotate(60deg) scale(1.08)}
 
@@ -41,32 +41,25 @@
 
 /* botones: brillo que cruza + ondas al hacer clic */
 .btn{position:relative;overflow:hidden;isolation:isolate}
-.btn.brillo::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:cruza 4.5s ease-in-out infinite}
-@keyframes cruza{0%,60%{left:-60%}100%{left:140%}}
+.btn.brillo::after{content:"";position:absolute;top:0;left:0;width:40%;height:100%;z-index:-1;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:translateX(-150%) skewX(-20deg);animation:cruza 4.5s ease-in-out infinite}
+@keyframes cruza{0%,60%{transform:translateX(-150%) skewX(-20deg)}100%{transform:translateX(350%) skewX(-20deg)}}
 .btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 24px -6px rgba(0,229,255,.55)}
 .onda{position:absolute;border-radius:50%;background:rgba(255,255,255,.5);transform:scale(0);animation:onda .6s ease-out forwards;pointer-events:none}
 @keyframes onda{to{transform:scale(4);opacity:0}}
 
-/* cifras y marquesina de marcas */
+/* cifras del catálogo */
 .datos{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;max-width:1100px;margin:0 auto;padding:2.5rem clamp(1rem,4vw,3rem) 1.5rem}
 .dato{padding:1rem;text-align:center;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,rgba(26,26,38,.85),rgba(18,18,26,.85));transition:border-color .3s,box-shadow .3s,transform .3s}
 .dato:hover{border-color:rgba(0,229,255,.55);box-shadow:0 0 24px -8px rgba(0,229,255,.5);transform:translateY(-3px)}
 .dato b{display:block;font:700 clamp(1.8rem,5vw,2.6rem)/1.1 var(--ft);background:linear-gradient(90deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
 .dato span{color:var(--mut);font-size:.9rem}
-.marquesina{overflow:hidden;margin:0 0 1rem;padding:.9rem 0;border-block:1px solid var(--line);background:rgba(18,18,26,.55);-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.pista{display:flex;width:max-content;gap:2.5rem;animation:marquesina 38s linear infinite}
-.marquesina:hover .pista{animation-play-state:paused}
-.pista button{padding:0;border:0;background:none;font:700 1.05rem var(--ft);letter-spacing:.14em;text-transform:uppercase;color:rgba(160,160,184,.75);white-space:nowrap;cursor:pointer;transition:color .25s,text-shadow .25s}
-.pista button:hover{color:var(--cyan);text-shadow:0 0 14px rgba(0,229,255,.5)}
-.pista button::before{content:"◆";margin-right:2.5rem;color:var(--violet);font-size:.6em;vertical-align:middle}
-@keyframes marquesina{to{transform:translateX(-50%)}}
 
-/* tarjetas de producto: entrada escalonada, inclinación 3D, luz que sigue al cursor */
-.card{position:relative;cursor:pointer;transform-style:preserve-3d;will-change:transform;transition:border-color .25s,box-shadow .3s,transform .25s ease-out}
+/* tarjetas de producto: entrada escalonada, inclinación 3D, luz que sigue al cursor (sin capa propia por tarjeta: la capa solo se prepara mientras se inclina) */
+.card{position:relative;cursor:pointer;transition:border-color .25s,box-shadow .3s,transform .25s ease-out}
 .card.entra{animation:tarjeta-in .55s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(min(var(--i,0),11)*55ms)}
 @keyframes tarjeta-in{from{opacity:0;transform:translateY(22px) scale(.97)}}
 .card:hover{border-color:var(--violet);transform:none;box-shadow:0 14px 34px -14px rgba(139,92,246,.55)}
-.card.inclinada{transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-4px)}
+.card.inclinada{will-change:transform;transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-4px)}
 .card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(0,229,255,.14),transparent 60%)}
 .card:hover::after{opacity:1}
 .img{overflow:hidden}
@@ -77,8 +70,7 @@
 .card:hover .ojo,.card:focus-within .ojo{opacity:1;transform:none}
 .ver{padding:0;border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
 .ver:hover{color:var(--cyan)}
-.tag:not(.out){animation:latido-tag 2.6s ease-in-out infinite}
-@keyframes latido-tag{50%{box-shadow:0 0 14px rgba(0,229,255,.8)}}
+.tag:not(.out):not(.dto){box-shadow:0 0 12px rgba(0,229,255,.6)}
 .price{transition:text-shadow .3s}
 .card:hover .price{text-shadow:0 0 16px rgba(0,229,255,.55)}
 .fav.pop{animation:corazon .45s cubic-bezier(.2,.8,.2,1)}
@@ -108,6 +100,5 @@
 /* inclinación de las tarjetas: sin movimiento extra si el visitante lo pidió */
 @media(prefers-reduced-motion:reduce){
   .js .reveal{opacity:1;transform:none}
-  .pista{animation:none;flex-wrap:wrap;width:auto;justify-content:center}
   .catalogo h2::after{transform:scaleX(1)}
 }

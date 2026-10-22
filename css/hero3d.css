@@ -8,12 +8,13 @@
 @keyframes entrar{from{opacity:0;transform:translateY(18px)}}
 
 .kicker{display:inline-flex;align-items:center;gap:.6rem;margin:0 0 1rem;color:var(--cyan);font:600 .8rem var(--ft);letter-spacing:.16em;text-transform:uppercase}
-.punto{width:8px;height:8px;border-radius:50%;background:var(--cyan);animation:latido 2s infinite}
-@keyframes latido{0%{box-shadow:0 0 0 0 rgba(0,229,255,.6)}70%,100%{box-shadow:0 0 0 10px rgba(0,229,255,0)}}
+.punto{position:relative;width:8px;height:8px;border-radius:50%;background:var(--cyan)}
+.punto::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--cyan);animation:latido 2s ease-out infinite}
+@keyframes latido{0%{transform:scale(1);opacity:.6}70%,100%{transform:scale(3.4);opacity:0}}
 
 /* Título con un brillo que lo recorre despacio */
 .hero h1{background:linear-gradient(110deg,#e9e9f3 0%,#e9e9f3 38%,#00e5ff 48%,#8b5cf6 56%,#e9e9f3 66%,#e9e9f3 100%) 0 0/260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:entrar .8s cubic-bezier(.2,.8,.2,1) both,brillo-titulo 9s linear 1s infinite}
-@keyframes brillo-titulo{from{background-position:100% 0}to{background-position:-60% 0}}
+@keyframes brillo-titulo{0%{background-position:100% 0}35%,100%{background-position:-60% 0}}
 
 .explora{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem;font:500 1.05rem var(--ft)}
 .palabra{padding:0 .15rem;border:0;border-bottom:1px dashed rgba(0,229,255,.55);background:none;color:var(--cyan);font:700 1.1rem var(--ft);cursor:pointer;text-shadow:0 0 14px rgba(0,229,255,.45);transition:opacity .25s,transform .25s}
@@ -23,10 +24,10 @@
 /* ---------- Escena 3D ----------
    Todo se mide en "em": el tamaño de .hero-3d manda y la escena se escala sola en celular. */
 .hero-3d{--w:min(86vw,440px);position:relative;z-index:1;justify-self:center;width:var(--w);height:var(--w);font-size:calc(var(--w)/32);perspective:80em;perspective-origin:50% 38%;animation:entrar 1s .2s cubic-bezier(.2,.8,.2,1) both}
-.aura{position:absolute;inset:4%;border-radius:50%;background:radial-gradient(closest-side,rgba(139,92,246,.5),rgba(0,229,255,.14) 62%,transparent);filter:blur(1.4em);animation:aura 6s ease-in-out infinite}
+.aura{position:absolute;inset:4%;border-radius:50%;background:radial-gradient(closest-side,rgba(139,92,246,.5),rgba(0,229,255,.14) 62%,transparent);animation:aura 6s ease-in-out infinite}
 @keyframes aura{50%{transform:scale(1.12);opacity:.72}}
 .inclina{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(calc(var(--ty,0)*1deg)) rotateY(calc(var(--tx,0)*1deg));transition:transform .3s ease-out}
-.escena{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(62deg) rotateZ(0deg);animation:giro 22s linear infinite;will-change:transform}
+.escena{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(62deg) rotateZ(0deg);animation:giro 22s linear infinite}
 @keyframes giro{to{transform:rotateX(62deg) rotateZ(360deg)}}
 
 /* capas apiladas que "respiran" (suben y bajan un poco) */
@@ -65,21 +66,25 @@
 .barrido{position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.75) 50%,transparent 65%) 150% 0/300% 100%;opacity:.6;animation:barrido 4.5s ease-in-out infinite}
 @keyframes barrido{to{background-position:-50% 0}}
 
-.nucleo{width:4.6em;height:4.6em;margin:-2.3em 0 0 -2.3em;border-radius:.6em;background:conic-gradient(from 45deg,#00e5ff,#8b5cf6,#00e5ff);box-shadow:0 0 2.2em rgba(0,229,255,.85),0 0 4.5em rgba(139,92,246,.55);animation:respira 5s ease-in-out infinite,nucleo 2.4s ease-in-out infinite}
+.nucleo{width:4.6em;height:4.6em;margin:-2.3em 0 0 -2.3em;border-radius:.6em;background:conic-gradient(from 45deg,#00e5ff,#8b5cf6,#00e5ff);box-shadow:0 0 2.2em rgba(0,229,255,.85),0 0 4.5em rgba(139,92,246,.55);animation:respira 5s ease-in-out infinite}
+.nucleo::before{content:"";position:absolute;inset:0;border-radius:inherit;background:#fff;opacity:0;animation:brilla 2.4s ease-in-out infinite}
 .nucleo::after{content:"";position:absolute;inset:.5em;border-radius:.3em;background:linear-gradient(rgba(255,255,255,.4) 1px,transparent 1px) 0 0/1em 1em,linear-gradient(90deg,rgba(255,255,255,.4) 1px,transparent 1px) 0 0/1em 1em}
-@keyframes nucleo{50%{filter:brightness(1.4)}}
+@keyframes brilla{50%{opacity:.34}}
 
 .orbita{--z:7em;position:absolute;left:50%;top:50%;width:23em;height:23em;margin:-11.5em 0 0 -11.5em;transform:translateZ(var(--z));animation:giroZ 9s linear infinite;pointer-events:none}
 .orbita::before{content:"";position:absolute;left:50%;top:-.6em;width:1.2em;height:1.2em;margin-left:-.6em;border-radius:50%;background:#fff;box-shadow:0 0 1em .3em #00e5ff}
 .ob2{--z:14em;width:17em;height:17em;margin:-8.5em 0 0 -8.5em;animation-duration:6s;animation-direction:reverse}
 .ob2::before{background:#e6d9ff;box-shadow:0 0 1em .3em #8b5cf6}
 
-.sombra{position:absolute;left:50%;bottom:2%;width:60%;height:8%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.7),transparent);filter:blur(.4em);animation:aura 6s ease-in-out infinite}
+.sombra{position:absolute;left:50%;bottom:2%;width:60%;height:8%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.7),transparent);animation:aura 6s ease-in-out infinite}
 
 /* etiquetas flotantes de vidrio (2D) */
-.etiqueta{position:absolute;z-index:2;padding:.35em .9em;border:1px solid rgba(0,229,255,.4);border-radius:999px;background:rgba(18,18,26,.75);backdrop-filter:blur(4px);box-shadow:0 0 1.2em rgba(0,229,255,.2);color:#e9e9f3;font:700 1em var(--ft);letter-spacing:.1em;animation:flota 6s ease-in-out infinite}
+.etiqueta{position:absolute;z-index:2;padding:.35em .9em;border:1px solid rgba(0,229,255,.4);border-radius:999px;background:rgba(18,18,26,.9);box-shadow:0 0 1.2em rgba(0,229,255,.2);color:#e9e9f3;font:700 1em var(--ft);letter-spacing:.1em;animation:flota 6s ease-in-out infinite}
 .e1{left:0;top:16%}.e2{right:0;top:28%;animation-delay:-1.5s}.e3{left:5%;bottom:18%;animation-delay:-3s}.e4{right:3%;bottom:12%;animation-delay:-4.5s}
 @keyframes flota{50%{transform:translateY(-.8em)}}
 
 @media(min-width:900px){.hero{grid-template-columns:1.05fr .95fr}}
 @media(max-width:899px){.hero-3d{margin-top:.5rem}}
+
+/* pausa: cuando el héroe no se ve (lo marca js/hero3d.js con la clase "pausa") o hay una ventana abierta, todo se detiene */
+.hero.pausa *,.hero.pausa *::before,.hero.pausa *::after,body.lock .hero *,body.lock .hero *::before,body.lock .hero *::after{animation-play-state:paused!important}

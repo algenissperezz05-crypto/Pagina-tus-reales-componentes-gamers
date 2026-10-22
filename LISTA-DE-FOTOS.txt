@@ -1,0 +1,151 @@
+﻿LISTA DE FOTOS DE PRODUCTOS
+============================
+Cada producto usa una foto en la carpeta assets/images/ con el nombre que se indica abajo (formato PNG, de preferencia cuadrada y de menos de 300 KB).
+Si una foto no está, la tarjeta muestra el icono de su categoría: la página funciona igual.
+Para usar otro nombre o formato (jpg, webp), cambia el valor de "img" del producto en js/data.js.
+Solo uses fotos propias o con permiso de uso.
+
+Marcados con (NUEVO) están los 82 productos agregados en esta versión: son los que todavía no tienen foto.
+Los demás son los 31 productos de antes; sus fotos son las que ya tenías.
+
+--- Tarjetas gráficas (13) ---
+gpu-01.png     ASUS ROG Strix GeForce RTX 2080 8GB GDDR6
+gpu-02.png     MSI GeForce RTX 4070 Ventus 2X 12GB GDDR6X
+gpu-03.png     ROG Astral GeForce RTX 5090 32GB GDDR7
+gpu-04.png     Gigabyte GeForce RTX 5060 Windforce OC 8GB GDDR7  (NUEVO)
+gpu-05.png     MSI GeForce RTX 5060 Ti Ventus 2X OC 16GB GDDR7  (NUEVO)
+gpu-06.png     Gigabyte GeForce RTX 5070 Windforce OC 12GB GDDR7  (NUEVO)
+gpu-07.png     ASUS Prime GeForce RTX 5070 Ti OC 16GB GDDR7  (NUEVO)
+gpu-08.png     MSI GeForce RTX 5080 Gaming Trio OC 16GB GDDR7  (NUEVO)
+gpu-09.png     ASUS Dual GeForce RTX 4060 OC 8GB GDDR6  (NUEVO)
+gpu-10.png     Sapphire Pulse Radeon RX 9070 XT 16GB GDDR6  (NUEVO)
+gpu-11.png     XFX Swift Radeon RX 9070 16GB GDDR6  (NUEVO)
+gpu-12.png     Sapphire Pulse Radeon RX 9060 XT 16GB GDDR6  (NUEVO)
+gpu-13.png     ASRock Intel Arc B580 Challenger OC 12GB GDDR6  (NUEVO)
+
+--- Procesadores (12) ---
+cpu-01.png     AMD Ryzen 5 5600X 6 núcleos 4.6 GHz AM4
+cpu-02.png     Intel Core i5-13600K 14 núcleos LGA1700
+cpu-03.png     AMD Ryzen 9 9950X3D 16 núcleos AM5
+cpu-04.png     AMD Ryzen 5 5600 6 núcleos 4.4 GHz AM4  (NUEVO)
+cpu-05.png     AMD Ryzen 5 7600 6 núcleos 5.1 GHz AM5  (NUEVO)
+cpu-06.png     AMD Ryzen 7 7800X3D 8 núcleos AM5  (NUEVO)
+cpu-07.png     AMD Ryzen 5 9600X 6 núcleos 5.4 GHz AM5  (NUEVO)
+cpu-08.png     AMD Ryzen 7 9800X3D 8 núcleos AM5  (NUEVO)
+cpu-09.png     Intel Core i5-12400F 6 núcleos LGA1700  (NUEVO)
+cpu-10.png     Intel Core i5-14600K 14 núcleos LGA1700  (NUEVO)
+cpu-11.png     Intel Core i7-14700K 20 núcleos LGA1700  (NUEVO)
+cpu-12.png     Intel Core Ultra 7 265K 20 núcleos LGA1851  (NUEVO)
+
+--- Memoria RAM (8) ---
+ram-01.png     Corsair Vengeance LPX 16GB (2x8GB) DDR4 3200 MHz
+ram-02.png     Kingston FURY Beast 32GB (2x16GB) DDR4 3200 MHz
+ram-04.png     Dominator Titanium 64GB (2x32GB) DDR5
+ram-05.png     Corsair Vengeance 32GB (2x16GB) DDR5 6000 MHz CL30  (NUEVO)
+ram-06.png     G.Skill Trident Z5 RGB 32GB (2x16GB) DDR5 6000 MHz CL30  (NUEVO)
+ram-07.png     Kingston FURY Beast 32GB (2x16GB) DDR5 6000 MHz  (NUEVO)
+ram-08.png     TeamGroup T-Force Delta RGB 16GB (2x8GB) DDR4 3200 MHz  (NUEVO)
+ram-09.png     Crucial Pro 32GB (2x16GB) DDR5 5600 MHz  (NUEVO)
+
+--- Almacenamiento (9) ---
+ssd-01.png     WD Blue SN570 1TB SSD NVMe M.2
+ssd-02.png     Samsung 980 PRO 1TB SSD NVMe PCIe 4.0
+ssd-03.png     Samsung 9100 PRO 4TB NVMe PCIe 5.0
+ssd-04.png     Crucial P3 Plus 1TB SSD NVMe PCIe 4.0 M.2  (NUEVO)
+ssd-05.png     WD Black SN850X 2TB SSD NVMe PCIe 4.0 M.2  (NUEVO)
+ssd-06.png     Samsung 990 PRO 2TB SSD NVMe PCIe 4.0 M.2  (NUEVO)
+ssd-07.png     Crucial MX500 1TB SSD SATA 2.5"  (NUEVO)
+hdd-01.png     Seagate BarraCuda 2TB Disco duro 3.5" 7200 RPM  (NUEVO)
+ext-01.png     Samsung T7 1TB SSD externo portátil USB 3.2  (NUEVO)
+
+--- Monitores (8) ---
+mon-01.png     AOC 24G2 24" Full HD IPS 144 Hz
+mon-02.png     LG UltraGear 27GL850 27" QHD Nano IPS 144 Hz
+mon-03.png     ROG Swift OLED PG32UCDM 32 pulgadas 4K 240Hz
+mon-04.png     Gigabyte G27F 2 27" Full HD IPS 165 Hz  (NUEVO)
+mon-05.png     ASUS TUF Gaming VG27AQ3A 27" QHD IPS 180 Hz  (NUEVO)
+mon-06.png     Samsung Odyssey G5 27" QHD 144 Hz curvo  (NUEVO)
+mon-07.png     LG UltraGear 27GR95QE 27" OLED QHD 240 Hz  (NUEVO)
+mon-08.png     Alienware AW3423DWF 34" QD-OLED ultrapanorámico 165 Hz  (NUEVO)
+
+--- Periféricos (17) ---
+per-01.png     Redragon Kumara K552 Teclado mecánico TKL RGB
+per-02.png     Logitech G203 LIGHTSYNC Ratón gaming RGB
+per-03.png     HyperX Cloud II Gaming Headset
+per-04.png     Wooting 80HE Teclado gaming Hall Effect
+per-05.png     PRO X SUPERLIGHT 2 Ratón gaming inalámbrico
+per-06.png     Maxwell Auriculares gaming inalámbricos
+per-07.png     Logitech G PRO X TKL LIGHTSPEED Teclado mecánico inalámbrico  (NUEVO)
+per-08.png     Corsair K70 RGB PRO Teclado mecánico  (NUEVO)
+per-09.png     Razer BlackWidow V4 X Teclado mecánico RGB  (NUEVO)
+per-10.png     Redragon K630 Dragonborn Teclado mecánico 60% RGB  (NUEVO)
+per-11.png     Razer DeathAdder V3 Ratón gaming ergonómico  (NUEVO)
+per-12.png     Logitech G502 HERO Ratón gaming  (NUEVO)
+per-13.png     Razer Viper V3 Pro Ratón gaming inalámbrico  (NUEVO)
+per-14.png     Redragon M711 Cobra Ratón gaming RGB  (NUEVO)
+per-15.png     HyperX Cloud III Auriculares gaming  (NUEVO)
+per-16.png     SteelSeries Arctis Nova 7 Auriculares gaming inalámbricos  (NUEVO)
+per-17.png     Razer BlackShark V2 X Auriculares gaming  (NUEVO)
+
+--- Placas base (8) ---
+mb-01.png      ROG Crosshair X870E Hero AM5 DDR5
+mb-02.png      Gigabyte B550M DS3H AM4 DDR4 Micro-ATX  (NUEVO)
+mb-03.png      ASUS TUF Gaming B550-PLUS WiFi II AM4 DDR4 ATX  (NUEVO)
+mb-04.png      MSI MAG B650 Tomahawk WiFi AM5 DDR5 ATX  (NUEVO)
+mb-05.png      ROG Strix B650E-F Gaming WiFi AM5 DDR5 ATX  (NUEVO)
+mb-06.png      ASUS TUF Gaming B760-PLUS WiFi D4 LGA1700 DDR4 ATX  (NUEVO)
+mb-07.png      MSI MAG Z790 Tomahawk WiFi LGA1700 DDR5 ATX  (NUEVO)
+mb-08.png      Gigabyte Z890 AORUS Elite WiFi7 LGA1851 DDR5 ATX  (NUEVO)
+
+--- Refrigeración (6) ---
+cool-01.png    Liquid Freezer III 360 A-RGB
+cool-02.png    DeepCool AK620 Disipador de aire doble torre  (NUEVO)
+cool-03.png    Cooler Master Hyper 212 Black Edition Disipador de aire  (NUEVO)
+cool-04.png    Noctua NH-D15 Disipador de aire doble torre  (NUEVO)
+cool-05.png    ARCTIC Liquid Freezer III 240 A-RGB  (NUEVO)
+cool-06.png    ARCTIC P12 PWM PST Ventiladores 120 mm (paquete de 5)  (NUEVO)
+
+--- Fuentes de alimentación (6) ---
+psu-01.png     PRIME TX-1300 Fuente 1300W 80 PLUS Titanium
+psu-02.png     Corsair CV650 Fuente 650W 80 PLUS Bronze  (NUEVO)
+psu-03.png     Corsair RM750e Fuente 750W 80 PLUS Gold modular  (NUEVO)
+psu-04.png     MSI MAG A650BN Fuente 650W 80 PLUS Bronze  (NUEVO)
+psu-05.png     Cooler Master MWE Gold 850 V2 Full Modular Fuente 850W 80 PLUS Gold  (NUEVO)
+psu-06.png     Seasonic FOCUS GX-850 Fuente 850W 80 PLUS Gold modular  (NUEVO)
+
+--- Cajas PC (6) ---
+case-01.png    O11D EVO RGB Torre gaming panorámica
+case-02.png    Corsair 4000D Airflow Torre media ATX  (NUEVO)
+case-03.png    NZXT H5 Flow Torre media ATX  (NUEVO)
+case-04.png    Cooler Master MasterBox Q300L Torre Micro-ATX  (NUEVO)
+case-05.png    Lian Li LANCOOL 216 Torre media ATX  (NUEVO)
+case-06.png    Fractal Design North Torre media ATX  (NUEVO)
+
+--- Cámaras y streaming (6) ---
+cam-01.png     Facecam 4K Webcam Ultra HD 60 FPS
+cam-02.png     4K X Capturadora de vídeo HDMI
+str-01.png     Stream Deck XL Controlador de 32 teclas
+cam-03.png     Logitech C920 HD Pro Webcam Full HD 1080p  (NUEVO)
+cam-04.png     Logitech StreamCam Webcam Full HD 1080p 60 fps  (NUEVO)
+cam-05.png     Elgato HD60 X Capturadora de vídeo 4K HDR  (NUEVO)
+
+--- Audio (5) ---
+aud-01.png     SM7dB Micrófono dinámico para streaming
+aud-02.png     Blue Yeti Micrófono USB de condensador  (NUEVO)
+aud-03.png     HyperX QuadCast S Micrófono USB RGB  (NUEVO)
+aud-04.png     Elgato Wave:3 Micrófono de condensador USB  (NUEVO)
+aud-05.png     Edifier R1280DB Altavoces Bluetooth 2.0  (NUEVO)
+
+--- Accesorios gamer (6) ---
+acc-01.png     Key Light Iluminación LED para streaming
+acc-02.png     SteelSeries QcK Heavy XXL Alfombrilla para ratón  (NUEVO)
+acc-03.png     Razer Gigantus V2 XXL Alfombrilla para ratón  (NUEVO)
+acc-04.png     Xbox Wireless Controller Control inalámbrico  (NUEVO)
+acc-05.png     Sony DualSense Control inalámbrico para PS5  (NUEVO)
+acc-06.png     Elgato Wave Mic Arm LP Brazo de micrófono de perfil bajo  (NUEVO)
+
+--- Figuras 3D (3) ---
+fig-01.png     Figura 3D de dragón RGB para setup gamer
+fig-02.png     Figura 3D de robot articulado para setup gamer  (NUEVO)
+fig-03.png     Lámpara 3D de calavera con luz RGB para setup gamer  (NUEVO)
+

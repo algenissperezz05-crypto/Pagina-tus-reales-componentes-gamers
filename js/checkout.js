@@ -27,7 +27,7 @@
     const p = porId.get(i.id); if (!p || p.stock < 1) return null;
     return { id: p.id, cantidad: Math.max(1, Math.min(Math.floor(Number(i.cantidad)) || 1, p.stock)) };
   }).filter(Boolean);
-  const total = () => ctx.items.reduce((s, i) => s + porId.get(i.id).precio * i.cantidad, 0);
+  const total = () => ctx.items.reduce((s, i) => s + porId.get(i.id).venta * i.cantidad, 0); // "venta" = precio actual (con oferta si la tiene)
   const unidades = () => ctx.items.reduce((s, i) => s + i.cantidad, 0);
   const codigoNuevo = () => "TRCG-" + Date.now().toString(36).toUpperCase().slice(-5) + Math.floor(Math.random() * 36).toString(36).toUpperCase();
 
@@ -45,7 +45,7 @@
     const filas = ctx.items.map(i => {
       const p = porId.get(i.id);
       return `<li class="co-item"><span class="mini">${p.img ? `<img src="${esc(p.img)}" alt="">` : icono(p.cat)}</span>
-        <div><p class="n">${esc(p.nombre)}</p><p class="u">${i.cantidad} × ${fmt(p.precio)}</p></div><p class="s">${fmt(p.precio * i.cantidad)}</p></li>`;
+        <div><p class="n">${esc(p.nombre)}</p><p class="u">${i.cantidad} × ${fmt(p.venta)}${p.dto ? ` <s class="antes">${fmt(p.precio)}</s>` : ""}${p.combo ? ` · ${p.items.length} piezas` : ""}</p></div><p class="s">${fmt(p.venta * i.cantidad)}</p></li>`;
     }).join("");
     return `<aside class="co-side" aria-label="Resumen del pedido">
       <h3>Tu pedido</h3><ul class="co-items">${filas}</ul>
@@ -94,7 +94,11 @@
     if (d.pago) L.push(`Pago preferido: ${d.pago}`);
     if (d.notas) L.push(`Notas: ${d.notas}`);
     L.push("", b("Productos"));
-    ctx.items.forEach(i => { const p = porId.get(i.id); L.push(`${i.cantidad} x ${p.nombre} (ref. ${p.id}) - ${fmt(p.precio)} c/u = ${fmt(p.precio * i.cantidad)}`); });
+    ctx.items.forEach(i => {
+      const p = porId.get(i.id);
+      L.push(`${i.cantidad} x ${p.nombre}${p.combo ? " (combo)" : ""} (ref. ${p.id}) - ${fmt(p.venta)} c/u${p.dto ? ` (oferta -${p.dto}%)` : ""} = ${fmt(p.venta * i.cantidad)}`);
+      if (p.combo) p.items.forEach(x => L.push(`   - ${porId.get(x).nombre}`)); // piezas del combo
+    });
     L.push("", `${b("Total de referencia")}: ${fmt(total())}`, "El total es de referencia: la tienda confirma disponibilidad, envío y precio final antes de cobrar.");
     return L.join("\n");
   }
